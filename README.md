@@ -1,18 +1,16 @@
-# ats
+#ERC Place - Tools for ERCs
 
-## Train control simulator
+---
+
+## ATS 
+
+### Train control simulator
 
 This is a simulation of the Automatic Train Control simulator, with added features:
  - It doesn't take 1-3 hours to start up.
  - It doesn't crash frequently.
  - It is online and can be available on any computer.
  - It will hopefully work as an obstruction plan tool.
-
-I am a new programmer and this is my first major project. I have been learning JavaScript, HTML and CSS while working on this.
-
-There are a lot of features I still hope to add, and a lot of work still to do.
- 
-The code is hosted at https://ats-simulation.neocities.org/.
 
 ### 1.0 - Proof of Concept - 2022-06-15
 
@@ -25,3 +23,15 @@ The rest of the signals don't work yet, and only one platform is used at the ter
 
 Converted to a multi-file repository. Working on modifying DOM (alarms) with js.
 Added train EB visual and functionality.
+
+---
+
+
+## Obstruction Plan Finder
+
+### A user-friendly obstruction plan tool for general use. 
+
+### Desired Features
+- No special training or knowledge required.
+- Fast to use
+- Provide visual of obstruction plan as well as simple description with more details available if needed
