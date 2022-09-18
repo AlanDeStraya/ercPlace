@@ -1,13 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: papyrus, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #252;
+      }
+      div {
+        max-width: 800px;
+        margin: 30px;
+        padding: 30px;
+        background-color: linen;
+        user-select: none;
+      }
+      h1 {
+        text-align: center;
+        font-size: 36px;
+      }
+      p {
+        font-size: 20px;
+      }
+    </style>
     <title>Not Found</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-    <h1>Page Not Found</h1>
-    <p>The requested page was not found.</p>
+    <div>
+      <h1>Page Not Found</h1>
+      <p>The requested page was not found.
+      <br><br>
+      What does that mean? Let's go on an adventure. You see, what happened was, your browser is looking for a resource (any file, like a web page or document or photo) on a server (computer) somwhere, at a URL (Uniform Resource Locator), which is a certain location on the internet. It sent out that request via your router to the DNS (Domain Name System) of the internet, which is like the internet's phone book. DNS servers will look up the URL and answer your browser's request with the IP (internet protocol) address, which is the exact name and address of the computer holding the resource you are looking for. Your computer then sent a request for certain data to that exact address using certain sets of rules (IP, HTTP - hypertext transfer protocol, TCP - transmission control protocol). Following the same rules, the server holding the resource you wanted should respond with that resource, and your browser will then figure out what to do with it.
+      <br><br>
+      In this case, the request that you just made was half successful. You got to the right server, the one holding files for ats-simulation.neocities.org, but your browser requested a resource (located by the rest of the URL) that doesn't exist, which is why you're seeing this. Perhaps the site has an incorrect or out-of-date link, or something was typed incorrectly by you or me.
+      <br><br>
+      I hope you had fun on this adventure, and I hope I got everything right because I'm only just starting to understand these things myself.
+      <br><br>
+      Have a good one! :)</p>
+    </div>
   </body>
 </html>

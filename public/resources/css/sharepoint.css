@@ -1,0 +1,544 @@
+:root.dark {
+  --body-bg: rgb(40, 40, 40);
+  --header-bg: rgb(30, 60, 30);
+  --text: rgb(205, 225, 200);
+  --link: rgb(180, 180, 180);
+  --sidebar: rgb(55, 55, 55);
+  --smoke: rgb(65, 65, 10);
+  --flame: rgb(53, 15, 15);
+  --tr: rgb(70, 70, 70);
+}
+:root.light {
+  --body-bg: rgb(190, 190, 190);
+  --header-bg: rgb(150, 150, 150);
+  --text: rgb(45, 5, 5);
+  --link: rgb(110, 10, 10);
+  --sidebar: white;
+  --smoke: rgb(255, 255, 200);
+  --flame: rgb(255, 180, 180);
+  --tr: rgb(220, 220, 220);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.3s, background-color 0.4s, color 0.4s;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  background-color: var(--body-bg);
+  font-family: sans-serif;
+  transition-duration: 0.4s;
+}
+a {
+  color: var(--link);
+  transition: color 0.4s;
+}
+h2, h3, h4, li, th, td, p {
+  color: var(--text);
+  transition: color 0.4s;
+}
+header {
+  height: 75px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 0 15px 15px var(--header-bg);
+  transition-duration: 0.4s;
+  z-index: 1;
+}
+h1 {
+  letter-spacing: 1px;
+  color: var(--text);
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--sidebar);
+  transition-duration: 0.4s;
+}
+h1 a, #weather a {
+  text-decoration: none;
+}
+#weather {
+  width: 30px;
+  height: 20px;
+  transition: color 0.4s;
+}
+#weather a:hover {
+  background-color: rgb(150, 165, 255);
+}
+#weather a {
+  font-size: 42px;
+  position: relative;
+  bottom: 20px;
+  border: 1px solid grey;
+  border-radius: 35%;
+  background-color: var(--text);
+  padding-top: 5px;
+  transition-duration: 0.4s;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+nav li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 3px;
+}
+nav li a {
+  text-decoration: none;
+  padding: 5px;
+  color: #CCC;
+  background-color: black;
+  border-radius: 5px;
+}
+nav li a:hover {
+  background-color: rgb(80, 80, 80);
+}
+#sidebar {
+  background-color: var(--sidebar);
+  border: 1px solid black;
+  width: 200px;
+  height: 500px;
+  position: fixed;
+  right: 15px;
+  top: 300px;
+  padding: 8px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition-duration: 0.4s;
+}
+.search {
+  animation: highlight 3s, remind 300ms cubic-bezier(0.5,0,0.5,1) 2s 5;
+}
+@keyframes highlight {
+  0% {
+    box-shadow: 0 0 300px 300px var(--text);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+@keyframes remind {
+  0% {
+    background-color: var(--link);
+  }
+  100% {
+    background-color: var(--transparent);
+  }
+}
+table {
+  text-align: center;
+}
+th, td {
+  width: 80px;
+}
+tr:nth-of-type(even), th {
+  background-color: var(--tr);
+}
+
+#dark-mode {
+  width: 80%;
+  line-height: 25px;
+  font-size: 16px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  padding: 3px;
+}
+#dark-mode:hover, #obstruction-button:hover, #radarButton:hover {
+  background-color: var(--header-bg);
+  box-shadow: 0 0 7px 3px var(--link);
+}
+#dark-mode:active, #obstruction-button:active, #radarButton:active {
+  background-color: var(--body-bg);
+}
+
+#obstruction-button {
+  width: 200px;
+  height: 50px;
+  position: fixed;
+  right: 15px;
+  top: 190px;
+  line-height: 25px;
+  font-size: 16px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  padding: 3px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+ 
+#fire-mode {
+  width: 200px;
+  height: 50px;
+  position: fixed;
+  right: 15px;
+  top: 120px;
+  background-color: rgb(255, 255, 150);
+  color: red;
+  font-weight: bold;
+  font-size: 25px;
+  animation: siren 2.2s infinite;
+  z-index: 5;
+}
+#fire-mode:hover {
+  animation: none;
+  background-color: rgb(255, 255, 210);
+  box-shadow: 0 0 14px 7px red;
+}
+#fire-mode:active {
+  background-color: white;
+}
+@keyframes siren {
+  0% {
+    box-shadow: 0 0 0 0 red;
+  }
+  50% {
+    box-shadow: 0 0 7px 3px red;
+  }
+  100% {
+    box-shadow: 0 0 0 0 red;
+  }
+}
+#midbar {
+ display: flex;
+ flex-direction: column;
+ width: 320px;
+ height: calc(100vh - 200px);
+ position: fixed;
+ right: 240px;
+ top: 96px;
+}
+#fire {
+  height: calc((100vh - 200px)/2);
+  border: 1px solid black;
+  width: 100%;
+  background: linear-gradient(180deg, var(--smoke) 43%, var(--flame));
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.4s;
+  padding: 7px;
+  z-index: 5;
+  overflow: auto;
+}
+#midbar h4 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#midbar li {
+  list-style: none;
+  margin-top: 1vh;
+  margin-left: 10px;
+}
+#obstruction-plans {
+  margin-top: 10px;
+  width: 100%;
+  height: calc((100vh - 200px)/2);
+  visibility: hidden;
+  background-color: var(--sidebar);
+  border: 1px solid black;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.4s;
+}
+#obstruction-plans li {
+  margin-top: 1vh;
+}
+
+main {
+  width: calc(100vw - 570px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+sub {
+  position: relative;
+  top: -150px;
+}
+section {
+  padding: 10px;
+  margin-left: 80px;
+}
+@media only screen and (min-width: 1300px) {
+  section {
+    margin-left: calc(80px + ((100vw - 1300px) * 0.2));
+  }
+}
+section:first-of-type {
+  margin-top: 100px;
+}
+section li {
+  margin-top: 6px;
+  margin-left: 25px;
+  font-family: verdana, sans-serif;
+}
+h2 {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: -20px;
+}
+h2 a {
+  margin-left: 5px;
+  font-size: 16px;
+}
+#rules {
+  margin-top: 35px;
+}
+h3 {
+  margin-top: 10px;
+}
+.set-up ul {
+  margin-left: 10px;
+}
+section:last-of-type {
+  margin-bottom: 120px;
+}
+
+#weatherContainer {
+ position: relative;
+ top: 120px;
+ left: 20px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-start;
+ gap: 25px;
+ align-items: center;
+}
+.weatherWidget {
+  width: calc(100vw - 620px);
+  max-width: 350px;
+  margin-bottom: 35px;
+}
+#radarButton {
+  padding: 10px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#map {
+  width: 90%;
+  max-width: 600px;
+  height: 360px;
+  position: relative;
+  top: 120px;
+  left: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 10vh;
+  height: 80vh;
+  left: 10vw;
+  width: 80vw;
+  overflow: auto;
+  background-color: var(--body-bg);
+  padding: 20px;
+  border: 3px solid var(--text);
+  z-index: 6;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.popup h2 {
+  margin: 20px;
+  text-align: center;
+}
+.popup h3 {
+  margin: 35px 0 20px;
+}
+.popup p {
+  margin: 20px 45px;
+}
+.popup ul {
+  list-style-position: inside;
+}
+.popup ol {
+  margin-left: 34px;
+}
+.popup li {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+.popupx {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--sidebar);
+  color: var(--text);
+  font-size: 24px;
+  margin: 3px;
+  padding: 3px;
+  user-select: none;
+}
+.popupx:hover {
+  background-color: var(--link);
+}
+
+footer a {
+  z-index: 12;
+  text-decoration: none;
+  padding: 8px;
+}
+footer a:hover {
+  background-color: var(--body-bg);
+  border-radius: 5px;
+}
+  
+footer {
+  height: 40px;
+  margin-top: 100px;
+  padding: 0 15px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--header-bg);
+  box-shadow: 0 0 15px 15px var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+
+@media only screen and (max-height: 822px) {
+  header {
+    height: 65px;
+  }
+  #sidebar {
+    height: 375px;
+    position: fixed;
+    right: 15px;
+    top: 195px;
+  }
+  #midbar {
+    height: calc(100vh - 120px);
+  }
+  #fire {
+    height: calc((100vh - 120px)/2);
+  }
+  #obstruction-plans {
+    height: calc((100vh - 120px)/2);
+  }
+  #obstruction-plans li {
+    margin-top: 0.6vh;
+  }
+  #fire-mode {
+    position: fixed;
+    right: 15px;
+    top: 95px;
+  }
+  #obstruction-button {
+    position: fixed;
+    right: 15px;
+    top: 150px;
+  }
+  footer {
+    height: 15px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  header {
+    height: 74px;
+  }
+  nav {
+    margin-left: 50px;
+  }
+  nav li {
+    margin-top: 20px;
+  }
+  #weather {
+    margin: 0 20px;
+  }
+  section {
+    margin-left: 25px;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  header {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    min-height: 600px;
+    position: absolute;
+    padding: 20px 0;
+  }
+  h1 {
+    width: 60vw;
+    font-size: 7vw;
+    text-align: center;
+  }
+  nav {
+    margin-left: 0;
+  }
+  nav li {
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 30px;
+  }
+  #fire-mode, #obstruction-button, #sidebar {
+    display: none;
+  }
+  #midbar {
+    position: static;
+    margin: 110vh auto 0;
+    height: 500px;
+  }
+  #fire, #obstruction-plans {
+    visibility: visible;
+    opacity: 1;
+    height: 250px;
+  }
+  .weatherWidget {
+    display: none;
+  }
+  #map {
+    display: none;
+  }
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  section {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 15px 0 40px;
+  }
+  footer {
+    position: static;
+    top: 0;
+    height: 30vh;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    z-index: 50;
+    margin-top: 20px;
+  }
+}
