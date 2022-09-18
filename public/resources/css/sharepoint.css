@@ -284,7 +284,7 @@ section {
   margin-left: 80px;
 }
 @media only screen and (min-width: 1300px) {
-  section {
+  section, #weatherContainer {
     margin-left: calc(80px + ((100vw - 1300px) * 0.2));
   }
 }
@@ -327,11 +327,6 @@ section:last-of-type {
  justify-content: flex-start;
  gap: 25px;
  align-items: center;
-}
-.weatherWidget {
-  width: calc(100vw - 620px);
-  max-width: 350px;
-  margin-bottom: 35px;
 }
 #radarButton {
   padding: 10px;
@@ -516,9 +511,6 @@ footer {
     visibility: visible;
     opacity: 1;
     height: 250px;
-  }
-  .weatherWidget {
-    display: none;
   }
   #map {
     display: none;
