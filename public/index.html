@@ -9,13 +9,13 @@
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 
 <!--style-->
-<link rel='stylesheet' type='text/css' href='./resources/css/sharepoint.css' />
+<link rel='stylesheet' type='text/css' href='./resources/css/index.css' />
 
-<title>Sharepoint++</title>
+<title>ERC.Place</title>
 </head>
 <body>
   <header>
-    <h1><a href='#top'>Sharepoint++</a></h1>
+    <h1><a href='#top'>ERC.Place</a></h1>
     
     <div id='weather'><a href='https://weather.gc.ca/city/pages/on-118_metric_e.html' target='_blank'>⛅</a></div>
 		
@@ -91,7 +91,7 @@
   
   <main>
   <div id='weatherContainer'>
-    <div class="weatherWidget"></div>
+    <iframe title="Environment Canada Weather" width="300px" height="191px" src="https://weather.gc.ca/wxlink/wxlink.html?cityCode=on-118&amp;lang=e" allowtransparency="true" frameborder="0"></iframe>
     <button id='radarButton'>Display Radar</button>
   </div>
   <div id="map"></div>
@@ -225,6 +225,7 @@
       <li><a href='https://www.logistikunicorp.com/en/index.asp' target='_blank'>Logistik</a></li>
       <li><a href='http://webstaff.transit.local/webstaff/servlet/ServletController.asp?device=stdbrowser&action=doBeginLogin' target='_blank'>Telestaff</a></li>
       <li><a href='http://10.136.12.88/CADIncidentManagement/' target='_blank'>CAD</a></li>
+      <li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank'>Sharepoint</a></li>
       <li><a href='https://www.chickpeasottawa.com/' target='_blank'>Mission Critical Support</a></li>
       <li id='scadaAlarms-link'><a href='#resources'>Downloading SCADA Alarms (& secure key code)</a></li>
       <li id='print-link'><a href='#resources'>Print Maintenance Plan</a></li>
@@ -322,6 +323,7 @@
     <div class='popupx' id='updatesx'>X</div>
     <h2>Updates</h2>
     <ul>
+      <li>2022-09-18 - <strong>Changed weather widget to Environment Canada</strong> - official source of weather with alerts</li>
       <li>2022-09-17 - <strong>Added weather radar map</strong> - map showing weather radar</li>
       <li>2022-08-30 - <strong>Added improved maintenance plan print instruction</strong> - popup with more thorough instructions</li>
       <li>2022-08-24 - <strong>Linked Lieu Requests sheet</strong> - new sheet to track lieu requests</li>
@@ -350,57 +352,35 @@
       <a id='top-link' href='#top'>^Top</a>
     </div>
     <div>
-      <p>Updated 2022-09-17 <em><a id='updates-link' href='#'>List of Updates</a></em></p>
+      <p>Updated 2022-09-18 <em><a id='updates-link' href='#'>List of Updates</a></em></p>
     </div>
     <div>
-    <a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank'>Sharepoint Nonplussed</a>
+    <a href='mailto:alan@erc.place'>Contact: alan@erc.place</a>
     </div>
   </footer>
   
-  <script> //weather forecast
-	
-    window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-    window.weatherWidgetConfig.push({
-      selector: ".weatherWidget",
-      apiKey: "79GRWU92BG3J59PMQX4S7PRUQ", //Sign up for your personal key
-      location: "Ottawa, CA", //Enter an address
-      unitGroup: "metric", //"us" or "metric"
-      forecastDays: 3, //how many days forecast to show
-      title: "Weather from non-official source", //optional title
-      showTitle: true, 
-      showConditions: false
-    });
-    
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'visualCrossingWidget.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-    </script>
-  
-    <script> //weather map
-      
-      let map = L.map("map").setView([45.5, -75.7], 8);
-      
-    let OpenStreetMap_Mapnik = L.tileLayer(
-      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }
-    ).addTo(map);
-  
-    let wmsLayer = L.tileLayer
-      .wms("https://geo.weather.gc.ca/geomet?", {
-        layers: "RADAR_1KM_RRAI",
-        version: "1.3.0",
-        opacity: 0.5
-      })
-      .addTo(map);
-  
-    </script>
+		<script> //weather map
+			
+			let map = L.map("map").setView([45.5, -75.7], 8);
+			
+		let OpenStreetMap_Mapnik = L.tileLayer(
+			"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+			{
+				maxZoom: 19,
+				attribution:
+					'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}
+		).addTo(map);
+
+		let wmsLayer = L.tileLayer
+			.wms("https://geo.weather.gc.ca/geomet?", {
+				layers: "RADAR_1KM_RRAI",
+				version: "1.3.0",
+				opacity: 0.5
+			})
+			.addTo(map);
+
+		</script>
   
     
     <script>
