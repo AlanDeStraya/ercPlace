@@ -23,9 +23,7 @@
       <h1>ERC.Place</h1>
       <h1>Diversion</h1>
     </div>
-    
-    <div id='weather'><a href='https://weather.gc.ca/city/pages/on-118_metric_e.html' target='_blank'>⛅</a></div>
-		
+    		
     <nav>
       <ul>
         <li><a href='./iosReference.html' target='_blank'>IOS Reference</a></li>
@@ -47,10 +45,11 @@
     <article>
       
       <section id='weatherContainer'>
-        <iframe title="Environment Canada Weather" width="300px" height="191px" src="https://weather.gc.ca/wxlink/wxlink.html?cityCode=on-118&amp;lang=e" allowtransparency="true" frameborder="0"></iframe>
-        <button id='radarButton'>Display Radar</button>
-      </div>
-      <section id="map"></div>
+				<div id='weather'>
+					<iframe title="Environment Canada Weather" width="300px" height="191px" src="https://weather.gc.ca/wxlink/wxlink.html?cityCode=on-118&amp;lang=e" allowtransparency="true" frameborder="0"></iframe>
+				</div>
+				<button id='radarButton'>Toggle Radar</button>
+      </section>
       
       <section>
       <sub id='rules'></sub>
@@ -384,24 +383,7 @@
   
 		<script> //weather map
 			
-			let map = L.map("map").setView([45.5, -75.7], 8);
 			
-      let OpenStreetMap_Mapnik = L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        })
-      .addTo(map);
-
-		  let wmsLayer = L.tileLayer
-		  .wms("https://geo.weather.gc.ca/geomet?", {
-		    layers: "RADAR_1KM_RRAI",
-		    version: "1.3.0",
-		    opacity: 0.5
-		  })
-			.addTo(map);
 
 		</script>
   

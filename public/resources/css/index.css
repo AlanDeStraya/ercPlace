@@ -60,36 +60,23 @@ header {
   transition-duration: 0.4s;
   z-index: 1;
 }
+#tabs {
+	display: flex;
+	gap: 20px;
+	height: 75px;
+	align-items: flex-end;
+}
 h1 {
   letter-spacing: 1px;
-  color: var(--text);
+  color: var(--link);
   border: 1px solid var(--text);
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+	border-bottom: none;
   padding: 5px;
   background-color: var(--sidebar);
   transition-duration: 0.4s;
 }
-#weather a {
-  text-decoration: none;
-}
-#weather {
-  width: 30px;
-  height: 20px;
-  transition: color 0.4s;
-}
-#weather a:hover {
-  background-color: rgb(150, 165, 255);
-}
-#weather a {
-  font-size: 42px;
-  position: relative;
-  bottom: 20px;
-  border: 1px solid grey;
-  border-radius: 35%;
-  background-color: var(--text);
-  padding-top: 5px;
-  transition-duration: 0.4s;
-}
+
 nav {
   display: flex;
   align-items: center;
@@ -113,9 +100,74 @@ nav li a:hover {
 	height: 75px;
 }
 
+
+
+main {
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+	padding: 20px 520px 120px 5vw;
+}
+sub {
+  position: relative;
+  top: -150px;
+}
+section {
+  padding: 10px;
+  margin-left: 80px;
+}
+
+section li {
+  margin-top: 6px;
+  margin-left: 25px;
+  font-family: verdana, sans-serif;
+}
+h2 {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: -20px;
+}
+h2 a {
+  margin-left: 5px;
+  font-size: 16px;
+}
+#rules {
+  margin-top: 35px;
+}
+h3 {
+  margin-top: 10px;
+}
+.setUp ul {
+  margin-left: 10px;
+}
+
+#weatherContainer {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ gap: 20px;
+}
+#radarButton {
+  padding: 10px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#map {
+  width: 90%;
+  max-width: 600px;
+  height: 360px;
+}
+
+
+
 #sidebar {
   background-color: var(--sidebar);
-  border: 1px solid black;
   width: 200px;
   height: calc(100vh - 115px);
 	position: fixed;
@@ -223,10 +275,10 @@ tr:nth-of-type(even), th {
  display: flex;
  flex-direction: column;
  width: 320px;
- height: calc(100vh - 200px);
+ height: calc(100vh - 115px);
  position: fixed;
- right: 240px;
- top: 96px;
+ right: 200px;
+ top: 75px;
 }
 #fire {
   height: calc((100vh - 200px)/2);
@@ -266,74 +318,29 @@ tr:nth-of-type(even), th {
   margin-top: 1vh;
 }
 
-main {
-  width: 98vw;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-sub {
-  position: relative;
-  top: -150px;
-}
-section {
-  padding: 10px;
-  margin-left: 80px;
-}
 
-section li {
-  margin-top: 6px;
-  margin-left: 25px;
-  font-family: verdana, sans-serif;
+footer a {
+  z-index: 12;
+  text-decoration: none;
+  padding: 8px;
 }
-h2 {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: -20px;
-}
-h2 a {
-  margin-left: 5px;
-  font-size: 16px;
-}
-#rules {
-  margin-top: 35px;
-}
-h3 {
-  margin-top: 10px;
-}
-.setUp ul {
-  margin-left: 10px;
-}
-section:last-of-type {
-  margin-bottom: 120px;
-}
-
-#weatherContainer {
- position: relative;
- top: 120px;
- left: 20px;
- display: flex;
- flex-wrap: wrap;
- justify-content: flex-start;
- gap: 25px;
- align-items: center;
-}
-#radarButton {
-  padding: 10px;
+footer a:hover {
   background-color: var(--body-bg);
-  color: var(--text);
-  border: 1px solid var(--text);
-  transition-duration: 0.4s;
-  font-weight: bold;
-  letter-spacing: 1px;
+  border-radius: 5px;
 }
-#map {
-  width: 90%;
-  max-width: 600px;
-  height: 360px;
-  position: relative;
-  top: 120px;
-  left: 20px;
+  
+footer {
+  height: 40px;
+  margin-top: 100px;
+  padding: 0 15px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.4s;
 }
 
 .popup {
@@ -386,34 +393,9 @@ section:last-of-type {
   background-color: var(--link);
 }
 
-footer a {
-  z-index: 12;
-  text-decoration: none;
-  padding: 8px;
-}
-footer a:hover {
-  background-color: var(--body-bg);
-  border-radius: 5px;
-}
-  
-footer {
-  height: 40px;
-  margin-top: 100px;
-  padding: 0 15px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background-color: var(--header-bg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition-duration: 0.4s;
-}
+
 
 @media only screen and (max-height: 822px) {
-  header {
-    height: 65px;
-  }
   #midbar {
     height: calc(100vh - 120px);
   }
@@ -442,9 +424,6 @@ footer {
 }
 
 @media only screen and (max-width: 1200px) {
-  header {
-    height: 74px;
-  }
   nav {
     margin-left: 50px;
   }
