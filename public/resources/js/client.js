@@ -1,4 +1,4 @@
-const socket = io();
+//const socket = io();
 
 
 const fireEl = document.getElementById('fire');
@@ -146,11 +146,11 @@ document.addEventListener('keydown', evt => {
 });
 
 
-
+/*
 socket.on('event', func => {
   //socket.emit('something');
 });
 
-
+*/
 
 

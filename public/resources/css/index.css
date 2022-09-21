@@ -69,7 +69,7 @@ h1 {
   background-color: var(--sidebar);
   transition-duration: 0.4s;
 }
-h1 a, #weather a {
+#weather a {
   text-decoration: none;
 }
 #weather {
@@ -109,14 +109,18 @@ nav li a {
 nav li a:hover {
   background-color: rgb(80, 80, 80);
 }
+#topSpacer {
+	height: 75px;
+}
+
 #sidebar {
   background-color: var(--sidebar);
   border: 1px solid black;
   width: 200px;
-  height: 500px;
-  position: fixed;
-  right: 15px;
-  top: 300px;
+  height: calc(100vh - 115px);
+	position: fixed;
+	right: 0;
+	top: 75px;
   padding: 8px;
   font-weight: bold;
   display: flex;
@@ -173,11 +177,8 @@ tr:nth-of-type(even), th {
 }
 
 #obstructionButton {
-  width: 200px;
+  width: 170px;
   height: 50px;
-  position: fixed;
-  right: 15px;
-  top: 190px;
   line-height: 25px;
   font-size: 16px;
   background-color: var(--body-bg);
@@ -190,11 +191,8 @@ tr:nth-of-type(even), th {
 }
  
 #fireMode {
-  width: 200px;
+  width: 170px;
   height: 50px;
-  position: fixed;
-  right: 15px;
-  top: 120px;
   background-color: rgb(255, 255, 150);
   color: red;
   font-weight: bold;
@@ -269,7 +267,7 @@ tr:nth-of-type(even), th {
 }
 
 main {
-  width: calc(100vw - 570px);
+  width: 98vw;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -282,14 +280,7 @@ section {
   padding: 10px;
   margin-left: 80px;
 }
-@media only screen and (min-width: 1300px) {
-  section, #weatherContainer, #map {
-    margin-left: calc(80px + ((100vw - 1300px) * 0.2));
-  }
-}
-section:first-of-type {
-  margin-top: 100px;
-}
+
 section li {
   margin-top: 6px;
   margin-left: 25px;
@@ -413,7 +404,6 @@ footer {
   position: fixed;
   bottom: 0;
   background-color: var(--header-bg);
-  box-shadow: 0 0 15px 15px var(--header-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -423,12 +413,6 @@ footer {
 @media only screen and (max-height: 822px) {
   header {
     height: 65px;
-  }
-  #sidebar {
-    height: 375px;
-    position: fixed;
-    right: 15px;
-    top: 195px;
   }
   #midbar {
     height: calc(100vh - 120px);
