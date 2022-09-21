@@ -3,7 +3,7 @@
   --header-bg: rgb(30, 60, 30);
   --text: rgb(205, 225, 200);
   --link: rgb(180, 180, 180);
-  --sidebar: rgb(55, 55, 55);
+  --sidebar: rgb(65, 65, 65);
   --smoke: rgb(65, 65, 10);
   --flame: rgb(53, 15, 15);
   --tr: rgb(70, 70, 70);
@@ -58,7 +58,7 @@ header {
   align-items: center;
   padding: 0 20px;
   transition-duration: 0.4s;
-  z-index: 1;
+  z-index: 3;
 }
 #tabs {
 	display: flex;
@@ -80,11 +80,12 @@ h1 {
 nav {
   display: flex;
   align-items: center;
+	margin-left: 30px;
 }
 nav li {
   display: inline-block;
   list-style: none;
-  margin: 0 3px;
+  margin: 12px 3px;
 }
 nav li a {
   text-decoration: none;
@@ -115,7 +116,6 @@ sub {
 }
 section {
   padding: 10px;
-  margin-left: 80px;
 }
 
 section li {
@@ -143,12 +143,46 @@ h3 {
 }
 
 #weatherContainer {
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
- align-items: center;
- gap: 20px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px;
+	width: 90%;
+	max-width: 600px;
 }
+#weather {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 90%;
+	max-width: 400px;
+	height: 200px;
+}
+#forecast {
+	width: 300px;
+	height: 171px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+	z-index: 0;
+}
+.weatherItem {
+	grid-area: 1 / 1 / 2 / 2;
+}
+#forecastBorder {
+  width: 100%;
+  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--body-bg);
+	z-index: 1;
+}
+
+
 #radarButton {
   padding: 10px;
   background-color: var(--body-bg);
@@ -157,11 +191,6 @@ h3 {
   transition-duration: 0.4s;
   font-weight: bold;
   letter-spacing: 1px;
-}
-#map {
-  width: 90%;
-  max-width: 600px;
-  height: 360px;
 }
 
 
@@ -173,6 +202,7 @@ h3 {
 	position: fixed;
 	right: 0;
 	top: 75px;
+	border: 1px solid black;
   padding: 8px;
   font-weight: bold;
   display: flex;
@@ -281,7 +311,7 @@ tr:nth-of-type(even), th {
  top: 75px;
 }
 #fire {
-  height: calc((100vh - 200px)/2);
+  height: 50%;
   border: 1px solid black;
   width: 100%;
   background: linear-gradient(180deg, var(--smoke) 43%, var(--flame));
@@ -292,21 +322,9 @@ tr:nth-of-type(even), th {
   z-index: 5;
   overflow: auto;
 }
-#midbar h4 {
-  text-align: center;
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-#midbar li {
-  list-style: none;
-  margin-top: 1vh;
-  margin-left: 10px;
-}
 #obstructionPlans {
-  margin-top: 10px;
   width: 100%;
-  height: calc((100vh - 200px)/2);
+  height: 50%;
   visibility: hidden;
   background-color: var(--sidebar);
   border: 1px solid black;
@@ -314,8 +332,16 @@ tr:nth-of-type(even), th {
   opacity: 0;
   transition: opacity 0.3s, background-color 0.4s;
 }
-#obstructionPlans li {
+#midbar h4 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#midbar li {
+  list-style: none;
   margin-top: 1vh;
+  margin-left: 10px;
 }
 
 
@@ -396,45 +422,8 @@ footer {
 
 
 @media only screen and (max-height: 822px) {
-  #midbar {
-    height: calc(100vh - 120px);
-  }
-  #fire {
-    height: calc((100vh - 120px)/2);
-  }
-  #obstructionPlans {
-    height: calc((100vh - 120px)/2);
-  }
   #obstructionPlans li {
     margin-top: 0.6vh;
-  }
-  #fireMode {
-    position: fixed;
-    right: 15px;
-    top: 95px;
-  }
-  #obstructionButton {
-    position: fixed;
-    right: 15px;
-    top: 150px;
-  }
-  footer {
-    height: 15px;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  nav {
-    margin-left: 50px;
-  }
-  nav li {
-    margin-top: 20px;
-  }
-  #weather {
-    margin: 0 20px;
-  }
-  section {
-    margin-left: 25px;
   }
 }
 
@@ -451,7 +440,12 @@ footer {
     width: 60vw;
     font-size: 7vw;
     text-align: center;
+		border: 1px solid var(--text);
+		border-radius: 10px;
   }
+	h1:nth-of-type(2) {
+		display: none;
+	}
   nav {
     margin-left: 0;
   }
@@ -461,30 +455,32 @@ footer {
     text-align: center;
     font-size: 30px;
   }
-  #fireMode, #obstructionButton, #sidebar {
+	#topSpacer {
+		height: 100vh;
+	}
+  main {
+    width: 100%;
+    margin: 0;
+		padding: 20px;
+		flex-direction: column-reverse;
+  }
+  section {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 15px 0 40px;
+  }
+	#sidebar {
     display: none;
   }
   #midbar {
     position: static;
-    margin: 110vh auto 0;
+    margin: 0 auto;
     height: 500px;
   }
   #fire, #obstructionPlans {
     visibility: visible;
     opacity: 1;
     height: 250px;
-  }
-  #map {
-    display: none;
-  }
-  main {
-    width: 100%;
-    margin: 0;
-  }
-  section {
-    width: 100%;
-    margin: 20px 0;
-    padding: 0 15px 0 40px;
   }
   footer {
     position: static;

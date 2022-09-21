@@ -1,5 +1,6 @@
 //const socket = io();
 
+let activeTab = 'ercPlace';
 
 const fireEl = document.getElementById('fire');
 const fireButtonEl = document.getElementById('fireMode');
@@ -67,35 +68,20 @@ function toggleDark() {
 darkButtonEl.addEventListener('click', toggleDark);
 
 let radarOn = false;
-let weatherEl = document.getElementById('weather');
+let mapEl = document.getElementById('map');
+let forecastEl = document.getElementById('forecastBorder');
 let radarButtonEl = document.getElementById('radarButton');
 radarButton.addEventListener('click', toggleRadar);
 
 function toggleRadar() {
   if(radarOn === false) {
     radarOn = true;
-    weatherEl.innerHTML = '<div id="map"></div>';
-		let map = L.map("map").setView([45.5, -75.7], 8);
-			
-      let OpenStreetMap_Mapnik = L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        })
-      .addTo(map);
-
-		  let wmsLayer = L.tileLayer
-		  .wms("https://geo.weather.gc.ca/geomet?", {
-		    layers: "RADAR_1KM_RRAI",
-		    version: "1.3.0",
-		    opacity: 0.5
-		  })
-			.addTo(map);
+    mapEl.style.zIndex = '1';
+		forecastEl.style.zIndex = '0';
   } else if(radarOn) {
     radarOn = false;
-    weatherEl.innerHTML = '<iframe title="Environment Canada Weather" width="300px" height="191px" src="https://weather.gc.ca/wxlink/wxlink.html?cityCode=on-118&amp;lang=e" allowtransparency="true" frameborder="0"></iframe>';
+		mapEl.style.zIndex = '0';
+		forecastEl.style.zIndex = '1';
   }
 };
 
