@@ -95,20 +95,26 @@ let tunnelTwoButton = document.getElementById('tunnel-two');
 let clearButton = document.getElementById('clear');
     
 function enterManual() {
+  clearClosedArray();
   let manPlan = window.prompt('Enter the plan number:');
   plan = manPlan.replace('.', 'p');
   showPlan();
 }
 manualButton.addEventListener('click', enterManual);
 
-function clearAll() {
+function clearClosedArray() {
   for(let i = 0; i < areaButtons.length; i++) {
     areaButtons[i].style.backgroundColor = 'transparent';
     areaButtons[i].close = false;
   	closedAreas = [];
-  }
+  }	
+}
+
+function clearAll() {
+	clearClosedArray();
 	choosePlan();
 }
+
 clearButton.addEventListener('click', clearAll);
 		
 function tunnelFireOne() {
