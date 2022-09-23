@@ -390,7 +390,7 @@ function setDetails() {
 		notes = '<ul><li><strong>Do not use during peak period</strong> (13 trains). Use 3.5 or 3.6.</li><li>If 11 trains on ML: park 1 each at TUN/BLA, use to fill gaps. Remove/park 2 trains.</li></ul>';
 	} else if(plan === '3p2') {
 		oblocation = '3.2 Obstruction track 2<br>UOT interlocking to HUR crossover';
-		routing = '<strong>Single Tracking:</strong> LN01-DW02 start RID-E resume TRE-E';
+		routing = '<strong>Single Tracking:</strong> LN01-DW02 start RID-E resume TRE-E (7 trains)';
 		notes = '<ul><li><strong>Do not use during peak period</strong> (13 trains). Use 3.5 or 3.6.</li><li>If 11 trains on ML: park 1 each at TUN/BLA, use to fill gaps. Remove/park 2 trains.</li></ul>';
 	} else if(plan === '3p3'){
 		oblocation = '3.3 Obstruction track 2 HUR west crossover to HUR crossover';
