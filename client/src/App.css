@@ -103,7 +103,7 @@ nav li a:hover {
 
 
 
-main {
+#sharepointPlus {
   width: 98vw;
   display: flex;
   flex-direction: column;
@@ -458,7 +458,7 @@ footer {
 	#topSpacer {
 		height: 100vh;
 	}
-  main {
+  #sharepointPlus {
     width: 100%;
     margin: 0;
 		padding: 20px;
