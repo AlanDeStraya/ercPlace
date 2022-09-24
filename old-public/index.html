@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta charset='utf-8' />
-<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-<!-- weather -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-
-<!-- main client script -->
-<script defer src='./resources/js/client.js'></script>
-
-<!-- style -->
-<link rel='stylesheet' type='text/css' href='./resources/css/index.css' />
-
-<title>ERC.Place</title>
-</head>
 
 <body>
   <header>
@@ -23,7 +6,7 @@
       <h1>ERC.Place</h1>
       <h1>Diversion</h1>
     </div>
-    		
+
     <nav>
       <ul>
         <li><a href='./iosReference.html' target='_blank'>IOS Reference</a></li>
@@ -38,22 +21,22 @@
     </nav>
   </header>
   <div id='topSpacer'></div>
-  
-  
-  
+
+
+
   <main>
     <article>
-      
+
       <section id='weatherContainer'>
 				<div id='weather'>
 					<div id='forecastBorder' class='weatherItem'>
 						<iframe id='forecast' title="Environment Canada Weather" src="https://weather.gc.ca/wxlink/wxlink.html?cityCode=on-118&amp;lang=e" allowtransparency="true" frameborder="0"></iframe>
-					</div>					
+					</div>
 					<div class='weatherItem' id="map"></div>
 				</div>
 				<button id='radarButton'>Toggle Radar</button>
       </section>
-      
+
       <section>
       <sub id='rules'></sub>
         <h2>Rules</h2>
@@ -65,7 +48,7 @@
           <li><a href='https://ottawacity.sharepoint.com/sites/OCTSP/CCKBRail/Rail%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FOCTSP%2FCCKBRail%2FRail%20Documents%2FOLRT%5FProject%5FSOR%5FRev%2E79%2Epdf&parent=%2Fsites%2FOCTSP%2FCCKBRail%2FRail%20Documents' target='_blank'>Thales SOR (Safe Operating Requirements)</a></li>
         </ul>
       </section>
-      
+
       <section>
       <sub id='workInstructions'></sub>
         <h2>Work Instructions <a href='https://ottawacity.sharepoint.com/sites/RailOperationsDocumentControl/OCTOperationalDocumentation/Forms/AllItems.aspx?FilterField1=OCT%5Fx0020%5FOperational%5Fx0020%5FDocument%5Fx0020%5FType&FilterValue1=Work%20Instruction&FilterType1=Lookup&FilterDisplay1=Work%20Instruction&viewid=bc80df01%2D823b%2D4aba%2Da1f9%2D13e8c7ddfa17' target='_blank'>(All Here)</a></h2>
@@ -101,7 +84,7 @@
           <li><a href='https://ottawacity.sharepoint.com/sites/RailOperationsDocumentControl/OCTOperationalDocumentation/Forms/AllItems.aspx?q=cctv&id=%2Fsites%2FRailOperationsDocumentControl%2FOCTOperationalDocumentation%2FEvacuations%20on%20the%20Confederation%20Line%2Epdf&parent=%2Fsites%2FRailOperationsDocumentControl%2FOCTOperationalDocumentation&parentview=7' target='_blank'>Evacuations</a></li>
         </ul>
       </section>
-      
+
       <section>
       <sub id='troubleshooting'></sub>
         <h2>Troubleshooting <a href='https://ottawacity.sharepoint.com/sites/RailOperations/SitePages/ERC-Troubleshooting.aspx' target='_blank'> (Binder Versions Here)</a></h2>
@@ -142,8 +125,8 @@
           <li><a href='https://ottawacity.sharepoint.com/:x:/r/sites/RailOperations/_layouts/15/Doc.aspx?sourcedoc=%7BF80B68CC-54F5-42EF-9503-63672A477246%7D&file=RTM+and+Contractor+EROR+Training+Report.xlsx&action=default&mobileredirect=true' target='_blank'>List of Rules Qualified Personnel</a></li>
         </ul>
       </section>
-      
-      
+
+
       <section>
       <sub id='manuals'></sub>
         <h2>User Guides and Manuals</h2>
@@ -159,7 +142,7 @@
           <li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/Fire%20Panel%20Training%20-%20Part%201.pdf?CT=1656960387385&OR=ItemsView' target='_blank'>Fire Panel</a></li><li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/ONYX%20Workstation%20Training%20Notes.pdf?CT=1656960995079&OR=ItemsView' target='_blank'>ONYX Workstation Guide</a></li>
         </ul>
       </section>
-      
+
       <section>
         <sub id='teams'></sub>
         <h2>Teams Files</h2>
@@ -174,7 +157,7 @@
           <li>(These are normally found on Teams >  Transit Ops > ERCs. You can open/edit in browser.)</li>
         </ul>
       </section>
-      
+
       <section>
         <sub id='resources'></sub>
         <h2>New ERC Resources</h2>
@@ -246,8 +229,8 @@
       </table>
       <button id='darkMode'>Toggle Dark Mode</button>
     </aside>
-    
-    
+
+
     <aside id='midbar'>
       <div id='fire'>
         <h4>Fire Docs</h4>
@@ -262,7 +245,7 @@
         </ul>
       </div>
       <!-- TICP locations -->
-      
+
       <div id='obstructionPlans'>
         <h4>Obstruction Plans</h4>
         <ul>
@@ -328,7 +311,7 @@
       <li>Retrieve Secure Key from Matt Pieter's desk</li>
       <li>Insert secure key (unlock it first - key 1: 14589071, key 2: 23670982 - notice the button pattern to remember)</li>
       <li>Go to Data Export Viewer</li>
-      <li>Click Alarm History, click 'Results'</li> 
+      <li>Click Alarm History, click 'Results'</li>
       <li>Go to Folder (2022) and the last subfolder inside that Folder Year (2022)</li>
       <li>Select the file you want to add to the Secure Key</li>
       <li>Click on the “Download” button at the top of the page</li>
@@ -383,11 +366,11 @@
     <a href='mailto:alan@erc.place'>Contact: alan@erc.place</a>
     </div>
   </footer>
-  
+
 		<script> //weather map
-			
+
 			let map = L.map("map").setView([45.5, -75.7], 8);
-			
+
       let OpenStreetMap_Mapnik = L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
@@ -406,21 +389,21 @@
 			.addTo(map);
 
 		</script>
-  
+
   </body>
 </html>
  <!-- onyx, CLCs, -->
-  
-  
-      
-    
+
+
+
+
 <!--<li>Radar precipitation rate (Rain) (1 km) [mm/hr], ID: <code>RADAR_1KM_RRAI</code></li>-->
 <!--<li>Radar precipitation rate (Snow) (1 km) [cm/hr], ID: <code>RADAR_1KM_RSNO</code></li>-->
 <!--<li>Corresponding dynamic radar coverage layers:<ul>-->
 <!--<li>Coverage for Rain, ID: <code>RADAR_COVERAGE_RRAI</code>. ID for inverted style: <code>RADAR_COVERAGE_RRAI.INV</code></li>-->
 <!--<li>Coverage for Snow, ID: <code>RADAR_COVERAGE_RSNO</code>. ID for inverted style: <code>RADAR_COVERAGE_RSNO.INV</code></li>-->
 <!--Global Deterministic Prediction System surface temp? GDPS.ETA_TT-->
-  
-  
+
+
 
 

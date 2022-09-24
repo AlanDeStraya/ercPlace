@@ -1,10 +1,10 @@
 # ERC Place - Tools for ERCs
 
-Moving to server with back-end hosting capability.
+Moving to server for back-end hosting capability.
 
 ---
 
-## ATS 
+## ATS
 
 ### Train control simulator
 
@@ -34,7 +34,7 @@ In progress
 
 ## Obstruction Plan Finder
 
-A user-friendly obstruction plan tool for general use. 
+A user-friendly obstruction plan tool for general use.
 
 - No special training or knowledge required.
 - Fast to use
