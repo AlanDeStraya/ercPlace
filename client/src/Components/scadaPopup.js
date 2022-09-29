@@ -8,11 +8,11 @@ const ScadaPopup = () => {
 			<h3>Export Alarms</h3>
 			<ol>
 				<li>Open Alarm History (from main menu, aka Home Depot)</li>
-				<li>Click on 'Search' and choose the initial Date and Time and Final Date and Time<br>
-					(Ie. Jan 1 2022 00:00:00 to Jan 1 2022 23:59:59 for one full day)<br>
+				<li>Click on 'Search' and choose the initial Date and Time and Final Date and Time<br />
+					(Ie. Jan 1 2022 00:00:00 to Jan 1 2022 23:59:59 for one full day)<br />
 					Note 1: By default, the final date will be the current date so in case a new final date is required, the button will need to be de-selected. </li>
 				<li>Select Minimum Priority Alarm - Priority 3</li>
-				<li>Click on the button on the bottom of the window 'Include Acknowledgement Records'<br>
+				<li>Click on the button on the bottom of the window 'Include Acknowledgement Records'<br />
 					If the number of alarms is bigger than 10,000, the search will need to be split into different exports as 10K is the max that can be exported.</li>
 				<li>Go to “Export Data to CSV” (small icon on top of the window)</li>
 				<li>Fill in the file name (recommended to name the file as per the date of the alarms that are being exported)</li>
