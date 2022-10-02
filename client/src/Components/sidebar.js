@@ -40,7 +40,6 @@ const Sidebar = () => {
 						<tr><td>4</td><td>900</td><td>15:00</td></tr>
 					</tbody>
 				</table>
-				<button id='darkMode'>Toggle Dark Mode</button>
 			</aside>
 
 			<aside id='midbar'>
