@@ -6,12 +6,12 @@ const NercResources = () => {
 			<sub id='resources'></sub>
 			<h2>New ERC Resources</h2>
 			<ul>
-				<li><a href='https://mycentre.ottawa.ca/home#Shell-home' target='_blank'>Pay/Leave</a></li>
-				<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/Scheduling/Forms/Case%20View.aspx?id=%2Fsites%2FRailOperations%2FScheduling%2FTOCC+Staff&viewid=8691d665-c171-4c2c-acb3-f97532cde2b9' target='_blank'>Sharepoint Scheduling Folder</a></li>
-				<li><a href='https://www.logistikunicorp.com/en/index.asp' target='_blank'>Logistik</a></li>
-				<li><a href='http://webstaff.transit.local/webstaff/servlet/ServletController.asp?device=stdbrowser&action=doBeginLogin' target='_blank'>Telestaff</a></li>
-				<li><a href='http://10.136.12.88/CADIncidentManagement/' target='_blank'>CAD</a></li>
-				<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank'>Sharepoint</a></li>
+				<li><a href='https://mycentre.ottawa.ca/home#Shell-home' target='_blank' rel="noreferrer">Pay/Leave</a></li>
+				<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/Scheduling/Forms/Case%20View.aspx?id=%2Fsites%2FRailOperations%2FScheduling%2FTOCC+Staff&viewid=8691d665-c171-4c2c-acb3-f97532cde2b9' target='_blank' rel="noreferrer">Sharepoint Scheduling Folder</a></li>
+				<li><a href='https://www.logistikunicorp.com/en/index.asp' target='_blank' rel="noreferrer">Logistik</a></li>
+				<li><a href='http://webstaff.transit.local/webstaff/servlet/ServletController.asp?device=stdbrowser&action=doBeginLogin' target='_blank' rel="noreferrer">Telestaff</a></li>
+				<li><a href='http://10.136.12.88/CADIncidentManagement/' target='_blank' rel="noreferrer">CAD</a></li>
+				<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank' rel="noreferrer">Sharepoint</a></li>
 				<li><a href='https://www.chickpeasottawa.com/' target='_blank'>Mission Critical Support</a></li>
 				<li id='scadaAlarmsLink'><a href='#resources'>Downloading SCADA Alarms (& secure key code)</a></li>
 				<li id='printLink'><a href='#resources'>Print Maintenance Plan</a></li>

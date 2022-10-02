@@ -8,16 +8,16 @@ import Manuals from '../Components/manuals.js';
 import TeamsFiles from '../Components/teamsFiles.js';
 import NercResources from '../Components/nercResources.js';
 import Sidebar from '../Components/sidebar.js';
-import Midbar from '../Components/midbar.js';
 import PrintPopup from '../Components/printPopup.js';
 import ScadaPopup from '../Components/scadaPopup.js';
 import SiteUpdatesPopup from '../Components/siteUpdatesPopup.js';
 
 const SharepointPlus = () => {
+
 	return (
 		<div id='sharepointPlus'>
 			<article>
-				<Weather />					
+				<Weather />
 				<Rules />
 				<WorkInstructions />
 				<Troubleshooting />
@@ -27,7 +27,6 @@ const SharepointPlus = () => {
 				<NercResources />
 			</article>
 			<Sidebar />
-			<Midbar />
 			<PrintPopup />
 			<ScadaPopup />
 			<SiteUpdatesPopup />
