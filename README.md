@@ -1,6 +1,8 @@
 # ERC Place - Tools for ERCs
 
-Moving to server for back-end hosting capability.
+Migrating to Heroku as full stack web app.
+Refactoring front end to React.
+Adding sockets for live syncing, updates, and chat capability.
 
 ---
 
@@ -8,9 +10,7 @@ Moving to server for back-end hosting capability.
 
 ### Train control simulator
 
-This is a simulation of the Automatic Train Control simulator, with added features:
- - Doesn't take 1-3 hours to start up.
- - Doesn't crash frequently.
+This is a simulation of the Automatic Train Control simulator
  - Online and can be available on any computer.
  - Will hopefully work as an obstruction plan animation.
 
