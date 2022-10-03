@@ -1,16 +1,16 @@
 # ERC Place - Tools for ERCs
 
-Moving to server with back-end hosting capability.
+Migrating to Heroku as full stack web app.
+Refactoring front end to React.
+Adding sockets for live syncing, updates, and chat capability.
 
 ---
 
-## ATS 
+## ATS
 
 ### Train control simulator
 
-This is a simulation of the Automatic Train Control simulator, with added features:
- - Doesn't take 1-3 hours to start up.
- - Doesn't crash frequently.
+This is a simulation of the Automatic Train Control simulator
  - Online and can be available on any computer.
  - Will hopefully work as an obstruction plan animation.
 
@@ -34,7 +34,7 @@ In progress
 
 ## Obstruction Plan Finder
 
-A user-friendly obstruction plan tool for general use. 
+A user-friendly obstruction plan tool for general use.
 
 - No special training or knowledge required.
 - Fast to use
