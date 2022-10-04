@@ -11,6 +11,11 @@ The stylesheet styles.css was not loaded because its MIME type 'text/html' is no
 Uncaught SyntaxError: expected expression, got '<'  
 <script type="text/javascript"></script>?  
 
+Questions
+Folder structure? Server files in folder?  
+How to serve files - local or remote build? where do locally built files go?  
+Where to install modules/dependencies?  
+
 ---
 
 ## ERC Place Diversion App
