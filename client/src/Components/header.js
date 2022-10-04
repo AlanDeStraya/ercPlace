@@ -8,7 +8,7 @@ const Header = ({ darkness, toggleDarkness }) => {
 		<>
 			<header>
 				<div id='tabs'>
-					<h1>ERC.Place</h1>
+					<h1 className='open-tab'>ERC.Place</h1>
 					<h1>Diversion</h1>
 				</div>
 
