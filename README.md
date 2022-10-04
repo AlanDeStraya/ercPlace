@@ -1,5 +1,5 @@
 # ERC Place - Tools for ERCs
-## (Formerly Sharepoint++)
+(Formerly Sharepoint++)
 
 Migrating to Heroku(Digital ocean?) as full stack web app.  
 Refactoring front end to React.  
@@ -22,8 +22,8 @@ Uncaught SyntaxError: expected expression, got '<'
 - Initial screen mainline, switch to comms or SCADA on sides
 - Chat box in corner
 - Stream - log at top and suggestions below
--- Tech requested -> ETA -> arrival
--- Track authority -> cancellation
+    * Tech requested -> ETA -> arrival
+    * Track authority -> cancellation
 
 ---
 
