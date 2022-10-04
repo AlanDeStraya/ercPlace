@@ -4,6 +4,12 @@ Migrating to Heroku as full stack web app.
 Refactoring front end to React.
 Adding sockets for live syncing, updates, and chat capability.
 
+Issues on deploy:
+Script from script.js was loaded even though its MIME type ('text/html') is not a valid JavaScript MIME type.
+The stylesheet styles.css was not loaded because its MIME type 'text/html' is not 'text/css'.
+Uncaught SyntaxError: expected expression, got '<'
+<script type="text/javascript"></script>?
+
 ---
 
 ## ATS
