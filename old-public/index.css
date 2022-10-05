@@ -1,0 +1,494 @@
+:root.dark {
+  --body-bg: rgb(40, 40, 40);
+  --header-bg: rgb(30, 60, 30);
+  --text: rgb(205, 225, 200);
+  --link: rgb(180, 180, 180);
+  --sidebar: rgb(65, 65, 65);
+  --smoke: rgb(65, 65, 10);
+  --flame: rgb(53, 15, 15);
+  --tr: rgb(70, 70, 70);
+}
+:root.light {
+  --body-bg: rgb(190, 190, 190);
+  --header-bg: rgb(150, 150, 150);
+  --text: rgb(45, 5, 5);
+  --link: rgb(110, 10, 10);
+  --sidebar: white;
+  --smoke: rgb(255, 255, 200);
+  --flame: rgb(255, 180, 180);
+  --tr: rgb(220, 220, 220);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.3s, background-color 0.4s, color 0.4s;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  background-color: var(--body-bg);
+  font-family: sans-serif;
+  transition-duration: 0.4s;
+}
+a {
+  color: var(--link);
+  transition: color 0.4s;
+}
+h2, h3, h4, li, th, td, p {
+  color: var(--text);
+  transition: color 0.4s;
+}
+header {
+  height: 75px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  transition-duration: 0.4s;
+  z-index: 3;
+}
+#tabs {
+	display: flex;
+	gap: 20px;
+	height: 75px;
+	align-items: flex-end;
+}
+h1 {
+  letter-spacing: 1px;
+  color: var(--link);
+  border: 1px solid var(--text);
+  border-radius: 10px 10px 0 0;
+	border-bottom: none;
+  padding: 5px;
+  background-color: var(--sidebar);
+  transition-duration: 0.4s;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+	margin-left: 30px;
+}
+nav li {
+  display: inline-block;
+  list-style: none;
+  margin: 12px 3px;
+}
+nav li a {
+  text-decoration: none;
+  padding: 5px;
+  color: #CCC;
+  background-color: black;
+  border-radius: 5px;
+}
+nav li a:hover {
+  background-color: rgb(80, 80, 80);
+}
+#topSpacer {
+	height: 75px;
+}
+
+
+
+main {
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+	padding: 20px 520px 120px 5vw;
+}
+sub {
+  position: relative;
+  top: -150px;
+}
+section {
+  padding: 10px;
+}
+
+section li {
+  margin-top: 6px;
+  margin-left: 25px;
+  font-family: verdana, sans-serif;
+}
+h2 {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: -20px;
+}
+h2 a {
+  margin-left: 5px;
+  font-size: 16px;
+}
+#rules {
+  margin-top: 35px;
+}
+h3 {
+  margin-top: 10px;
+}
+.setUp ul {
+  margin-left: 10px;
+}
+
+#weatherContainer {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px;
+	width: 90%;
+	max-width: 600px;
+}
+#weather {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 90%;
+	max-width: 400px;
+	height: 200px;
+}
+#forecast {
+	width: 300px;
+	height: 171px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+	z-index: 0;
+}
+.weatherItem {
+	grid-area: 1 / 1 / 2 / 2;
+}
+#forecastBorder {
+  width: 100%;
+  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--body-bg);
+	z-index: 1;
+}
+
+
+#radarButton {
+  padding: 10px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+
+#sidebar {
+  background-color: var(--sidebar);
+  width: 200px;
+  height: calc(100vh - 115px);
+	position: fixed;
+	right: 0;
+	top: 75px;
+	border: 1px solid black;
+  padding: 8px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition-duration: 0.4s;
+}
+.search {
+  animation: highlight 3s, remind 300ms cubic-bezier(0.5,0,0.5,1) 2s 5;
+}
+@keyframes highlight {
+  0% {
+    box-shadow: 0 0 300px 300px var(--text);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+@keyframes remind {
+  0% {
+    background-color: var(--link);
+  }
+  100% {
+    background-color: var(--transparent);
+  }
+}
+table {
+  text-align: center;
+}
+th, td {
+  width: 80px;
+}
+tr:nth-of-type(even), th {
+  background-color: var(--tr);
+}
+
+#darkMode {
+  width: 80%;
+  line-height: 25px;
+  font-size: 16px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  padding: 3px;
+}
+#darkMode:hover, #obstructionButton:hover, #radarButton:hover {
+  background-color: var(--header-bg);
+  box-shadow: 0 0 7px 3px var(--link);
+}
+#darkMode:active, #obstructionButton:active, #radarButton:active {
+  background-color: var(--body-bg);
+}
+
+#obstructionButton {
+  width: 170px;
+  height: 50px;
+  line-height: 25px;
+  font-size: 16px;
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition-duration: 0.4s;
+  padding: 3px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+ 
+#fireMode {
+  width: 170px;
+  height: 50px;
+  background-color: rgb(255, 255, 150);
+  color: red;
+  font-weight: bold;
+  font-size: 25px;
+  animation: siren 2.2s infinite;
+  z-index: 5;
+}
+#fireMode:hover {
+  animation: none;
+  background-color: rgb(255, 255, 210);
+  box-shadow: 0 0 14px 7px red;
+}
+#fireMode:active {
+  background-color: white;
+}
+@keyframes siren {
+  0% {
+    box-shadow: 0 0 0 0 red;
+  }
+  50% {
+    box-shadow: 0 0 7px 3px red;
+  }
+  100% {
+    box-shadow: 0 0 0 0 red;
+  }
+}
+#midbar {
+ display: flex;
+ flex-direction: column;
+ width: 320px;
+ height: calc(100vh - 115px);
+ position: fixed;
+ right: 200px;
+ top: 75px;
+}
+#fire {
+  height: 50%;
+  border: 1px solid black;
+  width: 100%;
+  background: linear-gradient(180deg, var(--smoke) 43%, var(--flame));
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.4s;
+  padding: 7px;
+  z-index: 5;
+  overflow: auto;
+}
+#obstructionPlans {
+  width: 100%;
+  height: 50%;
+  visibility: hidden;
+  background-color: var(--sidebar);
+  border: 1px solid black;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.4s;
+}
+#midbar h4 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#midbar li {
+  list-style: none;
+  margin-top: 1vh;
+  margin-left: 10px;
+}
+
+
+footer a {
+  z-index: 12;
+  text-decoration: none;
+  padding: 8px;
+}
+footer a:hover {
+  background-color: var(--body-bg);
+  border-radius: 5px;
+}
+  
+footer {
+  height: 40px;
+  margin-top: 100px;
+  padding: 0 15px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.4s;
+}
+
+.popup {
+  position: fixed;
+  top: 10vh;
+  height: 80vh;
+  left: 10vw;
+  width: 80vw;
+  overflow: auto;
+  background-color: var(--body-bg);
+  padding: 20px;
+  border: 3px solid var(--text);
+  z-index: 6;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.popup h2 {
+  margin: 20px;
+  text-align: center;
+}
+.popup h3 {
+  margin: 35px 0 20px;
+}
+.popup p {
+  margin: 20px 45px;
+}
+.popup ul {
+  list-style-position: inside;
+}
+.popup ol {
+  margin-left: 34px;
+}
+.popup li {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+.popupx {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--sidebar);
+  color: var(--text);
+  font-size: 24px;
+  margin: 3px;
+  padding: 3px;
+  user-select: none;
+}
+.popupx:hover {
+  background-color: var(--link);
+}
+
+
+
+@media only screen and (max-height: 822px) {
+  #obstructionPlans li {
+    margin-top: 0.6vh;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  header {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    min-height: 600px;
+    position: absolute;
+    padding: 20px 0;
+  }
+  h1 {
+    width: 60vw;
+    font-size: 7vw;
+    text-align: center;
+		border: 1px solid var(--text);
+		border-radius: 10px;
+  }
+	h1:nth-of-type(2) {
+		display: none;
+	}
+  nav {
+    margin-left: 0;
+  }
+  nav li {
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 30px;
+  }
+	#topSpacer {
+		height: 100vh;
+	}
+  main {
+    width: 100%;
+    margin: 0;
+		padding: 20px;
+		flex-direction: column-reverse;
+  }
+  section {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 15px 0 40px;
+  }
+	#sidebar {
+    display: none;
+  }
+  #midbar {
+    position: static;
+    margin: 0 auto;
+    height: 500px;
+  }
+  #fire, #obstructionPlans {
+    visibility: visible;
+    opacity: 1;
+    height: 250px;
+  }
+  footer {
+    position: static;
+    top: 0;
+    height: 30vh;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    z-index: 50;
+    margin-top: 20px;
+  }
+}
