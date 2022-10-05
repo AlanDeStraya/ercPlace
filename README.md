@@ -1,8 +1,34 @@
 # ERC Place - Tools for ERCs
+(Formerly Sharepoint++)
 
-Migrating to Heroku as full stack web app.
-Refactoring front end to React.
-Adding sockets for live syncing, updates, and chat capability.
+Migrating to Heroku(Digital ocean?) as full stack web app.  
+Refactoring front end to React.  
+Adding sockets for live syncing, updates, and chat capability.  
+
+Issues on deploy:  
+Script from script.js was loaded even though its MIME type ('text/html') is not a valid JavaScript MIME type.  
+The stylesheet styles.css was not loaded because its MIME type 'text/html' is not 'text/css'.  
+Uncaught SyntaxError: expected expression, got '<'  
+<script type="text/javascript"></script>?  
+
+Questions
+Folder structure? Server files in folder?  
+How to serve files - local or remote build? where do locally built files go?  
+Where to install modules/dependencies?  
+
+---
+
+## ERC Place Diversion App
+### Based on diversion checklist
+
+- Login/auth
+- Initiate diversion -> plan finder, broadcast alert, start clock
+- Clock -> top right, change color at key times
+- Initial screen mainline, switch to comms or SCADA on sides
+- Chat box in corner
+- Stream - log at top and suggestions below
+    * Tech requested -> ETA -> arrival
+    * Track authority -> cancellation
 
 ---
 

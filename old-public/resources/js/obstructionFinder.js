@@ -580,7 +580,7 @@ function setPapids() {
 		tgbaker = "<strong>STL-W, CYR-W:</strong> 3B Close platfoms";
 	} else if(plan === '6p4') {
 		livepa = "<strong>All platforms:</strong><br><em> Delay announcements (if required)</em>";
-		livepa = "<strong>STL-E, CYR-E:</strong> 3A Close platfoms";
+		tgbaker = "<strong>STL-E, CYR-E:</strong> 3A Close platfoms";
 	} else if(plan === '6p5') {
 		livepa = "<strong>All platforms:</strong><br><em> Attention: Line 1 is not operating betweeen St Laurent and Blair Stations. R1 replacement bus service is operating between St Laurent and Blair stations.<br><br>Attention: La Ligne 1 ne fonctionne pas entre les stations St Laurent et Blair. Le service d'autobus de remplacement R1 est en service entre les stations St Laurent et Blair.</em>";
 		tgbaker = "<strong>CYR, BLA (all zones):</strong> 5D Close platforms";

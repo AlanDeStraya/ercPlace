@@ -55,6 +55,9 @@ h1 {
   background-color: var(--sidebar);
   transition-duration: 0.4s;
 }
+h1.open-tab {
+	background-color: var(--body-bg);
+}
 #header-right {
   display: flex;
   gap: 22px;
