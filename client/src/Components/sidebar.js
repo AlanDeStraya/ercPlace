@@ -14,12 +14,24 @@ const Sidebar = () => {
 	function toggleObstruction() {
 		setObstruction(!obstruction);
 	};
+	
+	let desk = '';
+	function deskSpinner() {
+		const index = Math.floor(Math.random() * 3);
+		if(index === 0) {
+			desk = 'Comms';
+		} else if(index === 1) {
+			desk = 'Mainline';
+		} else if(index === 2) {
+			desk = 'SCADA';
+		}
+	};
 
 	return (
 		<>
 			<aside id='sidebar'>
 				<button id='fireMode' onClick={toggleFire}>Fire!</button>
-				<button id='obstructionButton' onClick={toggleObstruction}>Obstruction!</button>
+				<button className='sharepointButton' id='obstructionButton' onClick={toggleObstruction}>Obstruction!</button>
 				<p className='search'>Use Ctrl + F to search</p>
 				<table>
 					<thead>
@@ -40,6 +52,7 @@ const Sidebar = () => {
 						<tr><td>4</td><td>900</td><td>15:00</td></tr>
 					</tbody>
 				</table>
+				<button className='sharepointButton' id='deskSpinnerButton' onClick={deskSpinner}> {desk ? desk : 'Desk Spinner'} </button>
 			</aside>
 
 			<aside id='midbar'>

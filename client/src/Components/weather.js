@@ -9,7 +9,7 @@ const Weather = () => {
 				</div>
 				<div className='weatherItem' id="map"></div>
 			</div>
-			<button id='radarButton'>Toggle Radar</button>
+			<button className='sharepointButton' id='radarButton'>Toggle Radar</button>
 
 		</section>
 	);
