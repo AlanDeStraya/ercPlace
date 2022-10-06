@@ -198,10 +198,10 @@ h3 {
   background-color: var(--sidebar);
   width: 200px;
   height: calc(100vh - 115px);
-	position: fixed;
-	right: 0;
-	top: 75px;
-	border: 1px solid black;
+  position: fixed;
+  right: 0;
+  top: 75px;
+  border: 1px solid black;
   padding: 8px;
   font-weight: bold;
   display: flex;
@@ -240,7 +240,7 @@ tr:nth-of-type(even), th {
 }
 
 
-#obstructionButton {
+#obstructionButton, #deskSpinnerButton {
   width: 170px;
   height: 50px;
   line-height: 25px;
