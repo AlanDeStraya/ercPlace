@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import weatherRadarFunction from './Scripts/weatherRadar.js';
+// import weatherRadarFunction from './Scripts/weatherRadar.js';
 import Header from './Components/header.js';
 import Footer from './Components/footer.js';
 import SharepointPlus from './Tabs/sharepointPlus.js';
@@ -23,7 +23,7 @@ function App() {
     }
   };
 
-  weatherRadarFunction();
+  //weatherRadarFunction();
 
   return (
     <div className="App">

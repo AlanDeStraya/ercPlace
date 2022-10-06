@@ -13,7 +13,7 @@ import PrintPopup from '../Components/printPopup.js';
 import ScadaPopup from '../Components/scadaPopup.js';
 import SiteUpdatesPopup from '../Components/siteUpdatesPopup.js';
 
-import useState from 'react';
+import { useState } from 'react';
 
 
 const SharepointPlus = () => {
@@ -23,6 +23,7 @@ const SharepointPlus = () => {
 	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
 
 	function togglePrintPopupActive() {
+		console.log('toggle button clicked');
 		if(printPopupActive === false) {
 			setPrintPopupActive(true);
 		} else if(printPopupActive === true) {
