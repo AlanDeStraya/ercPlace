@@ -424,6 +424,9 @@ footer {
     position: absolute;
     padding: 20px 0;
   }
+  #header-right {
+    flex-direction: column;
+  }
   h1 {
     width: 60vw;
     font-size: 7vw;

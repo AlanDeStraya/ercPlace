@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import weatherRadarFunction from './Scripts/weatherRadar.js';
 import Header from './Components/header.js';
 import Footer from './Components/footer.js';
 import SharepointPlus from './Tabs/sharepointPlus.js';
@@ -21,6 +22,8 @@ function App() {
       document.body.classList.remove('dark-mode');
     }
   };
+
+  weatherRadarFunction();
 
   return (
     <div className="App">

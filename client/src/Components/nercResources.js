@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NercResources = () => {
+const NercResources = ({togglePrintPopupActive, toggleScadaPopupActive}) => {
 	return (
 		<section>
 			<sub id='resources'></sub>
@@ -13,8 +13,10 @@ const NercResources = () => {
 				<li><a href='http://10.136.12.88/CADIncidentManagement/' target='_blank' rel="noreferrer">CAD</a></li>
 				<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank' rel="noreferrer">Sharepoint</a></li>
 				<li><a href='https://www.chickpeasottawa.com/' target='_blank'>Mission Critical Support</a></li>
-				<li id='scadaAlarmsLink'><a href='#resources'>Downloading SCADA Alarms (& secure key code)</a></li>
-				<li id='printLink'><a href='#resources'>Print Maintenance Plan</a></li>
+
+				<li id='scadaAlarmsLink'><a href='#resources' onClick={toggleScadaPopupActive}>Downloading SCADA Alarms (& secure key code)</a></li>
+				<li id='printLink'><a href='#resources' onClick={togglePrintPopupActive}>Print Maintenance Plan</a></li>
+
 				<li className='setUp'>To consider when setting up city PC:
 					<ul>
 						<li>Printer - Windows + R => \\cmfp037\BLFB01F02MFD</li>
