@@ -11,7 +11,7 @@ function App() {
 
   // const darkMode = window.matchMedia
   useEffect(() => {
-    setDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    toggleDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   }, [/*darkMode*/]);
 
   function toggleDarkness(mode) {
