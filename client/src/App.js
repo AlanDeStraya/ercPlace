@@ -14,8 +14,6 @@ function App() {
     setDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   }, [/*darkMode*/]);
 
-	console.log(darkness);
-
   function toggleDarkness(mode) {
     setDarkness(mode);
     if(mode === 'dark') {
