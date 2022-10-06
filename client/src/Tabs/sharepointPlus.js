@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Weather from '../Components/weather.js';
 import Rules from '../Components/rules.js';
 import WorkInstructions from '../Components/workInstructions.js';
@@ -12,7 +13,30 @@ import PrintPopup from '../Components/printPopup.js';
 import ScadaPopup from '../Components/scadaPopup.js';
 import SiteUpdatesPopup from '../Components/siteUpdatesPopup.js';
 
+import { useState } from 'react';
+
+
 const SharepointPlus = () => {
+
+	const [printPopupActive, setPrintPopupActive] = useState(false);
+	const [scadaPopupActive, setScadaPopupActive] = useState(false);
+	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
+
+	function togglePrintPopupActive() {
+		console.log('toggle button clicked');
+		if(printPopupActive === false) {
+			setPrintPopupActive(true);
+		} else if(printPopupActive === true) {
+			setPrintPopupActive(false);
+		}
+	};
+	function toggleScadaPopupActive() {
+		if(scadaPopupActive === false) {
+			setScadaPopupActive(true);
+		} else if(scadaPopupActive === true) {
+			setScadaPopupActive(false);
+		}
+	};
 
 	return (
 		<div id='sharepointPlus'>
@@ -24,12 +48,16 @@ const SharepointPlus = () => {
 				<Misc />
 				<Manuals />
 				<TeamsFiles />
-				<NercResources />
+				<NercResources
+					togglePrintPopupActive={togglePrintPopupActive}
+					toggleScadaPopupActive={toggleScadaPopupActive} />
 			</article>
 			<Sidebar />
-			<PrintPopup />
-			<ScadaPopup />
-			<SiteUpdatesPopup />
+
+			{printPopupActive && <PrintPopup />}
+			{scadaPopupActive && <ScadaPopup />}
+			{siteUpdatesPopupActive && <SiteUpdatesPopup />}
+
 		</div>
 	);
 };

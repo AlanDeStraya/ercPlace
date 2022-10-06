@@ -1,6 +1,3 @@
-
-export default function weatherRadarFunction() {
-	let L;
 	let map = L.map("map").setView([45.5, -75.7], 8);
 	let OpenStreetMap_Mapnik = L.tileLayer(
 		"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -17,4 +14,3 @@ export default function weatherRadarFunction() {
 		opacity: 0.5
 	})
 	.addTo(map);
-}
