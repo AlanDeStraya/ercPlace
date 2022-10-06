@@ -26,6 +26,7 @@ const SharepointPlus = () => {
 		console.log('toggle button clicked');
 		if(printPopupActive === false) {
 			setPrintPopupActive(true);
+			console.log('print popup active must be false');
 		} else if(printPopupActive === true) {
 			setPrintPopupActive(false);
 		}
