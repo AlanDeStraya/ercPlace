@@ -26,8 +26,8 @@ const Header = ({ darkness, toggleDarkness }) => {
 						</ul>
 					</nav>
 					{ darkness === 'dark' ?
-					<button className='dark-mode-button' onClick={() => toggleDarkness('light')}><i class="fa-solid fa-sun"></i></button> :
-					<button className='dark-mode-button' onClick={() => toggleDarkness('dark')}><i class="fa-solid fa-moon"></i></button> }
+					<button className='dark-mode-button sharepointButton' onClick={() => toggleDarkness('light')}><i class="fa-solid fa-sun"></i></button> :
+					<button className='dark-mode-button sharepointButton' onClick={() => toggleDarkness('dark')}><i class="fa-solid fa-moon"></i></button> }
 				</div>
 			</header>
 			<div id='topSpacer'></div>

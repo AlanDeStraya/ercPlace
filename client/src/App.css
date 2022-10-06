@@ -85,9 +85,6 @@ nav li a:hover {
 }
 .dark-mode-button {
   font-size: 16px;
-  background-color: var(--body-bg);
-  color: var(--text);
-  border: 1px solid var(--text);
   padding: 3px;
   height: 24px;
 }
@@ -95,7 +92,19 @@ nav li a:hover {
 	height: 75px;
 }
 
-
+.sharepointButton {
+  background-color: var(--body-bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+	transition-duration: 0.4s;
+}
+.sharepointButton:hover {
+  background-color: var(--header-bg);
+  box-shadow: 0 0 7px 3px var(--link);
+}
+.sharepointButton:active {
+  background-color: var(--body-bg);
+}
 
 #sharepointPlus {
   width: 98vw;
@@ -179,10 +188,6 @@ h3 {
 
 #radarButton {
   padding: 10px;
-  background-color: var(--body-bg);
-  color: var(--text);
-  border: 1px solid var(--text);
-  transition-duration: 0.4s;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -234,23 +239,12 @@ tr:nth-of-type(even), th {
   background-color: var(--tr);
 }
 
-.dark-mode-button:hover, #obstructionButton:hover, #radarButton:hover {
-  background-color: var(--header-bg);
-  box-shadow: 0 0 7px 3px var(--link);
-}
-.dark-mode-button:active, #obstructionButton:active, #radarButton:active {
-  background-color: var(--body-bg);
-}
 
 #obstructionButton {
   width: 170px;
   height: 50px;
   line-height: 25px;
   font-size: 16px;
-  background-color: var(--body-bg);
-  color: var(--text);
-  border: 1px solid var(--text);
-  transition-duration: 0.4s;
   padding: 3px;
   font-weight: bold;
   letter-spacing: 1px;
