@@ -23,7 +23,7 @@ function App() {
     }
   };
 
-  //weatherRadarFunction();
+  // weatherRadarFunction();
 
   return (
     <div className="App">
