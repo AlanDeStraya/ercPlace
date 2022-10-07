@@ -44,6 +44,7 @@ header {
 	gap: 20px;
 	height: 75px;
 	align-items: flex-end;
+  width: 50%;
 }
 h1 {
   letter-spacing: 1px;
@@ -126,12 +127,12 @@ section li {
   margin-left: 25px;
   font-family: verdana, sans-serif;
 }
-h2 {
+#sharepointPlus h2 {
   display: inline-block;
   margin-top: 10px;
   margin-left: -20px;
 }
-h2 a {
+#sharepointPlus h2 a {
   margin-left: 5px;
   font-size: 16px;
 }

@@ -1,18 +1,22 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+
 import './App.css';
+
 // import weatherRadarFunction from './Scripts/weatherRadar.js';
 import Header from './Components/header.js';
 import Footer from './Components/footer.js';
 import SharepointPlus from './Tabs/sharepointPlus.js';
-import { useState, useEffect } from 'react';
+import Diversion from './Tabs/diversion.js';
+import IosReference from './Tabs/iosReference.js';
 
 function App() {
   const [darkness, setDarkness] = useState();
+  const [openTab, setOpenTab] = useState('SharepointPlus');
 
-  // const darkMode = window.matchMedia
   useEffect(() => {
     toggleDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  }, [/*darkMode*/]);
+  }, []);
 
   function toggleDarkness(mode) {
     setDarkness(mode);
@@ -25,14 +29,17 @@ function App() {
 
   // weatherRadarFunction();
 
+
   return (
     <div className="App">
 
       <Header
 	darkness={darkness}
-	toggleDarkness={toggleDarkness} />
+	toggleDarkness={toggleDarkness}
+  openTab={openTab}
+  setOpenTab={setOpenTab} />
 
-      <SharepointPlus />
+      { openTab === 'SharepointPlus' ? <SharepointPlus /> : openTab === 'Diversion' ? <Diversion /> : <IosReference /> }
 
       <Footer />
 
