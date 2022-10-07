@@ -4,7 +4,7 @@ const ScadaPopup = ({ closePopups }) => {
 	return (
 		<div id='scadaAlarms' className='popup'>
 			<div className='popupx' id='scadaAlarmsx' onClick={closePopups}>X</div>
-			<h2>How to Download SCADA Alarms</h2>
+			<h3>How to Download SCADA Alarms</h3>
 			<h3>Export Alarms</h3>
 			<ol>
 				<li>Open Alarm History (from main menu, aka Home Depot)</li>

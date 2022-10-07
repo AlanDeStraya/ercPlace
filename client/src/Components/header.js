@@ -28,17 +28,11 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab }) => {
 				</div>
 					);
 		}
-	}
+	};
 
-
-	return (
-		<>
-			<header>
-
-					{chooseTab()}
-
-
-				<div id='header-right'>
+	function chooseNav() {
+		if(openTab === 'SharepointPlus') {
+			return (
 					<nav>
 						<ul>
 							<li><a href='#rules'>Rules</a></li>
@@ -50,10 +44,33 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab }) => {
 							<li><a href='#resources'>NERC</a></li>
 						</ul>
 					</nav>
+			);
+		} else if(openTab === 'IosReference') {
+			return (
+					<nav>
+						<ul>
+							<li><a href='#index-link'>Index</a></li>
+							<li><a href='#detail-link'>Details</a></li>
+						</ul>
+					</nav>
+			);
+		}
+	};
+
+	return (
+		<>
+			<header>
+
+					{ chooseTab() }
+
+
+				<div id='header-right'>
+					{ chooseNav() }
 					{ darkness === 'dark' ?
 					<button className='dark-mode-button sharepointButton' onClick={() => toggleDarkness('light')}><i class="fa-solid fa-sun"></i></button> :
 					<button className='dark-mode-button sharepointButton' onClick={() => toggleDarkness('dark')}><i class="fa-solid fa-moon"></i></button> }
 				</div>
+
 			</header>
 			<div id='topSpacer'></div>
 		</>

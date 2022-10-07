@@ -16,9 +16,8 @@ const Sidebar = () => {
 	function toggleObstruction() {
 		setObstruction(!obstruction);
 	};
-	
+
 	function deskSpinner() {
-		console.log('spinner is being called');
 		const index = Math.floor(Math.random() * 3);
 		if(index === 0) {
 			setSpunDesk('Comms');

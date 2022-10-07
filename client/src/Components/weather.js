@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Weather = () => {
+
 	return (
 		<section id='weatherContainer'>
 			<div id='weather'>
@@ -9,7 +10,7 @@ const Weather = () => {
 				</div>
 				<div className='weatherItem' id="map"></div>
 			</div>
-			<button className='sharepointButton' id='radarButton'>Toggle Radar</button>
+			{/*<button className='sharepointButton' id='radarButton'>Toggle Radar</button>*/}
 
 		</section>
 	);

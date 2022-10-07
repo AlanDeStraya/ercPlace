@@ -13,6 +13,7 @@ import IosReference from './Tabs/iosReference.js';
 function App() {
   const [darkness, setDarkness] = useState();
   const [openTab, setOpenTab] = useState('SharepointPlus');
+	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
 
   useEffect(() => {
     toggleDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -27,6 +28,7 @@ function App() {
     }
   };
 
+
   // weatherRadarFunction();
 
 
@@ -39,9 +41,16 @@ function App() {
   openTab={openTab}
   setOpenTab={setOpenTab} />
 
-      { openTab === 'SharepointPlus' ? <SharepointPlus /> : openTab === 'Diversion' ? <Diversion /> : <IosReference /> }
+      { openTab === 'SharepointPlus'
+        ? <SharepointPlus
+          siteUpdatesPopupActive={siteUpdatesPopupActive}
+          setSiteUpdatesPopupActive={setSiteUpdatesPopupActive} />
+        : openTab === 'Diversion'
+        ? <Diversion />
+        : <IosReference /> }
 
-      <Footer />
+      { openTab === 'SharepointPlus' && <Footer
+        setSiteUpdatesPopupActive={setSiteUpdatesPopupActive} /> }
 
     </div>
   );
