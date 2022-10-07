@@ -1,32 +1,23 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 :root {
-	--tracks: rgb(200, 200, 200);
+  --tracks: rgb(230, 230, 230);
 }
-body {
-  background-color: grey;
+#obstruction-plan-finder {
   font-family: sans-serif;
+  width: 1000px;
+  margin: 20px auto;
 }
-section, .buttons, h1 {
-	user-select: none;
+#finder-title {
+  text-align: center;
 }
-h1 {
-	text-align: center;
-	width: 1000px;
-  margin: 25px auto;
+#obstruction-finding-area, .buttons, h1 {
+  user-select: none;
 }
-.buttons {
+.train-counter {
   display: flex;
   width: 1000px;
   justify-content: center;
   align-items: center;
   margin: 15px auto;
-}
-.buttons button.bigger-buttons {
-  font-size: 28px;
 }
 .buttons p {
   font-size: 22px;
@@ -40,21 +31,6 @@ h1 {
   display: block;
   min-width: 40px;
 }
-.buttons button {
-  margin-left: 15px;
-  padding: 0 10px;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: rgb(100, 255, 255);
-  border: 2px solid black;
-  border-radius: 5px;
-}
-.buttons button:hover {
-  background-color: rgb(170, 255, 255);
-}
-.buttons button:active {
-  background-color: rgb(30, 200, 200);
-}
 #numOfTrains {
   width: 50px;
   border: 1px solid black;
@@ -62,12 +38,8 @@ h1 {
   margin-right: 20px;
   padding: 5px;
 }
-hr {
-  width: 80vw;
-  margin: 0 auto;
-}
 
-section {
+#obstruction-finding-area {
   margin: 5px auto;
   width: 1000px;
   padding: 20px 0;
@@ -153,7 +125,7 @@ section {
   background: linear-gradient(rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2));
   z-index: 2;
 }
-.labels p {
+#obstruction-plan-finder .labels p {
   font-family: 'courier new';
   font-weight: bold;
   display: inline-block;
@@ -253,24 +225,25 @@ p.label-extra-two {
 	margin: 25px auto;
 	text-align: center;
 }
-h2 {
-	text-align: center;
-	width: 1000px;
-	margin: 20px auto;
-}
-table {
+
+/***************************************************************/
+
+#obstruction-plan-finder table {
 	margin: 20px auto;
 	width: 1000px;
 }
-th {
+#obstruction-plan-finder th {
 	text-align: center;
 }
-table, th, td {
+#obstruction-plan-finder table, #obstruction-plan-finder th, #obstruction-plan-finder td {
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 5px;
-	background-color: rgb(200, 200, 200);
+	background-color: var(--body-bg);
 }
+
+/***************************************************************/
+
 #details th {
   color: white;
   background-color: blue;
@@ -295,9 +268,6 @@ table, th, td {
 }
 .bolded td:nth-of-type(1) {
 	font-weight: bold;
-}
-ul {
-	list-style-position: inside;
 }
 #papids {
 	margin-bottom: 90px;

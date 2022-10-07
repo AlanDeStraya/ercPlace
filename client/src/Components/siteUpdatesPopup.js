@@ -1,11 +1,13 @@
 import React from 'react';
 
-const SiteUpdatesPopup = () => {
+const SiteUpdatesPopup = ({ closePopups }) => {
 	return (
 		<div id='updates' className='popup'>
-			<div className='popupx' id='updatesx'>X</div>
-			<h2>Updates</h2>
+			<div className='popupx' id='updatesx' onClick={closePopups} >X</div>
+			<h3>Updates</h3>
 			<ul>
+				<li>2022-10-07 - <strong>Migrated all Sharepoint++ functionality to ERC.place</strong> - (except for weather radar). ERC.Place is live.</li>
+				<br />
 				<li>2022-09-18 - <strong>Changed weather widget to Environment Canada</strong> - official source of weather with alerts</li>
 				<li>2022-09-17 - <strong>Added weather radar map</strong> - map showing weather radar</li>
 				<li>2022-08-30 - <strong>Added improved maintenance plan print instruction</strong> - popup with more thorough instructions</li>

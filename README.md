@@ -1,20 +1,25 @@
 # ERC Place - Tools for ERCs
 (Formerly Sharepoint++)
 
-Migrating to Heroku(Digital ocean?) as full stack web app.  
-Refactoring front end to React.  
-Adding sockets for live syncing, updates, and chat capability.  
+Migrating to Heroku(Digital ocean?) as full stack web app.
+Refactoring front end to React.
+Adding sockets for live syncing, updates, and chat capability.
 
-Issues on deploy:  
-Script from script.js was loaded even though its MIME type ('text/html') is not a valid JavaScript MIME type.  
-The stylesheet styles.css was not loaded because its MIME type 'text/html' is not 'text/css'.  
-Uncaught SyntaxError: expected expression, got '<'  
-<script type="text/javascript"></script>?  
+## To-Do:
+- post update about migration on sp++
+- finder css
+- finder js
+- esc to close popups (on sharepoint only?)
+- radar map
 
-Questions
-Folder structure? Server files in folder?  
-How to serve files - local or remote build? where do locally built files go?  
-Where to install modules/dependencies?  
+- auto select number of trains for obstruction plan finder based on date and time
+- swap ercplace h2 and ul L margins, set popup h3 back to h2
+- refactor IOS reference to React with single location for code description
+- match table colors for dark mode, consider fire docs element colors
+
+## Questions:
+- Which host, Heroku or Digital Ocean?
+- Where to install modules/dependencies?
 
 ---
 

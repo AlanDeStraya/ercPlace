@@ -4,6 +4,37 @@
   padding: 0;
   transition: opacity 0.3s, background-color 0.4s, color 0.4s;
 }
+
+:root {
+  --body-bg: rgb(190, 190, 190);
+  --header-bg: rgb(150, 150, 150);
+  --text: rgb(45, 5, 5);
+  --link: rgb(110, 10, 10);
+  --sidebar: white;
+  --smoke: rgb(255, 255, 200);
+  --flame: rgb(255, 180, 180);
+  --tr: rgb(220, 220, 220);
+}
+.dark-mode {
+  --body-bg: rgb(40, 40, 40);
+  --header-bg: rgb(30, 60, 30);
+  --text: rgb(205, 225, 200);
+  --link: rgb(180, 180, 180);
+  --sidebar: rgb(65, 65, 65);
+  --smoke: rgb(65, 65, 10);
+  --flame: rgb(53, 15, 15);
+  --tr: rgb(70, 70, 70);
+}
+
+#diversion-holding-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -37,13 +68,15 @@ header {
   align-items: center;
   padding: 0 20px;
   transition-duration: 0.4s;
-  z-index: 3;
+  z-index: 30;
 }
 #tabs {
 	display: flex;
 	gap: 20px;
 	height: 75px;
 	align-items: flex-end;
+  width: 600px;
+  user-select: none;
 }
 h1 {
   letter-spacing: 1px;
@@ -53,25 +86,31 @@ h1 {
 	border-bottom: none;
   padding: 5px;
   background-color: var(--sidebar);
-  transition-duration: 0.4s;
+  transition-duration: 0.15s;
 }
 h1.open-tab {
 	background-color: var(--body-bg);
+}
+#tabs h1:not(.open-tab):hover {
+  color: var(--text);
+  box-shadow: 0 -1px 0 1px var(--text);
 }
 #header-right {
   display: flex;
   gap: 22px;
   align-items: center;
+  flex-shrink: 2;
 }
 nav {
   display: flex;
   align-items: center;
 	margin-left: 30px;
+  flex-wrap: wrap;
 }
 nav li {
   display: inline-block;
   list-style: none;
-  margin: 12px 3px;
+  margin: 6px 3px;
 }
 nav li a {
   text-decoration: none;
@@ -117,6 +156,9 @@ sub {
   position: relative;
   top: -150px;
 }
+ul {
+  list-style-position: inside;
+}
 section {
   padding: 10px;
 }
@@ -126,12 +168,12 @@ section li {
   margin-left: 25px;
   font-family: verdana, sans-serif;
 }
-h2 {
+#sharepointPlus h2 {
   display: inline-block;
   margin-top: 10px;
   margin-left: -20px;
 }
-h2 a {
+#sharepointPlus h2 a {
   margin-left: 5px;
   font-size: 16px;
 }
@@ -372,9 +414,6 @@ footer {
 }
 .popup p {
   margin: 20px 45px;
-}
-.popup ul {
-  list-style-position: inside;
 }
 .popup ol {
   margin-left: 34px;

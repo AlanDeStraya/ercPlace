@@ -16,11 +16,10 @@ import ScadaPopup from '../Components/scadaPopup.js';
 import SiteUpdatesPopup from '../Components/siteUpdatesPopup.js';
 
 
-const SharepointPlus = () => {
+const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) => {
 
 	const [printPopupActive, setPrintPopupActive] = useState(false);
 	const [scadaPopupActive, setScadaPopupActive] = useState(false);
-	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
 
 	function openPrintPopup() {
 		setPrintPopupActive(true);
@@ -33,6 +32,14 @@ const SharepointPlus = () => {
 		setScadaPopupActive(false);
 		setSiteUpdatesPopupActive(false);
 	};
+
+	document.addEventListener('keydown', evt => {
+		if (evt.key === 'Escape') {
+				closePopups();
+		}
+	});
+
+
 
 	return (
 		<div id='sharepointPlus'>
