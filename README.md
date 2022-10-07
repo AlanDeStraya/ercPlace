@@ -11,6 +11,8 @@ Adding sockets for live syncing, updates, and chat capability.
 - finder js
 - esc to close popups (on sharepoint only?)
 - radar map
+- 'esc to close' in popup headers
+- comms card
 
 - auto select number of trains for obstruction plan finder based on date and time
 - swap ercplace h2 and ul L margins, set popup h3 back to h2
