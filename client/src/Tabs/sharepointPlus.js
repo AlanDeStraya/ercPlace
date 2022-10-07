@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useState } from 'react';
+
 import Weather from '../Components/weather.js';
 import Rules from '../Components/rules.js';
 import WorkInstructions from '../Components/workInstructions.js';
@@ -12,8 +14,6 @@ import Sidebar from '../Components/sidebar.js';
 import PrintPopup from '../Components/printPopup.js';
 import ScadaPopup from '../Components/scadaPopup.js';
 import SiteUpdatesPopup from '../Components/siteUpdatesPopup.js';
-
-import { useState } from 'react';
 
 
 const SharepointPlus = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NercResources = ({togglePrintPopupActive, toggleScadaPopupActive}) => {
+const NercResources = ({openPrintPopup, openScadaPopup}) => {
 	return (
 		<section>
 			<sub id='resources'></sub>
@@ -14,8 +14,8 @@ const NercResources = ({togglePrintPopupActive, toggleScadaPopupActive}) => {
 				<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank' rel="noreferrer">Sharepoint</a></li>
 				<li><a href='https://www.chickpeasottawa.com/' target='_blank'>Mission Critical Support</a></li>
 
-				<li id='scadaAlarmsLink'><a href='#resources' onClick={toggleScadaPopupActive}>Downloading SCADA Alarms (& secure key code)</a></li>
-				<li id='printLink'><a href='#resources' onClick={togglePrintPopupActive}>Print Maintenance Plan</a></li>
+				<li id='scadaAlarmsLink'><a href='#resources' onClick={openScadaPopup}>Downloading SCADA Alarms (& secure key code)</a></li>
+				<li id='printLink'><a href='#resources' onClick={openPrintPopup}>Print Maintenance Plan</a></li>
 
 				<li className='setUp'>To consider when setting up city PC:
 					<ul>
