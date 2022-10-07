@@ -1,9 +1,9 @@
 import React from 'react';
 
-const PrintPopup = () => {
+const PrintPopup = ({ closePopups }) => {
 	return (
 		<div id='print' className='popup'>
-			<div className='popupx' id='printx'>X</div>
+			<div className='popupx' id='printx' onClick={closePopups}>X</div>
 			<h2>How to Print Maintenance Plan</h2>
 			<ul>
 				<li>Select columns from 'Day/Date' to 'Description' (inclusive). No need to include other columns.</li>

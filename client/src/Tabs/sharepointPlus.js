@@ -22,21 +22,16 @@ const SharepointPlus = () => {
 	const [scadaPopupActive, setScadaPopupActive] = useState(false);
 	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
 
-	function togglePrintPopupActive() {
-		console.log('toggle button clicked');
-		if(printPopupActive === false) {
-			setPrintPopupActive(true);
-			console.log('print popup active must be false');
-		} else if(printPopupActive === true) {
-			setPrintPopupActive(false);
-		}
+	function openPrintPopup() {
+		setPrintPopupActive(true);
 	};
-	function toggleScadaPopupActive() {
-		if(scadaPopupActive === false) {
-			setScadaPopupActive(true);
-		} else if(scadaPopupActive === true) {
-			setScadaPopupActive(false);
-		}
+	function openScadaPopup() {
+		setScadaPopupActive(true);
+	};
+	function closePopups() {
+		setPrintPopupActive(false);
+		setScadaPopupActive(false);
+		setSiteUpdatesPopupActive(false);
 	};
 
 	return (
@@ -50,14 +45,14 @@ const SharepointPlus = () => {
 				<Manuals />
 				<TeamsFiles />
 				<NercResources
-					togglePrintPopupActive={togglePrintPopupActive}
-					toggleScadaPopupActive={toggleScadaPopupActive} />
+					openPrintPopup={openPrintPopup}
+					openScadaPopup={openScadaPopup} />
 			</article>
 			<Sidebar />
 
-			{printPopupActive && <PrintPopup />}
-			{scadaPopupActive && <ScadaPopup />}
-			{siteUpdatesPopupActive && <SiteUpdatesPopup />}
+			{printPopupActive && <PrintPopup closePopups={closePopups} />}
+			{scadaPopupActive && <ScadaPopup closePopups={closePopups} />}
+			{siteUpdatesPopupActive && <SiteUpdatesPopup closePopups={closePopups} />}
 
 		</div>
 	);
