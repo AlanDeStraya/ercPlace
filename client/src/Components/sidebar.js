@@ -8,6 +8,8 @@ const Sidebar = () => {
 	const [fire, setFire] = useState(false);
 	const [obstruction, setObstruction] = useState(false);
 
+	const [spunDesk, setSpunDesk] = useState('');
+
 	function toggleFire() {
 		setFire(!fire);
 	};
@@ -15,15 +17,15 @@ const Sidebar = () => {
 		setObstruction(!obstruction);
 	};
 	
-	let desk = '';
 	function deskSpinner() {
+		console.log('spinner is being called');
 		const index = Math.floor(Math.random() * 3);
 		if(index === 0) {
-			desk = 'Comms';
+			setSpunDesk('Comms');
 		} else if(index === 1) {
-			desk = 'Mainline';
+			setSpunDesk('Mainline');
 		} else if(index === 2) {
-			desk = 'SCADA';
+			setSpunDesk('SCADA');
 		}
 	};
 
@@ -52,7 +54,7 @@ const Sidebar = () => {
 						<tr><td>4</td><td>900</td><td>15:00</td></tr>
 					</tbody>
 				</table>
-				<button className='sharepointButton' id='deskSpinnerButton' onClick={deskSpinner}> {desk ? desk : 'Desk Spinner'} </button>
+				<button className='sharepointButton' id='deskSpinnerButton' onClick={deskSpinner}> {spunDesk ? spunDesk : 'Desk Spinner'} </button>
 			</aside>
 
 			<aside id='midbar'>
