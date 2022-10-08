@@ -16,6 +16,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - swap ercplace h2 and ul L margins, set popup h3 back to h2
 - refactor IOS reference to React with single location for code description
 - match table colors for dark mode, consider fire docs element colors
+- npm 6 high severity vulnerabilities
 
 ## Questions:
 - Which host, Heroku or Digital Ocean?

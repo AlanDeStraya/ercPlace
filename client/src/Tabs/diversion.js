@@ -1,6 +1,11 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 
 import ObstructionFinder from '../Components/obstructionFinder.js';
+
+const socket = io();
+console.log(socket);
 
 		/*
 const Diversion = () => {
@@ -16,9 +21,29 @@ const Diversion = () => {
 		*/
 
 const Diversion = () => {
+
+	const [isConnected, setIsConnected] = useState(socket.connected);
+	const [diversionActive, setDiversionActive] = useState(false);
+
+	useEffect(() => {
+		socket.on('connect', () => {
+			setIsConnected(true);
+			console.log(isConnected);
+		});
+		socket.on('disconnect', () => {
+			setIsConnected(false);
+		});
+		return () => {
+			socket.off('connect');
+			socket.off('disconnect');
+		};
+	}, []);
+
 	return (
 		<>
-			<ObstructionFinder />
+			<ObstructionFinder
+				diversionActive={diversionActive}
+				setDiversionActive={setDiversionActive} />
 		</>
 	);
 };

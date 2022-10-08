@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 import './obstructionFinder.css';
 
-const ObstructionFinder = () => {
-	const [diversionActive, setDiversionActive] = useState(false);
+const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
 	const [numTrains, setNumTrains] = useState(11);
 	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
 	const [showFindingArea, setShowFindingArea] = useState(false);
