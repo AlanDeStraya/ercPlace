@@ -7,7 +7,7 @@ const Diversion = () => {
 
 		<div id='diversion-holding-page'>
 			<h2>Diversion App - Coming Soon</h2>
-			<a href='http://erc.place/obstructionFinder.html'>Old Obstruction Finder</a>
+			<a href='https://ats-simulation.neocities.org/obstructionFinder.html'>Old Obstruction Finder</a>
 		</div>
 
 	);
