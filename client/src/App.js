@@ -36,10 +36,10 @@ function App() {
     <div className="App">
 
       <Header
-	darkness={darkness}
-	toggleDarkness={toggleDarkness}
-  openTab={openTab}
-  setOpenTab={setOpenTab} />
+        darkness={darkness}
+        toggleDarkness={toggleDarkness}
+        openTab={openTab}
+        setOpenTab={setOpenTab} />
 
       { openTab === 'SharepointPlus'
         ? <SharepointPlus

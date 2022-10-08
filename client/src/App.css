@@ -46,15 +46,12 @@ html {
 body {
   background-color: var(--body-bg);
   font-family: sans-serif;
-  transition-duration: 0.4s;
 }
 a {
   color: var(--link);
-  transition: color 0.4s;
 }
 h2, h3, h4, li, th, td, p {
   color: var(--text);
-  transition: color 0.4s;
 }
 header {
   height: 75px;
@@ -67,7 +64,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  transition-duration: 0.4s;
   z-index: 30;
 }
 #tabs {
@@ -86,7 +82,6 @@ h1 {
 	border-bottom: none;
   padding: 5px;
   background-color: var(--sidebar);
-  transition-duration: 0.15s;
 }
 h1.open-tab {
 	background-color: var(--body-bg);
@@ -135,7 +130,6 @@ nav li a:hover {
   background-color: var(--body-bg);
   color: var(--text);
   border: 1px solid var(--text);
-	transition-duration: 0.4s;
 }
 .sharepointButton:hover {
   background-color: var(--header-bg);
@@ -250,7 +244,6 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  transition-duration: 0.4s;
 }
 .search {
   animation: highlight 3s, remind 300ms cubic-bezier(0.5,0,0.5,1) 2s 5;
@@ -271,13 +264,11 @@ h3 {
     background-color: var(--transparent);
   }
 }
-table {
+#headways th, td {
   text-align: center;
-}
-th, td {
   width: 80px;
 }
-tr:nth-of-type(even), th {
+#headways tr:nth-of-type(even), #headways th {
   background-color: var(--tr);
 }
 
@@ -369,15 +360,6 @@ tr:nth-of-type(even), th {
 }
 
 
-footer a {
-  z-index: 12;
-  text-decoration: none;
-  padding: 8px;
-}
-footer a:hover {
-  background-color: var(--body-bg);
-  border-radius: 5px;
-}
 
 footer {
   height: 40px;
@@ -390,7 +372,15 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition-duration: 0.4s;
+}
+footer a {
+  z-index: 12;
+  text-decoration: none;
+  padding: 8px;
+}
+footer a:hover {
+  background-color: var(--body-bg);
+  border-radius: 5px;
 }
 
 .popup {
@@ -437,13 +427,6 @@ footer {
   background-color: var(--link);
 }
 
-
-
-@media only screen and (max-height: 822px) {
-  #obstructionPlans li {
-    margin-top: 0.6vh;
-  }
-}
 
 @media only screen and (max-width: 840px) {
   header {
@@ -513,20 +496,3 @@ footer {
     margin-top: 20px;
   }
 }
-
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/

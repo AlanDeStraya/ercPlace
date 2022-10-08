@@ -19,14 +19,6 @@ function toggleRadar() {
 };
 
 
-document.addEventListener('keydown', evt => {
-  if (evt.key === 'Escape') {
-      closePrint();
-      closeScadaAlarms();
-      closeUpdates();
-  }
-});
-
 
 /*
 socket.on('event', func => {

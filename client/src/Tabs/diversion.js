@@ -2,6 +2,7 @@ import React from 'react';
 
 import ObstructionFinder from '../Components/obstructionFinder.js';
 
+		/*
 const Diversion = () => {
 	return (
 
@@ -12,13 +13,14 @@ const Diversion = () => {
 
 	);
 };
-
-		/* <section id='diversion-holding-page'>
-			<h2>Coming soon</h2>
-		</section>
-		*
-		*
-		<ObstructionFinder />
 		*/
+
+const Diversion = () => {
+	return (
+		<>
+			<ObstructionFinder />
+		</>
+	);
+};
 
 export default Diversion;

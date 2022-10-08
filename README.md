@@ -6,8 +6,6 @@ Refactoring front end to React.
 Adding sockets for live syncing, updates, and chat capability.
 
 ## To-Do:
-- post update about migration on sp++
-- finder css
 - finder js
 - esc to close popups (on sharepoint only?)
 - radar map

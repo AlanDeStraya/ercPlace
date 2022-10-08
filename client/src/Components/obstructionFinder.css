@@ -6,54 +6,45 @@
   width: 1000px;
   margin: 20px auto;
 }
-#finder-title {
-  text-align: center;
-}
 #obstruction-finding-area, .buttons, h1 {
   user-select: none;
 }
-.train-counter {
+
+#obstruction-plan-control {
   display: flex;
   width: 1000px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 15px auto;
+  margin: 8px auto;
+  border: 1px solid var(--text);
 }
-.buttons p {
-  font-size: 22px;
+#obstruction-plan-control p {
+  font-size: 18px;
   font-weight: bold;
 }
-.buttons span {
-  background-color: white;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  min-width: 40px;
-}
-#numOfTrains {
-  width: 50px;
-  border: 1px solid black;
-  margin-left: 8px;
-  margin-right: 20px;
-  padding: 5px;
+#obstruction-plan-control div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #obstruction-finding-area {
   margin: 5px auto;
   width: 1000px;
   padding: 20px 0;
+  position: relative;
+  background-color: grey;
 }
 #track-one-areas {
   position: absolute;
-  top: 280px;
+  top: 78px;
   z-index: 10;
   overflow: auto;
   width: 1000px;
 }
 #track-two-areas {
   position: absolute;
-  top: 343px;
+  top: 146px;
   z-index: 10;
   overflow: auto;
   width: 1000px;
@@ -138,10 +129,10 @@
 	margin: 0 auto;
 	font-size: 22px;
 }
-p.label-extra-one {
+#obstruction-plan-finder p.label-extra-one {
   margin-left: 50px;
 }
-p.label-extra-two {
+#obstruction-plan-finder p.label-extra-two {
   margin-left: 30px;
 }
 #track1, #track2 {

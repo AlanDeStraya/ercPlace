@@ -34,7 +34,7 @@ const Sidebar = () => {
 				<button id='fireMode' onClick={toggleFire}>Fire!</button>
 				<button className='sharepointButton' id='obstructionButton' onClick={toggleObstruction}>Obstruction!</button>
 				<p className='search'>Use Ctrl + F to search</p>
-				<table>
+				<table id='headways'>
 					<thead>
 						<tr><th>Trains</th><th>Secs</th><th>Mins</th></tr>
 					</thead>

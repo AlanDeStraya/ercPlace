@@ -1,123 +1,146 @@
 import React from 'react';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 import './obstructionFinder.css';
 
 const ObstructionFinder = () => {
+	const [diversionActive, setDiversionActive] = useState(false);
+	const [numTrains, setNumTrains] = useState(11);
+	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
+	const [showFindingArea, setShowFindingArea] = useState(false);
+	const [showPlanDetails, setShowPlanDetails] = useState(true);
+
+	function declareTrains() {
+		setNumTrains(prompt('How many trains?'));
+		setNumTrainsDeclared(true);
+	};
+
 	return (
 		<div id='obstruction-plan-finder'>
-			<h2 id='finder-title'>Obstruction Plan Finder</h2>
-			<div class='train-counter'>
-				<p>Number of Trains: </p><span id='numOfTrains'>(11)</span> <button>Declare Manually</button>
-			</div>
-			<hr />
 
-			<div id='obstruction-finding-area'>
+			<div id='obstruction-plan-control'>
+				<button onClick={()=>setDiversionActive(true)}>Begin Event</button>
+				<div id='selectNumOfTrains'>
+					<p>{numTrainsDeclared ? 'Declared' : 'Scheduled'} # of Trains: {numTrains}</p>
+					<button	onClick={declareTrains}>Declare Manually</button>
+				</div>
+				<div id='selectAreas'>
+					<button onClick={()=>setShowFindingArea(true)}>Select Areas</button>
+					<button onClick={()=>setShowFindingArea(false)}>Confirm Areas</button>
+				</div>
+				<div id='selectVisibility'>
+					<button onClick={()=>setShowPlanDetails(true)}>Show Details</button>
+					<button onClick={()=>setShowPlanDetails(false)}>Hide Details</button>
+				</div>
+				<button>End Event</button>
+			</div>
+
+			{showFindingArea && <div id='obstruction-finding-area'>
 				<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 				<div id='track-one-areas'>
-					<button class='area' id='area-one-one'></button>
-					<button class='area' id='area-two-one'></button>
-					<button class='area' id='area-three-one'></button>
-					<button class='area' id='area-four-one'></button>
-					<button class='area' id='area-five-one'></button>
-					<button class='area' id='area-six-one'></button>
-					<button class='area' id='area-seven-one'></button>
-					<button class='area' id='area-eight-one'></button>
-					<button class='area' id='area-nine-one'></button>
-					<button class='area' id='area-ten-one'></button>
-					<button class='area' id='area-eleven-one'></button>
-					<button class='area' id='area-twelve-one'></button>
-					<button class='area' id='area-thirteen-one'></button>
-					<button class='area' id='area-fourteen-one'></button>
+					<button className='area' id='area-one-one'></button>&nbsp;
+					<button className='area' id='area-two-one'></button>&nbsp;
+					<button className='area' id='area-three-one'></button>&nbsp;
+					<button className='area' id='area-four-one'></button>&nbsp;
+					<button className='area' id='area-five-one'></button>&nbsp;
+					<button className='area' id='area-six-one'></button>&nbsp;
+					<button className='area' id='area-seven-one'></button>&nbsp;
+					<button className='area' id='area-eight-one'></button>&nbsp;
+					<button className='area' id='area-nine-one'></button>&nbsp;
+					<button className='area' id='area-ten-one'></button>&nbsp;
+					<button className='area' id='area-eleven-one'></button>&nbsp;
+					<button className='area' id='area-twelve-one'></button>&nbsp;
+					<button className='area' id='area-thirteen-one'></button>&nbsp;
+					<button className='area' id='area-fourteen-one'></button>
 				</div>
-				<div class='labels'>
-					<p>TUN-W</p>
-					<p>BAY-W</p>
-					<p>PIM-W</p>
-					<p>LYO-W</p>
-					<p>PAR-W</p>
-					<p>RID-W</p>
-					<p>UOT-W</p>
-					<p>LEE-W</p>
-					<p>HUR-W</p>
-					<p>TRE-W</p>
-					<p class='label-extra-one'>STL-W</p>
-					<p>CYR-W</p>
-					<p class='label-extra-two'>BLA-W</p>
+				<div className='labels'>
+					<p>TUN-W</p>&nbsp;
+					<p>BAY-W</p>&nbsp;
+					<p>PIM-W</p>&nbsp;
+					<p>LYO-W</p>&nbsp;
+					<p>PAR-W</p>&nbsp;
+					<p>RID-W</p>&nbsp;
+					<p>UOT-W</p>&nbsp;
+					<p>LEE-W</p>&nbsp;
+					<p>HUR-W</p>&nbsp;
+					<p>TRE-W</p>&nbsp;
+					<p className='label-extra-one'>STL-W</p>&nbsp;
+					<p>CYR-W</p>&nbsp;
+					<p className='label-extra-two'>BLA-W</p>
 				</div>
 				<div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station cplat1'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station'></div>
-					<div class='t1s station stl'></div>
-					<div class='t1s station cplat1'></div>
-					<div class='t1s station cplat1 bla'></div>
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station cplat1'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station'></div>&nbsp;
+					<div className='t1s station stl'></div>&nbsp;
+					<div className='t1s station cplat1'></div>&nbsp;
+					<div className='t1s station cplat1 bla'></div>
 				</div>
 
 				<div id='track1'></div>
 				<div id='xovers'>
-					<div class='xover' id='tunx'><p>X</p></div>
-					<div class='xover' id='lyox'><p>X</p></div>
-					<div class='xover' id='uotx'><p>X</p></div>
-					<div class='xover' id='hurx'><p>/ \</p></div>
-					<div class='xover' id='trex'><p>/ \</p></div>
-					<div class='xover' id='stlx'><p>/ \</p></div>
-					<div class='xover' id='blax'><p>\ /</p></div>
+					<div className='xover' id='tunx'><p>X</p></div>
+					<div className='xover' id='lyox'><p>X</p></div>
+					<div className='xover' id='uotx'><p>X</p></div>
+					<div className='xover' id='hurx'><p>/ \</p></div>
+					<div className='xover' id='trex'><p>/ \</p></div>
+					<div className='xover' id='stlx'><p>/ \</p></div>
+					<div className='xover' id='blax'><p>\ /</p></div>
 				</div>
 				<div id='track2'></div>
 
 				<div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station cplat2'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station'></div>
-					<div class='t2s station stl'></div>
-					<div class='t2s station cplat2'></div>
-					<div class='t2s station cplat2 bla'></div>
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station cplat2'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station'></div>&nbsp;
+					<div className='t2s station stl'></div>&nbsp;
+					<div className='t2s station cplat2'></div>&nbsp;
+					<div className='t2s station cplat2 bla'></div>
 				</div>
-				<div class='labels'>
-					<p>TUN-E</p>
-					<p>BAY-E</p>
-					<p>PIM-E</p>
-					<p>LYO-E</p>
-					<p>PAR-E</p>
-					<p>RID-E</p>
-					<p>UOT-E</p>
-					<p>LEE-E</p>
-					<p>HUR-E</p>
-					<p>TRE-E</p>
-					<p class='label-extra-one'>STL-E</p>
-					<p>CYR-E</p>
-					<p class='label-extra-two'>BLA-E</p>
+				<div className='labels'>
+					<p>TUN-E</p>&nbsp;
+					<p>BAY-E</p>&nbsp;
+					<p>PIM-E</p>&nbsp;
+					<p>LYO-E</p>&nbsp;
+					<p>PAR-E</p>&nbsp;
+					<p>RID-E</p>&nbsp;
+					<p>UOT-E</p>&nbsp;
+					<p>LEE-E</p>&nbsp;
+					<p>HUR-E</p>&nbsp;
+					<p>TRE-E</p>&nbsp;
+					<p className='label-extra-one'>STL-E</p>&nbsp;
+					<p>CYR-E</p>&nbsp;
+					<p className='label-extra-two'>BLA-E</p>
 				</div>
 				<div id='track-two-areas'>
-					<button class='area' id='area-one-two'></button>
-					<button class='area' id='area-two-two'></button>
-					<button class='area' id='area-three-two'></button>
-					<button class='area' id='area-four-two'></button>
-					<button class='area' id='area-five-two'></button>
-					<button class='area' id='area-six-two'></button>
-					<button class='area' id='area-seven-two'></button>
-					<button class='area' id='area-eight-two'></button>
-					<button class='area' id='area-nine-two'></button>
-					<button class='area' id='area-ten-two'></button>
-					<button class='area' id='area-eleven-two'></button>
-					<button class='area' id='area-twelve-two'></button>
-					<button class='area' id='area-thirteen-two'></button>
-					<button class='area' id='area-fourteen-two'></button>
+					<button className='area' id='area-one-two'></button>&nbsp;
+					<button className='area' id='area-two-two'></button>&nbsp;
+					<button className='area' id='area-three-two'></button>&nbsp;
+					<button className='area' id='area-four-two'></button>&nbsp;
+					<button className='area' id='area-five-two'></button>&nbsp;
+					<button className='area' id='area-six-two'></button>&nbsp;
+					<button className='area' id='area-seven-two'></button>&nbsp;
+					<button className='area' id='area-eight-two'></button>&nbsp;
+					<button className='area' id='area-nine-two'></button>&nbsp;
+					<button className='area' id='area-ten-two'></button>&nbsp;
+					<button className='area' id='area-eleven-two'></button>&nbsp;
+					<button className='area' id='area-twelve-two'></button>&nbsp;
+					<button className='area' id='area-thirteen-two'></button>&nbsp;
+					<button className='area' id='area-fourteen-two'></button>
 				</div>
 				<div id='bottom-buttons'>
 					<button id='manual'>Enter Plan Manually</button>
@@ -125,12 +148,13 @@ const ObstructionFinder = () => {
 					<button id='tunnel-two'>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
 					<button id='clear'>Clear all</button>
 				</div>
-			</div>
-			<hr />
-			<div id='graphic'></div>
-			<div id='details' class='bolded'></div>
-			<div id='papids' class='bolded'></div>
-			<div id='cs'></div>
+			</div>}
+
+			{showPlanDetails && <div id='graphic'></div>}
+			{showPlanDetails && <div id='details' className='bolded'></div>}
+			{showPlanDetails && <div id='papids' className='bolded'></div>}
+			{showPlanDetails && <div id='cs'></div>}
+
 			<br /><br /><br /><br />
 
 		</div>
