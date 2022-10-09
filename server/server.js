@@ -23,9 +23,10 @@ io.on('connection', socket => {
     usersOnline--;
   });
 
+  const testContent = 'testAckContent';
   socket.on('cTestSend', (obj) => {
     console.log(obj);
-    socket.emit('sAckTest');
+    socket.emit('sAckTest', testContent);
   });
 
   socket.on('cStartEvent', param => {

@@ -44,8 +44,8 @@ const Diversion = () => {
 		console.log(`${num} users are online`);
 	});
 
-	socket.on('sAckTest', () => {
-		console.log('test ackd');
+	socket.on('sAckTest', str => {
+		console.log(str);
 	});
 
 
