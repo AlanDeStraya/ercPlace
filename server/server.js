@@ -14,12 +14,12 @@ app.get('/*', (req, res) => {
 let usersOnline = 0;
 
 io.on('connection', socket => {
-  counter++;
+  usersOnline++;
   console.log('A client connected');
-  socket.emit('sNumUsersOnline', counter);
+  socket.emit('sNumUsersOnline', usersOnline);
 
   socket.on('disconnect', () =>
-    counter--;
+    usersOnline--;
   });
 
   socket.on('cStartEvent', param => {
