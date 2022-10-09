@@ -23,6 +23,11 @@ io.on('connection', socket => {
     usersOnline--;
   });
 
+  socket.on('cTestSend', (obj) => {
+    console.log(obj);
+    socket.emit('sAckTest');
+  });
+
   socket.on('cStartEvent', param => {
     const eventStartTime = Date.now();
     socket.emit('sStartEvent', eventStartTime);

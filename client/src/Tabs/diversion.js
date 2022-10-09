@@ -33,15 +33,21 @@ const Diversion = () => {
 		socket.on('disconnect', () => {
 			setIsConnected(false);
 		});
-		socket.on('sNumUsersOnline', num => {
-			console.log(`${num} users are online`);
-		});
 
 		return () => {
 			socket.off('connect');
 			socket.off('disconnect');
 		};
 	}, []);
+
+	socket.on('sNumUsersOnline', num => {
+		console.log(`${num} users are online`);
+	});
+
+	socket.on('sAckTest', () => {
+		console.log('test ackd');
+	});
+
 
 	return (
 		<>
