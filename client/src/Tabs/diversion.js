@@ -28,11 +28,15 @@ const Diversion = () => {
 	useEffect(() => {
 		socket.on('connect', () => {
 			setIsConnected(true);
-			console.log(isConnected);
+			console.log(`connected: ${isConnected}`);
 		});
 		socket.on('disconnect', () => {
 			setIsConnected(false);
 		});
+		socket.on('sNumUsersOnline', num => {
+			console.log(`${num} users are online`);
+		});
+
 		return () => {
 			socket.off('connect');
 			socket.off('disconnect');
@@ -44,6 +48,8 @@ const Diversion = () => {
 			<ObstructionFinder
 				diversionActive={diversionActive}
 				setDiversionActive={setDiversionActive} />
+
+			<button onClick={() => socket.emit('cTestSend', {user: 'me', test: 'yes a test'});}>Test button</button>
 		</>
 	);
 };

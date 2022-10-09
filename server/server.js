@@ -16,7 +16,8 @@ let usersOnline = 0;
 io.on('connection', socket => {
   counter++;
   console.log('A client connected');
-  socket.emit('numUsersOnline', counter);
+  socket.emit('sNumUsersOnline', counter);
+
   socket.on('disconnect', () =>
     counter--;
   });
