@@ -49,7 +49,7 @@ const Diversion = () => {
 				diversionActive={diversionActive}
 				setDiversionActive={setDiversionActive} />
 
-			<button onClick={() => socket.emit('cTestSend', {user: 'me', test: 'yes a test'});}>Test button</button>
+			<button onClick={() => socket.emit('cTestSend', {user: 'me', test: 'yes a test'})}>Test button</button>
 		</>
 	);
 };
