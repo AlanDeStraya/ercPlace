@@ -18,7 +18,7 @@ io.on('connection', socket => {
   console.log('A client connected');
   socket.emit('sNumUsersOnline', usersOnline);
 
-  socket.on('disconnect', () =>
+  socket.on('disconnect', () => {
     usersOnline--;
   });
 
