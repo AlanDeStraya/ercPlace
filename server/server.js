@@ -23,7 +23,7 @@ io.on('connection', socket => {
     console.log('A client disconnected');
     usersOnline--;
   });
-/*
+
   const testContent = 'testAckContent';
   socket.on('cTestSend', (obj) => {
     console.log(obj);
@@ -36,21 +36,8 @@ io.on('connection', socket => {
     //socket.emit
     //socket.broadcast.emit
   });
-*/
+
 });
-//testing these outside of connection
-  const testContent = 'testAckContent';
-  socket.on('cTestSend', (obj) => {
-    console.log(obj);
-    io.emit('sAckTest', testContent);
-  });
-
-  socket.on('cStartEvent', param => {
-    const eventStartTime = Date.now();
-    io.emit('sStartEvent', eventStartTime);
-    //socket.emit
-    //socket.broadcast.emit
-  });
 
 
 
