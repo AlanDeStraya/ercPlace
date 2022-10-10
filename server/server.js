@@ -30,9 +30,11 @@ io.on('connection', socket => {
 
   // works
   const testContent = 'testAckContent';
+	const socketTestContent = 'socketTestAckContent';
   socket.on('cTestSend', (obj) => {
     console.log(obj);
     io.emit('sAckTest', testContent);
+		socket.emit('sAckTest', socketTestContent);
   });
 
   // works
