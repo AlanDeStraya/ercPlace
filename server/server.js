@@ -15,10 +15,13 @@ app.get('/*', (req, res) => {
 let usersOnline = 0;
 
 io.on('connection', socket => {
-  usersOnline++;
-  console.log('A client connected, users online: ' + usersOnline);
-  // doesn't work
-  io.emit('sNumUsersOnline', usersOnline);
+
+  // untested
+  socket.on('connect', () => {
+    usersOnline++;
+    console.log('A client connected, users online: ' + usersOnline);
+    io.emit('sNumUsersOnline', usersOnline);
+  });
 
   // works
   socket.on('disconnect', () => {
@@ -41,6 +44,7 @@ io.on('connection', socket => {
     //socket.broadcast.emit
   });
 
+  // works
   socket.on('cIsAlan', str => {
     const ok = 'ok'
     const nope = 'nope'

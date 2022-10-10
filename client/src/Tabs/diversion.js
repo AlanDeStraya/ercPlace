@@ -29,7 +29,7 @@ const Diversion = () => {
 		};
 	}, []);
 
-	// doesn't work.. always?
+	// hopefully works now
 	socket.on('sNumUsersOnline', num => {
 		console.log(`${num} users are online`);
 	});
