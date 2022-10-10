@@ -30,11 +30,20 @@ io.on('connection', socket => {
     io.emit('sAckTest', testContent);
   });
 
-  socket.on('cStartEvent', param => {
-    const eventStartTime = Date.now();
-    io.emit('sStartEvent', eventStartTime);
+  socket.on('cStartEvent', time => {
+    console.log(time);
+    io.emit('sStartEvent', time);
     //socket.emit
     //socket.broadcast.emit
+  });
+
+  socket.on('cIsAlan', str => {
+    const ok = 'ok'
+    const nope = 'nope'
+    if(str === 'test') {
+      io.emit('sAuthAlan', ok);
+    } else if(str === 'off') {
+      io.emit('sAuthAlan', nope);
   });
 
 });
