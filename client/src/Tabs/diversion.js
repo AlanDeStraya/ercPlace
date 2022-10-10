@@ -29,10 +29,12 @@ const Diversion = () => {
 		};
 	}, []);
 
+	// doesn't work.. always?
 	socket.on('sNumUsersOnline', num => {
 		console.log(`${num} users are online`);
 	});
 
+	// works
 	socket.on('sAckTest', str => {
 		console.log(str);
 	});
@@ -44,7 +46,7 @@ const Diversion = () => {
 	});
 
 //temp if/else
-	if(userAlan = 'ok') {
+	if(userAlan === 'ok') {
 	return (
 		<>
 			<button
@@ -73,6 +75,7 @@ const Diversion = () => {
 				onClick={() => {
 					const pass = prompt('Enter password:');
 					socket.emit('cIsAlan', pass)} } >Testing mode</button>
+					// test / off
 		</div>
 
 	);

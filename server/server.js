@@ -16,20 +16,24 @@ let usersOnline = 0;
 
 io.on('connection', socket => {
   usersOnline++;
-  console.log('A client connected');
+  console.log('A client connected, users online: ' + usersOnline);
+  // doesn't work
   io.emit('sNumUsersOnline', usersOnline);
 
+  // works
   socket.on('disconnect', () => {
     console.log('A client disconnected');
     usersOnline--;
   });
 
+  // works
   const testContent = 'testAckContent';
   socket.on('cTestSend', (obj) => {
     console.log(obj);
     io.emit('sAckTest', testContent);
   });
 
+  // works
   socket.on('cStartEvent', time => {
     console.log(time);
     io.emit('sStartEvent', time);
