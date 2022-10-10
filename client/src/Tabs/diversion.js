@@ -7,7 +7,7 @@ import ObstructionFinder from '../Components/obstructionFinder.js';
 const socket = io();
 console.log(socket);
 
-
+		/*
 const Diversion = () => {
 	return (
 
@@ -18,12 +18,14 @@ const Diversion = () => {
 
 	);
 };
-		/*
+
+*/
 
 const Diversion = () => {
 
 	const [isConnected, setIsConnected] = useState(socket.connected);
 	const [diversionActive, setDiversionActive] = useState(false);
+	const [obstructionPlanNumber, setObstructionPlanNumber] = useState();
 
 	useEffect(() => {
 		socket.on('connect', () => {
@@ -60,6 +62,5 @@ const Diversion = () => {
 	);
 };
 
-*/
 
 export default Diversion;

@@ -34,7 +34,8 @@ const NercResources = ({openPrintPopup, openScadaPopup}) => {
 						<li>VLC as default media player</li>
 						<li>Mouse Without Borders - 976VGFdrmb</li>
 						<li>S-VMX Titanium Client: 172.16.xx.96:80</li>
-						<li>Username: mitron, Password: mitron</li>
+						<li>^ Username: mitron, Password: mitron</li>
+						{/*<li>IndigoVision: select Confed 1 areas?</li>*/}
 					</ul>
 				</li>
 			</ul>

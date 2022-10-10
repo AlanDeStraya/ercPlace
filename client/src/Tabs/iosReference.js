@@ -11,7 +11,7 @@ const IosReference = () => {
     <table id='codes'>
       <tbody>
         <tr>
-          <td className='gd'><div className='tooltip'><a href='#zero-zero'>N/A</a><span className='tooltiptext'>00 N/A</span></div></td>
+          <td className='gd'><div className='tooltip'><a href='#zero-zero'>--</a><span className='tooltiptext'>00 N/A</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#one-zero'>10 ED</a><span className='tooltiptext'>10 One EVR recording faulty in multiple units</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#two-zero'>20 ED</a><span className='tooltiptext'>20 Rollback detection bypassed</span></div></td>
           <td className='el'><div className='tooltip'><a href='#three-zero'>30 EL</a><span className='tooltiptext'>30 Central Unit - Major Fault (Fire detection system)</span></div></td>
@@ -85,7 +85,7 @@ const IosReference = () => {
           <td className='el'><div className='tooltip'><a href='#five-six'>56 **</a><span className='tooltiptext'>56 Loss of the two NVR in one element(+)</span></div></td>
           <td className='el'><div className='tooltip'><a href='#six-six'>66 **</a><span className='tooltiptext'>66 Loss of internal displaying/impaired displaying in one car</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#seven-six'>76 ED</a><span className='tooltiptext'>76 Traction major fault level 4</span></div></td>
-          <td className='gd'><div className='tooltip'><a href='#eight-six'>N/A</a><span className='tooltiptext'>86 There is no IOS086</span></div></td>
+          <td className='gd'><div className='tooltip'><a href='#eight-six'>--</a><span className='tooltiptext'>86 There is no IOS086</span></div></td>
         </tr>
         <tr>
           <td className='gd'><div className='tooltip'><a href='#zero-seven'>07 ED</a><span className='tooltiptext'>07 At least one brake is under major fault</span></div></td>
@@ -96,7 +96,7 @@ const IosReference = () => {
           <td className='gd'><div className='tooltip'><a href='#five-seven'>57 --</a><span className='tooltiptext'>57 Loss of the two externam cameras on one side for one element</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#six-seven'>67 --</a><span className='tooltiptext'>67 Loss of front displaying</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#seven-seven'>77 --</a><span className='tooltiptext'>77 Traction major fault level 5</span></div></td>
-          <td className='gd'><div className='tooltip'><a href='#eight-seven'>N/A</a><span className='tooltiptext'>87 There is no IOS087</span></div></td>
+          <td className='gd'><div className='tooltip'><a href='#eight-seven'>--</a><span className='tooltiptext'>87 There is no IOS087</span></div></td>
         </tr>
         <tr>
           <td className='el'><div className='tooltip'><a href='#zero-eight'>08 EL</a><span className='tooltiptext'>08 Leveling system is not available or high leakage in pneumatic circuit</span></div></td>
@@ -107,7 +107,7 @@ const IosReference = () => {
           <td className='el'><div className='tooltip'><a href='#five-eight'>58 **</a><span className='tooltiptext'>58 Loss of external camera</span></div></td>
           <td className='wd'><div className='tooltip'><a href='#six-eight'>68 WD</a><span className='tooltiptext'>68 Incoherency with DRV relay or key switch</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#seven-eight'>78 ED</a><span className='tooltiptext'>78 Failure of at least one relay Q1(FAST)BRK - failed in working position</span></div></td>
-          <td className='gd'><div className='tooltip'><a href='#eight-eight'>N/A</a><span className='tooltiptext'>88 There is no IOS088</span></div></td>
+          <td className='gd'><div className='tooltip'><a href='#eight-eight'>--</a><span className='tooltiptext'>88 There is no IOS088</span></div></td>
         </tr>
         <tr>
           <td className='gd'><div className='tooltip'><a href='#zero-nine'>09 ED</a><span className='tooltiptext'>09 At least one trake brake untimely applied</span></div></td>
@@ -118,7 +118,7 @@ const IosReference = () => {
           <td className='gd'><div className='tooltip'><a href='#five-nine'>59 ED</a><span className='tooltiptext'>59 Loss of one NVR</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#six-nine'>69 ED</a><span className='tooltiptext'>69 Loss of lateral displaying</span></div></td>
           <td className='gd'><div className='tooltip'><a href='#seven-nine'>79 --</a><span className='tooltiptext'>79 ATC bypassed</span></div></td>
-          <td className='gd'><div className='tooltip'><a href='#eight-nine'>N/A</a><span className='tooltiptext'>89 There is no IOS089</span></div></td>
+          <td className='gd'><div className='tooltip'><a href='#eight-nine'>--</a><span className='tooltiptext'>89 There is no IOS089</span></div></td>
         </tr>
       </tbody>
     </table>
