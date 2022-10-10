@@ -16,12 +16,11 @@ let usersOnline = 0;
 
 io.on('connection', socket => {
 
-  // untested
-  socket.on('connect', () => {
-    usersOnline++;
-    console.log('A client connected, users online: ' + usersOnline);
-    io.emit('sNumUsersOnline', usersOnline);
-  });
+  // still unsure
+  usersOnline++;
+  console.log('A client connected, users online: ' + usersOnline);
+  io.emit('sNumUsersOnline', usersOnline);
+
 
   // works
   socket.on('disconnect', () => {
@@ -51,10 +50,13 @@ io.on('connection', socket => {
     console.log('auth req received');
     if(str === 'test') {
       io.emit('sAuthAlan', ok);
-      console.log('approved');
+      console.log('turned on');
     } else if(str === 'off') {
       io.emit('sAuthAlan', nope);
-      console.log('denied');
+      console.log('turned off');
+    } else {
+      io.emit('sAuthAlan', usersOnline);
+      console.log('invalid command');
     }
   });
 
