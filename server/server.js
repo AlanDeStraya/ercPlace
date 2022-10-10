@@ -44,6 +44,7 @@ io.on('connection', socket => {
       io.emit('sAuthAlan', ok);
     } else if(str === 'off') {
       io.emit('sAuthAlan', nope);
+    }
   });
 
 });
