@@ -1,0 +1,25 @@
+index
+	app
+		header
+		
+		?alert
+		
+		/sharepoint
+			weather
+			sidebar
+				fire
+				obstruction				
+			print popup
+			scada popup
+			updates popup
+			
+		/diversion
+			obstructionFinder
+				finder control
+				area select
+				details (which = selectable)
+			chat area
+			
+		/ios finder
+		
+		?footer

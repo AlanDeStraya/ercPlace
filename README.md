@@ -11,6 +11,9 @@ Adding sockets for live syncing, updates, and chat capability.
 - esc to close popups (on sharepoint only?)
 - radar map
 - comms card
+- in diversion app comms side announcement timer
+- cad section/option tree
+- diversion all staff broadcast script
 
 - EMS call questions
 - logs => prewrite comms emails?

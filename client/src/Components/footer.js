@@ -2,10 +2,6 @@ import React from 'react';
 
 const Footer = ({ setSiteUpdatesPopupActive }) => {
 
-	function openSiteUpdatesPopup() {
-		setSiteUpdatesPopupActive(true);
-	};
-
 	return (
 		<footer>
 			<div>
@@ -15,7 +11,7 @@ const Footer = ({ setSiteUpdatesPopupActive }) => {
 				<p>Updated 2022-09-18 <em>
 					<a id='updatesLink'
 						href='#top-link'
-						onClick={openSiteUpdatesPopup} >List of Updates</a>
+						onClick={() => setSiteUpdatesPopupActive(true)} >List of Updates</a>
 				</em></p>
 			</div>
 			<div>
