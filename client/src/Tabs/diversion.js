@@ -42,11 +42,17 @@ const Diversion = () => {
 	let userAlan = '';
 
 	socket.on('sAuthAlan', str => {
-		userAlan = str;
+		//nope/ok
+		console.log(str);
+		if(str === 'nope') {
+			setTestMode(false);
+		} else if(str === 'ok') {
+			setTestMode(true);
+		}
 	});
 
 //temp if/else
-	if(userAlan === 'ok') {
+	if(testMode) {
 	return (
 		<>
 			<button
@@ -73,9 +79,11 @@ const Diversion = () => {
 			<a href='https://ats-simulation.neocities.org/obstructionFinder.html'>Old Obstruction Finder</a>
 			<button
 				onClick={() => {
-					const pass = prompt('Enter password:');
-					socket.emit('cIsAlan', pass)} } >Testing mode</button>
 					// test / off
+					const pass = prompt('Enter password:');
+					socket.emit('cIsAlan', pass);
+					console.log(pass)} } >Testing mode</button>
+
 		</div>
 
 	);

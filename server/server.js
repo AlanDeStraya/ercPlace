@@ -44,10 +44,13 @@ io.on('connection', socket => {
   socket.on('cIsAlan', str => {
     const ok = 'ok'
     const nope = 'nope'
+    console.log('auth req received');
     if(str === 'test') {
       io.emit('sAuthAlan', ok);
+      console.log('approved');
     } else if(str === 'off') {
       io.emit('sAuthAlan', nope);
+      console.log('denied');
     }
   });
 
