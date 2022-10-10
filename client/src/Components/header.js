@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ darkness, toggleDarkness, openTab, setOpenTab }) => {
+const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOpen, setDiversionPageOpen }) => {
 
 	function chooseTab() {
 		if(openTab === 'SharepointPlus') {
@@ -33,26 +33,48 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab }) => {
 	function chooseNav() {
 		if(openTab === 'SharepointPlus') {
 			return (
-					<nav>
-						<ul>
-							<li><a href='#rules'>Rules</a></li>
-							<li><a href='#workInstructions'>Work Instructions</a></li>
-							<li><a href='#troubleshooting'>Troubleshooting</a></li>
-							<li><a href='#misc'>Misc</a></li>
-							<li><a href='#manuals'>Manuals</a></li>
-							<li><a href='#teams'>Teams Files</a></li>
-							<li><a href='#resources'>NERC</a></li>
-						</ul>
-					</nav>
+				<nav>
+					<ul>
+						<li><a href='#rules'>Rules</a></li>
+						<li><a href='#workInstructions'>Work Instructions</a></li>
+						<li><a href='#troubleshooting'>Troubleshooting</a></li>
+						<li><a href='#misc'>Misc</a></li>
+						<li><a href='#manuals'>Manuals</a></li>
+						<li><a href='#teams'>Teams Files</a></li>
+						<li><a href='#resources'>NERC</a></li>
+					</ul>
+				</nav>
+			);
+		} else if(openTab === 'Diversion') {
+			return (
+				<nav>
+					<ul>
+						<li>
+							<button
+								onClick={() => setDiversionPageOpen('diversion')} >Diversion App
+							</button>
+						</li>
+						<li>
+							<button
+								onClick={() => setDiversionPageOpen('finder')} >Finder Tool
+							</button>
+							</li>
+						<li>
+							<button
+								onClick={() => setDiversionPageOpen('logs')} >Logs
+							</button>
+						</li>
+					</ul>
+				</nav>
 			);
 		} else if(openTab === 'IosReference') {
 			return (
-					<nav>
-						<ul>
-							<li><a href='#index-link'>Index</a></li>
-							<li><a href='#detail-link'>Details</a></li>
-						</ul>
-					</nav>
+				<nav>
+					<ul>
+						<li><a href='#index-link'>Index</a></li>
+						<li><a href='#detail-link'>Details</a></li>
+					</ul>
+				</nav>
 			);
 		}
 	};

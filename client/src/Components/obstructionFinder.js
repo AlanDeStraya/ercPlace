@@ -17,8 +17,8 @@ const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
 	return (
 		<div id='obstruction-plan-finder'>
 
+// finder control component
 			<div id='obstruction-plan-control'>
-				<button onClick={()=>setDiversionActive(true)}>Begin Event</button>
 				<div id='selectNumOfTrains'>
 					<p>{numTrainsDeclared ? 'Declared' : 'Scheduled'} # of Trains: {numTrains}</p>
 					<button	onClick={declareTrains}>Declare Manually</button>
@@ -34,6 +34,7 @@ const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
 				<button>End Event</button>
 			</div>
 
+// finding area component
 			{showFindingArea && <div id='obstruction-finding-area'>
 				<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 				<div id='track-one-areas'>
@@ -149,6 +150,7 @@ const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
 				</div>
 			</div>}
 
+// details component
 			{showPlanDetails && <div id='graphic'></div>}
 			{showPlanDetails && <div id='details' className='bolded'></div>}
 			{showPlanDetails && <div id='papids' className='bolded'></div>}

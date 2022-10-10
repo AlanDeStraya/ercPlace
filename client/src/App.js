@@ -15,6 +15,7 @@ function App() {
   const [darkness, setDarkness] = useState();
   const [openTab, setOpenTab] = useState('SharepointPlus');
 	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
+	const [diversionPageOpen, setDiversionPageOpen] = useState('diversion'); //diversion/finder/logs
 
   useEffect(() => {
     toggleDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -39,15 +40,20 @@ function App() {
       <Header
         darkness={darkness}
         toggleDarkness={toggleDarkness}
+				
         openTab={openTab}
-        setOpenTab={setOpenTab} />
+        setOpenTab={setOpenTab}
+				
+				diversionPageOpen={diversionPageOpen}
+				setDiversionPageOpen={setDiversionPageOpen} />
 
       { openTab === 'SharepointPlus'
         ? <SharepointPlus
           siteUpdatesPopupActive={siteUpdatesPopupActive}
           setSiteUpdatesPopupActive={setSiteUpdatesPopupActive} />
         : openTab === 'Diversion'
-        ? <Diversion />
+        ? <Diversion
+						diversionPageOpen={diversionPageOpen} />
         : <IosReference /> }
 
       { openTab === 'SharepointPlus' && <Footer

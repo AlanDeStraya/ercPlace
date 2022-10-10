@@ -16,36 +16,25 @@ let usersOnline = 0;
 
 io.on('connection', socket => {
 
+	// io.emit to all
+	// socket.emit to this socket connection only
+
   // still unsure
   usersOnline++;
   console.log('A client connected, users online: ' + usersOnline);
   io.emit('sNumUsersOnline', usersOnline);
 
-
-  // works
   socket.on('disconnect', () => {
-    console.log('A client disconnected');
     usersOnline--;
+    console.log('A client disconnected, users online: ' + usersOnline);
+		io.emit('sNumUsersOnline', usersOnline);		
   });
 
-  // works
-  const testContent = 'testAckContent';
-	const socketTestContent = 'socketTestAckContent';
-  socket.on('cTestSend', (obj) => {
-    console.log(obj);
-    io.emit('sAckTest', testContent);
-		socket.emit('sAckTest', socketTestContent);
-  });
-
-  // works
   socket.on('cStartEvent', time => {
     console.log(time);
     io.emit('sStartEvent', time);
-    //socket.emit
-    //socket.broadcast.emit
   });
 
-  // works
   socket.on('cIsAlan', str => {
     const ok = 'ok'
     const nope = 'nope'
@@ -115,10 +104,10 @@ io.use(async (socket, next) => {
   }
 });
 
+  // in a listener
 io.on("connection", (socket) => {
   console.log(socket.user);
 
-  // in a listener
   socket.on("set username", (username) => {
     socket.username = username;
   });

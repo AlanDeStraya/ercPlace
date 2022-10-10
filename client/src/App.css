@@ -117,6 +117,17 @@ nav li a {
 nav li a:hover {
   background-color: rgb(80, 80, 80);
 }
+nav button {
+	display: inline-block;
+	margin: 6px 3px;
+	padding: 5px;
+	color: #CCC;
+	background-color: black;
+	border-radius: 5px;
+}
+nav button:hover {
+	background-color: rgb(80, 80, 80);
+}
 .dark-mode-button {
   font-size: 16px;
   padding: 3px;

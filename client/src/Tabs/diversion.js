@@ -7,7 +7,7 @@ import ObstructionFinder from '../Components/obstructionFinder.js';
 const socket = io();
 console.log(socket);
 
-const Diversion = () => {
+const Diversion = ({ diversionPageOpen }) => {
 
 	const [isConnected, setIsConnected] = useState(socket.connected);
 	const [diversionActive, setDiversionActive] = useState(false);
@@ -53,6 +53,8 @@ const Diversion = () => {
 
 //temp if/else
 	if(testMode) {
+///////////////
+		
 	return (
 		<>
 			<button
@@ -61,7 +63,9 @@ const Diversion = () => {
 					socket.emit('cStartEvent', eventStartTime)} } >START</button>
 			<ObstructionFinder
 				diversionActive={diversionActive}
-				setDiversionActive={setDiversionActive} />
+				setDiversionActive={setDiversionActive}
+				obstructionPlanNumber={obstructionPlanNumber}
+				setObstructionPlanNumber={setObstructionPlanNumber} />
 
 			<button onClick={() => socket.emit('cTestSend', {user: 'me', test: 'yes a test'})}>Test button</button>
 			<button
@@ -70,6 +74,13 @@ const Diversion = () => {
 					socket.emit('cIsAlan', pass)} } >Testing mode</button>
 		</>
 	);
+	
+	
+	
+	
+	
+	
+	
 } else {
 
 	return (

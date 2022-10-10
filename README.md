@@ -6,11 +6,14 @@ Refactoring front end to React.
 Adding sockets for live syncing, updates, and chat capability.
 
 ## To-Do:
+- reduce main page components
 - finder js
 - esc to close popups (on sharepoint only?)
 - radar map
 - comms card
 
+- EMS call questions
+- logs => prewrite comms emails?
 - auto select number of trains for obstruction plan finder based on date and time
 - swap ercplace h2 and ul L margins, set popup h3 back to h2
 - refactor IOS reference to React with single location for code description
