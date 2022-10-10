@@ -17,21 +17,22 @@ let usersOnline = 0;
 io.on('connection', socket => {
   usersOnline++;
   console.log('A client connected');
-  socket.emit('sNumUsersOnline', usersOnline);
+  io.emit('sNumUsersOnline', usersOnline);
 
   socket.on('disconnect', () => {
+    console.log('A client disconnected');
     usersOnline--;
   });
 
   const testContent = 'testAckContent';
   socket.on('cTestSend', (obj) => {
     console.log(obj);
-    socket.emit('sAckTest', testContent);
+    io.emit('sAckTest', testContent);
   });
 
   socket.on('cStartEvent', param => {
     const eventStartTime = Date.now();
-    socket.emit('sStartEvent', eventStartTime);
+    io.emit('sStartEvent', eventStartTime);
     //socket.emit
     //socket.broadcast.emit
   });
@@ -175,7 +176,13 @@ socket.use(([event, ...args], next) => {
 
 
 
-
+create unique id
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
 
 
 

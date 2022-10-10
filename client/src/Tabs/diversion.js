@@ -7,7 +7,7 @@ import ObstructionFinder from '../Components/obstructionFinder.js';
 const socket = io();
 console.log(socket);
 
-		/*
+
 const Diversion = () => {
 	return (
 
@@ -18,7 +18,7 @@ const Diversion = () => {
 
 	);
 };
-		*/
+		/*
 
 const Diversion = () => {
 
@@ -59,5 +59,7 @@ const Diversion = () => {
 		</>
 	);
 };
+
+*/
 
 export default Diversion;

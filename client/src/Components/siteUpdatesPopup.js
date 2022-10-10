@@ -4,7 +4,7 @@ const SiteUpdatesPopup = ({ closePopups }) => {
 	return (
 		<div id='updates' className='popup'>
 			<div className='popupx' id='updatesx' onClick={closePopups} >X</div>
-			<h3>Updates</h3>
+			<h3>Updates (Esc to close)</h3>
 			<ul>
 				<li>2022-10-07 - <strong>Migrated all Sharepoint++ functionality to ERC.place</strong> - (except for weather radar). ERC.Place is live.</li>
 				<br />

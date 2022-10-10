@@ -4,7 +4,7 @@ const PrintPopup = ({ closePopups }) => {
 	return (
 		<div id='print' className='popup'>
 			<div className='popupx' id='printx' onClick={closePopups}>X</div>
-			<h3>How to Print Maintenance Plan</h3>
+			<h3>How to Print Maintenance Plan (Esc to close)</h3>
 			<ul>
 				<li>Select columns from 'Day/Date' to 'Description' (inclusive). No need to include other columns.</li>
 				<li>Change font to 18</li>
