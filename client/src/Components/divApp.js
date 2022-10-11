@@ -1,17 +1,31 @@
 import React from 'react';
 import { useState } from 'react';
 
-const DivApp = ({socket}) => {
+import ObstructionFinder from './obstructionFinder.js';
+import DiversionControl from './diversionControl.js';
+import DiversionLive from './diversionLive.js';
 
-	socket.on('sStartEvent', time => {
-		console.log(time);
-	});
+
+const DivApp = ({ socket }) => {
+
+	const [diversionActive, setDiversionActive] = useState(false);
+	const [obstructionPlanNumber, setObstructionPlanNumber] = useState();
+
 
 	return (
-		<button
-				onClick={() => {
-					const eventStartTime = Date.now();
-					socket.emit('cStartEvent', eventStartTime)} } >START</button>
+		<>
+			<ObstructionFinder
+				obstructionPlanNumber={obstructionPlanNumber}
+				setObstructionPlanNumber={setObstructionPlanNumber} />
+			<DiversionControl
+				socket={socket} />
+			<DiversionLive
+				diversionActive={diversionActive}
+				setDiversionActive={setDiversionActive}
+				obstructionPlanNumber={obstructionPlanNumber}
+				setObstructionPlanNumber={setObstructionPlanNumber}
+				socket={socket} />
+		</>
 	);
 
 };

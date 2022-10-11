@@ -5,8 +5,8 @@ const Obstruction = () => {
 		<div id='obstructionPlans'>
 				<h4>Obstruction Plans</h4>
 				<ul>
-					<li><a href='https://ats-simulation.neocities.org/obstructionFinder.html' target='_blank'>Obstruction Plan Finder Tool</a></li>
-					<li><a href='http://erc.place/diversionChecklist.html' target='_blank'>Diversion Checklist</a></li>
+					<li><a href='https://erc.place/obstructionFinder.html' target='_blank'>Obstruction Plan Finder Tool</a></li>
+					<li><a href='https://erc.place/diversionChecklist.html' target='_blank'>Diversion Checklist</a></li>
 					<br />
 					<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/Forms/AllItems.aspx?FilterField1=Rail_x0020_Operations_x0020_Knowledge_x0020_Base_x0020_Topic&FilterValue1=Obstruction+Plans&FilterType1=Lookup&FilterDisplay1=Obstruction+Plans&viewid=25c6f50f-52ca-45a5-ace9-f0dfb3d0d26f' target='_blank' rel="noreferrer">Obstruction Plan Descriptions</a></li>
 					<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/Rail%20Single%20Track%20R1%20Scenario%202021%20(Transit%20Operation)%20individual.pdf?CT=1656885872752&OR=ItemsView' target='_blank' rel="noreferrer">Obstruction Plan Diagrams</a></li>

@@ -1,38 +1,36 @@
 index
 	app
 		header
-		
+
 		?alert
-		
+
 		/sharepoint
 			weather ?radar
 			sidebar
 				?fire
-				?obstruction				
+				?obstruction
 			print popup
 			scada popup
 			updates popup
-			
-		/diversion ##socket
-			/divApp $state(divActive, plan, timeElapsed, log#)
-				
-				obstructionFinder $state(areas, openBoxes, numTrains) &props(plan)
-					finder control &props(numTrains, plan)
-					?area select &props(areas, openBoxes, plan)
-					?details &props(openBoxes, plan)
-					
-				diversion control &props(timeElapsed)
-				diversion main &props(divActive, plan)
-					comms
-						chat
-					main
+
+		/Diversion ##socket $state(isConnected)
+			/DivApp $state(diversionActive, obstructionPlanNumber)
+
+				ObstructionFinder $state(numTrains, numTrainsDeclared, selectedAreas, openBoxes) &props(obstructionPlanNumber)
+					FinderControl &props(numTrains, numTrainsDeclared, obstructionPlanNumber, openBoxes)
+					?AreaSelector &props(obstructionPlanNumber, openBoxes, selectedAreas)
+					?PlanDetails &props(obstructionPlanNumber, openBoxes)
+
+				DiversionControl $state(eventStartTime) &props(socket)
+				DiversionLive &props(diversionActive, obstructionPlanNumber, socket)
+					CommsLive &props(socket)
+						Chat &props(socket)
+					MainlineLive
 						suggestions?
-					SCADA
-				
-				chat area
-				
+					ScadaLive
+
 			/log
-			
+
 		/ios finder
-		
+
 		?footer

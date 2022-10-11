@@ -7,26 +7,26 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOp
 			return (
 				<div id='tabs'>
 					<h1 className='open-tab'>ERC.Place</h1>
-					<h1 onClick={() => setOpenTab('Diversion')}>Diversion</h1>
+					<h1 onClick={() => setOpenTab('Diversion')}>DiversionLive</h1>
 					<h1 onClick={() => setOpenTab('IosReference')}>IOS Codes</h1>
 				</div>
-					);
+			);
 		} else if(openTab === 'Diversion') {
 			return (
 				<div id='tabs'>
 					<h1 onClick={() => setOpenTab('SharepointPlus')}>ERC.Place</h1>
-					<h1 className='open-tab'>Diversion</h1>
+					<h1 className='open-tab'>DiversionLive</h1>
 					<h1 onClick={() => setOpenTab('IosReference')}>IOS Codes</h1>
 				</div>
-					);
+			);
 		} else if(openTab === 'IosReference') {
 			return (
 				<div id='tabs'>
 					<h1 onClick={() => setOpenTab('SharepointPlus')}>ERC.Place</h1>
-					<h1 onClick={() => setOpenTab('Diversion')}>Diversion</h1>
+					<h1 onClick={() => setOpenTab('Diversion')}>DiversionLive</h1>
 					<h1 className='open-tab'>IOS Codes</h1>
 				</div>
-					);
+			);
 		}
 	};
 

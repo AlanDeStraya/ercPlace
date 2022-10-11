@@ -6,13 +6,12 @@ Refactoring front end to React.
 Adding sockets for live syncing, updates, and chat capability.
 
 ## To-Do:
-- reduce main page components
+
 - finder js
-- esc to close popups (on sharepoint only?)
-- radar map
 - comms card
 - in diversion app comms side announcement timer
 - cad section/option tree
+- sharepoint search bar
 - diversion all staff broadcast script
 - diversion > log > filterable; preformatted for email, cad; filter for written log
 
@@ -23,6 +22,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - refactor IOS reference to React with single location for code description
 - match table colors for dark mode, consider fire docs element colors
 - npm 6 high severity vulnerabilities
+- radar map
 
 ## Questions:
 - Which host, Heroku or Digital Ocean?
@@ -32,6 +32,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - sort imports consistently
 - remove test log statements
 - consistent formatting
+- alphabetize state and props?
 
 ---
 

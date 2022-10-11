@@ -6,11 +6,11 @@
   width: 1000px;
   margin: 20px auto;
 }
-#obstruction-finding-area, .buttons, h1 {
+#area-selector, .buttons, h1 {
   user-select: none;
 }
 
-#obstruction-plan-control {
+#finder-control {
   display: flex;
   width: 1000px;
   justify-content: space-around;
@@ -18,17 +18,17 @@
   margin: 8px auto;
   border: 1px solid var(--text);
 }
-#obstruction-plan-control p {
+#finder-control p {
   font-size: 18px;
   font-weight: bold;
 }
-#obstruction-plan-control div {
+#finder-control div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#obstruction-finding-area {
+#area-selector {
   margin: 5px auto;
   width: 1000px;
   padding: 20px 0;
