@@ -29,7 +29,7 @@ const Diversion = ({ diversionPageOpen }) => {
 		};
 	}, []);
 
-	// hopefully works now
+	// server side issue
 	socket.on('sNumUsersOnline', num => {
 		console.log(`${num} users are online`);
 	});
