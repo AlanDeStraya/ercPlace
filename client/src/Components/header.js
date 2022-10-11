@@ -56,12 +56,8 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOp
 						</li>
 						<li>
 							<button
-								onClick={() => setDiversionPageOpen('finder')} >Finder Tool
-							</button>
-							</li>
-						<li>
-							<button
-								onClick={() => setDiversionPageOpen('logs')} >Logs
+								onClick={() => setDiversionPageOpen('logs')} >
+								Logs
 							</button>
 						</li>
 					</ul>
@@ -89,8 +85,14 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOp
 				<div id='header-right'>
 					{ chooseNav() }
 					{ darkness === 'dark' ?
-					<button className='dark-mode-button sharepointButton' onClick={() => toggleDarkness('light')}><i class="fa-solid fa-sun"></i></button> :
-					<button className='dark-mode-button sharepointButton' onClick={() => toggleDarkness('dark')}><i class="fa-solid fa-moon"></i></button> }
+					<button className='dark-mode-button sharepointButton'
+						onClick={() => toggleDarkness('light')} >
+						<i class="fa-solid fa-sun"></i>
+					</button> :
+					<button className='dark-mode-button sharepointButton'
+						onClick={() => toggleDarkness('dark')} >
+						<i class="fa-solid fa-moon"></i>
+					</button> }
 				</div>
 
 			</header>

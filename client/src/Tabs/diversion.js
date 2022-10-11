@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
+import DivApp from '../Components/divApp.js';
 import ObstructionFinder from '../Components/obstructionFinder.js';
 
 const socket = io();
@@ -49,7 +50,8 @@ const Diversion = ({ diversionPageOpen }) => {
 ///////////////
 
 	return (
-		<>
+
+		<>	{/*
 			<button
 				onClick={() => {
 					const eventStartTime = Date.now();
@@ -63,6 +65,9 @@ const Diversion = ({ diversionPageOpen }) => {
 				onClick={() => {
 					const pass = prompt('Enter password:');
 					socket.emit('cIsAlan', pass)} } >Testing mode</button>
+
+					*/}
+					<DivApp />
 		</>
 	);
 

@@ -31,9 +31,9 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 	return (
 		<div id='sharepointPlus'>
 			<article>
-			
+
 				<Weather />
-				
+
 				<section>
 					<sub id='rules'></sub>
 					<h2>Rules</h2>
@@ -45,7 +45,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/sites/OCTSP/CCKBRail/Rail%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FOCTSP%2FCCKBRail%2FRail%20Documents%2FOLRT%5FProject%5FSOR%5FRev%2E79%2Epdf&parent=%2Fsites%2FOCTSP%2FCCKBRail%2FRail%20Documents' target='_blank' rel="noreferrer">Thales SOR (Safe Operating Requirements)</a></li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<sub id='workInstructions'></sub>
 					<h2>Work Instructions <a href='https://ottawacity.sharepoint.com/sites/RailOperationsDocumentControl/OCTOperationalDocumentation/Forms/AllItems.aspx?FilterField1=OCT%5Fx0020%5FOperational%5Fx0020%5FDocument%5Fx0020%5FType&FilterValue1=Work%20Instruction&FilterType1=Lookup&FilterDisplay1=Work%20Instruction&viewid=bc80df01%2D823b%2D4aba%2Da1f9%2D13e8c7ddfa17' target='_blank' rel="noreferrer">(All Here)</a></h2>
@@ -81,7 +81,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperationsDocumentControl/OCTOperationalDocumentation/Forms/AllItems.aspx?q=cctv&id=%2Fsites%2FRailOperationsDocumentControl%2FOCTOperationalDocumentation%2FEvacuations%20on%20the%20Confederation%20Line%2Epdf&parent=%2Fsites%2FRailOperationsDocumentControl%2FOCTOperationalDocumentation&parentview=7' target='_blank' rel="noreferrer">Evacuations</a></li>
 					</ul>
 				</section>
-				
+
 				<section>
 				<sub id='troubleshooting'></sub>
 					<h2>Troubleshooting <a href='https://ottawacity.sharepoint.com/sites/RailOperations/SitePages/ERC-Troubleshooting.aspx' target='_blank' rel="noreferrer"> (Binder Versions Here)</a></h2>
@@ -99,7 +99,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/WSM%20Reset%20Procedure%20(Rev%20TS1).pdf?CT=1658943103037&OR=ItemsView' target='_blank' rel="noreferrer">WSM Reset Procedure (RVM code 4 or 5)</a></li>
 					</ul>
 				</section>
-				
+
 				<section>
 				<sub id='misc'></sub>
 					<h2>Misc</h2>
@@ -122,7 +122,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/:x:/r/sites/RailOperations/_layouts/15/Doc.aspx?sourcedoc=%7BF80B68CC-54F5-42EF-9503-63672A477246%7D&file=RTM+and+Contractor+EROR+Training+Report.xlsx&action=default&mobileredirect=true' target='_blank' rel="noreferrer">List of Rules Qualified Personnel</a></li>
 					</ul>
 				</section>
-				
+
 				<section>
 				<sub id='manuals'></sub>
 					<h2>User Guides and Manuals</h2>
@@ -138,7 +138,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/Fire%20Panel%20Training%20-%20Part%201.pdf?CT=1656960387385&OR=ItemsView' target='_blank' rel="noreferrer">Fire Panel</a></li><li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/ONYX%20Workstation%20Training%20Notes.pdf?CT=1656960995079&OR=ItemsView' target='_blank' rel="noreferrer">ONYX Workstation Guide</a></li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<sub id='teams'></sub>
 					<h2>Teams Files</h2>
@@ -153,7 +153,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li>(These are normally found on Teams >  Transit Ops > ERCs. You can open/edit in browser.)</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<sub id='resources'></sub>
 					<h2>New ERC Resources</h2>
@@ -166,8 +166,10 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank' rel="noreferrer">Sharepoint</a></li>
 						<li><a href='https://www.chickpeasottawa.com/' target='_blank'>Mission Critical Support</a></li>
 
-						<li id='scadaAlarmsLink'><a href='#resources' onClick={setScadaPopupActive(true) }>Downloading SCADA Alarms (& secure key code)</a></li>
-						<li id='printLink'><a href='#resources' onClick={setPrintPopupActive(true)}>Print Maintenance Plan</a></li>
+						<li id='scadaAlarmsLink'><a href='#resources'
+							onClick={() => setScadaPopupActive(true)} >Downloading SCADA Alarms (& secure key code)</a></li>
+						<li id='printLink'><a href='#resources'
+							onClick={() => setPrintPopupActive(true)} >Print Maintenance Plan</a></li>
 
 						<li className='setUp'>To consider when setting up city PC:
 							<ul>
@@ -200,9 +202,9 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 							<li>Ctrl + L, Alt + Enter => duplicate tab (eg to make another CAD)</li>
 						</ul>
 				</section>
-				
+
 			</article>
-			
+
 			<Sidebar />
 
 			{printPopupActive && <PrintPopup closePopups={closePopups} />}
