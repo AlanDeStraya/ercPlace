@@ -7,7 +7,8 @@ import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
 
 const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
-	const [numTrains, setNumTrains] = useState(findScheduledTrains());
+	let initTrains = findScheduledTrains();
+	const [numTrains, setNumTrains] = useState(initTrains);
 	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
 	const [showFindingArea, setShowFindingArea] = useState(false);
 	const [showPlanDetails, setShowPlanDetails] = useState(true);
