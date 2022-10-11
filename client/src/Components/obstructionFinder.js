@@ -26,7 +26,7 @@ const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) 
 	return (
 		<div id='obstruction-plan-finder'>
 
-// finder control component
+{/* finder control component */}
 			<FinderControl
 				numTrains={numTrains}
 				setNumTrains={setNumTrains}
@@ -37,7 +37,7 @@ const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) 
 				openBoxes={openBoxes}
 				setOpenBoxes={setOpenBoxes} />
 
-// finding area component
+{/* finding area component */}
 			<AreaSelector
 				obstructionPlanNumber={obstructionPlanNumber}
 				setObstructionPlanNumber={setObstructionPlanNumber}
@@ -46,7 +46,7 @@ const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) 
 				selectedAreas={selectedAreas}
 				setSelectedAreas={setSelectedAreas} />
 
-// details component
+{/* details component */}
 			<PlanDetails
 				obstructionPlanNumber={obstructionPlanNumber}
 				setObstructionPlanNumber={setObstructionPlanNumber}

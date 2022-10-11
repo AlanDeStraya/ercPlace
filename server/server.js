@@ -6,11 +6,22 @@ const io = require('socket.io')(server)
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, '../client/build')));
-/*
+
+app.get('/obstructionFinder', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'obstructionFinder.html'));
+});
+
+app.get('/diversionChecklist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'diversionChecklist.html'));
+});
+
+app.get('/sim', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'sim.html'));
+});
+
 app.get('/*', (req, res) => {
 	res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
-*/
 
 let usersOnline = 0;
 
@@ -44,13 +55,13 @@ io.on('connection', socket => {
     const nope = 'nope'
     console.log('auth req received');
     if(str === 'test') {
-      io.emit('sAuthAlan', ok);
+      socket.emit('sAuthAlan', ok);
       console.log('turned on');
     } else if(str === 'off') {
-      io.emit('sAuthAlan', nope);
+      socket.emit('sAuthAlan', nope);
       console.log('turned off');
     } else {
-      io.emit('sAuthAlan', usersOnline);
+      socket.emit('sAuthAlan', usersOnline);
       console.log('invalid command');
     }
   });

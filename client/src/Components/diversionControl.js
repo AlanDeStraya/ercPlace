@@ -11,7 +11,7 @@ const DiversionControl = ({ socket }) => {
   });
 
   return (
-    <div id='startStop'>
+    <div id='diversion-control'>
       <button
 	  onClick={() => {
 					const eventStartTime = Date.now();

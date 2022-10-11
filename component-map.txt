@@ -1,6 +1,6 @@
 index
-	app
-		header
+	app ##socket $state(darkness, openTab, siteUpdatesPopupActive, diversionPageOpen, isConnected)
+		header &props(socket, darkness, openTab)
 
 		?alert
 
@@ -13,23 +13,22 @@ index
 			scada popup
 			updates popup
 
-		/Diversion ##socket $state(isConnected)
-			/DivApp $state(diversionActive, obstructionPlanNumber)
+		/Diversion $state(diversionActive, obstructionPlanNumber) &props(socket)
 
-				ObstructionFinder $state(numTrains, numTrainsDeclared, selectedAreas, openBoxes) &props(obstructionPlanNumber)
-					FinderControl &props(numTrains, numTrainsDeclared, obstructionPlanNumber, openBoxes)
-					?AreaSelector &props(obstructionPlanNumber, openBoxes, selectedAreas)
-					?PlanDetails &props(obstructionPlanNumber, openBoxes)
+			ObstructionFinder $state(numTrains, numTrainsDeclared, selectedAreas, openBoxes) &props(obstructionPlanNumber)
+				FinderControl &props(numTrains, numTrainsDeclared, obstructionPlanNumber, openBoxes)
+				?AreaSelector &props(obstructionPlanNumber, openBoxes, selectedAreas)
+				?PlanDetails &props(obstructionPlanNumber, openBoxes)
 
-				DiversionControl $state(eventStartTime) &props(socket)
-				DiversionLive &props(diversionActive, obstructionPlanNumber, socket)
-					CommsLive &props(socket)
-						Chat &props(socket)
-					MainlineLive
-						suggestions?
-					ScadaLive
+			DiversionControl $state(eventStartTime) &props(socket)
+			DiversionLive &props(diversionActive, obstructionPlanNumber, socket)
+				CommsLive &props(socket)
+					Chat &props(socket)
+				MainlineLive
+					suggestions?
+				ScadaLive
 
-			/log
+			?log
 
 		/ios finder
 

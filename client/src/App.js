@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-
+import io from 'socket.io-client';
 
 import './App.css';
 
@@ -11,11 +11,13 @@ import SharepointPlus from './Tabs/sharepointPlus.js';
 import Diversion from './Tabs/diversion.js';
 import IosReference from './Tabs/iosReference.js';
 
+const socket = io();
+
+
 function App() {
   const [darkness, setDarkness] = useState();
   const [openTab, setOpenTab] = useState('SharepointPlus');
-	const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
-	const [diversionPageOpen, setDiversionPageOpen] = useState('diversion'); //diversion/finder/logs
+  const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
 
   useEffect(() => {
     toggleDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -30,8 +32,50 @@ function App() {
     }
   };
 
-
   // weatherRadarFunction();
+
+
+
+
+
+  const [isConnected, setIsConnected] = useState(socket.connected);
+
+  const [testMode, setTestMode] = useState(false);
+
+  useEffect(() => {
+    socket.on('connect', () => {
+      setIsConnected(true);
+      console.log(`connected: ${isConnected}`);
+    });
+    socket.on('disconnect', () => {
+      setIsConnected(false);
+    });
+
+    return () => {
+      socket.off('connect');
+      socket.off('disconnect');
+    };
+  }, []);
+
+  socket.on('sNumUsersOnline', num => {
+    console.log(`${num} users are online`);
+  });
+
+  let userAlan = '';
+  socket.on('sAuthAlan', str => {
+    //nope/ok
+    console.log(str);
+    if(str === 'nope') {
+      setTestMode(false);
+    } else if(str === 'ok') {
+      setTestMode(true);
+    }
+  });
+
+
+
+
+
 
 
   return (
@@ -40,12 +84,11 @@ function App() {
       <Header
         darkness={darkness}
         toggleDarkness={toggleDarkness}
-				
+
         openTab={openTab}
         setOpenTab={setOpenTab}
-				
-				diversionPageOpen={diversionPageOpen}
-				setDiversionPageOpen={setDiversionPageOpen} />
+
+        socket={socket} />
 
       { openTab === 'SharepointPlus'
         ? <SharepointPlus
@@ -53,7 +96,9 @@ function App() {
           setSiteUpdatesPopupActive={setSiteUpdatesPopupActive} />
         : openTab === 'Diversion'
         ? <Diversion
-						diversionPageOpen={diversionPageOpen} />
+            socket={socket}
+            testMode={testMode}
+            setTestMode={setTestMode} />
         : <IosReference /> }
 
       { openTab === 'SharepointPlus' && <Footer

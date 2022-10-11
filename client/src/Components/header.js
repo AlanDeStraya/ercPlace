@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOpen, setDiversionPageOpen }) => {
+const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOpen, setDiversionPageOpen, socket }) => {
 
 	function chooseTab() {
 		if(openTab === 'SharepointPlus') {
