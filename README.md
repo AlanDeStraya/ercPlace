@@ -14,6 +14,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - sharepoint search bar
 - diversion all staff broadcast script
 - diversion > log > filterable; preformatted for email, cad; filter for written log
+- finder button Enter Plan Manually, move to finder control
 
 - EMS call questions
 - logs => prewrite comms emails?

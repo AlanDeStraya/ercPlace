@@ -10,8 +10,8 @@ const Chat = ({ socket }) => {
 			</div>
 			<form id='chat-form' autocomplete='off'>
 				<label id='chat-label' for='chat-input'>&nbsp;Message:&nbsp;</label>
-				<input class='input' id='chat-input' />
-				<input class='submit' type='submit' value=' send ' />
+				<input className='input' id='chat-input' />
+				<input id='submit' type='submit' value=' send ' />
 			</form>
 		</div>
 	);

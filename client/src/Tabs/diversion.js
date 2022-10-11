@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
+import './diversion.css';
+
 import ObstructionFinder from '../Components/obstructionFinder.js';
 import DiversionControl from '../Components/diversionControl.js';
 import DiversionLive from '../Components/diversionLive.js';

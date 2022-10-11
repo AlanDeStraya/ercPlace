@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-import './obstructionFinder.css';
-
 import FinderControl from './finderControl.js';
 import AreaSelector from './areaSelector.js';
 import PlanDetails from './planDetails.js';
