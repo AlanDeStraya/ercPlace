@@ -175,6 +175,9 @@ socket.use(([event, ...args], next) => {
 
   // to individual socketid (private message)
   io.to(socketId).emit(...);
+	
+	// possible // to originator
+	io.to(socket.id).emit(...);
 
   // to all clients on this node (when using multiple nodes)
   io.local.emit(...);

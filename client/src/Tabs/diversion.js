@@ -34,10 +34,6 @@ const Diversion = ({ diversionPageOpen }) => {
 		console.log(`${num} users are online`);
 	});
 
-	// works
-	socket.on('sAckTest', str => {
-		console.log(str);
-	});
 
 	let userAlan = '';
 
@@ -62,8 +58,6 @@ const Diversion = ({ diversionPageOpen }) => {
 					const eventStartTime = Date.now();
 					socket.emit('cStartEvent', eventStartTime)} } >START</button>
 			<ObstructionFinder
-				diversionActive={diversionActive}
-				setDiversionActive={setDiversionActive}
 				obstructionPlanNumber={obstructionPlanNumber}
 				setObstructionPlanNumber={setObstructionPlanNumber} />
 

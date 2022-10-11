@@ -14,6 +14,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - in diversion app comms side announcement timer
 - cad section/option tree
 - diversion all staff broadcast script
+- diversion > log > filterable; preformatted for email, cad; filter for written log
 
 - EMS call questions
 - logs => prewrite comms emails?

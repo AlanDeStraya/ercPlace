@@ -5,20 +5,33 @@ index
 		?alert
 		
 		/sharepoint
-			weather
+			weather ?radar
 			sidebar
-				fire
-				obstruction				
+				?fire
+				?obstruction				
 			print popup
 			scada popup
 			updates popup
 			
-		/diversion
-			obstructionFinder
-				finder control
-				area select
-				details (which = selectable)
-			chat area
+		/diversion ##socket
+			/divApp $state(divActive, plan, timeElapsed, log#)
+				
+				obstructionFinder $state(areas, openBoxes, numTrains) &props(plan)
+					finder control &props(numTrains, plan)
+					?area select &props(areas, openBoxes, plan)
+					?details &props(openBoxes, plan)
+					
+				diversion control &props(timeElapsed)
+				diversion main &props(divActive, plan)
+					comms
+						chat
+					main
+						suggestions?
+					SCADA
+				
+				chat area
+				
+			/log
 			
 		/ios finder
 		

@@ -1,14 +1,21 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './obstructionFinder.css';
 
+import findScheduledTrains from '../Utils/findScheduledTrains.js';
+
+
 const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
-	const [numTrains, setNumTrains] = useState(11);
+	const [numTrains, setNumTrains] = useState(findScheduledTrains());
 	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
 	const [showFindingArea, setShowFindingArea] = useState(false);
 	const [showPlanDetails, setShowPlanDetails] = useState(true);
 
+	useEffect(() => {
+		setNumTrains(findScheduledTrains());
+	});
+	
 	function declareTrains() {
 		setNumTrains(prompt('How many trains?'));
 		setNumTrainsDeclared(true);
