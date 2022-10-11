@@ -29,7 +29,7 @@ const Diversion = ({ diversionPageOpen }) => {
 		};
 	}, []);
 
-	// server side issue
+	// hopefully works now
 	socket.on('sNumUsersOnline', num => {
 		console.log(`${num} users are online`);
 	});
@@ -50,7 +50,7 @@ const Diversion = ({ diversionPageOpen }) => {
 //temp if/else
 	if(testMode) {
 ///////////////
-		
+
 	return (
 		<>
 			<button
@@ -68,13 +68,13 @@ const Diversion = ({ diversionPageOpen }) => {
 					socket.emit('cIsAlan', pass)} } >Testing mode</button>
 		</>
 	);
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 } else {
 
 	return (
