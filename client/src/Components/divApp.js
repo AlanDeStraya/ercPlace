@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import io from 'socket.io-client';
-const socket = io();
 
-const DivApp = () => {
+const DivApp = ({socket}) => {
+
+	socket.on('sStartEvent', time => {
+		console.log(time);
+	});
 
 	return (
 		<button

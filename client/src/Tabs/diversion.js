@@ -67,7 +67,7 @@ const Diversion = ({ diversionPageOpen }) => {
 					socket.emit('cIsAlan', pass)} } >Testing mode</button>
 
 					*/}
-					<DivApp />
+					<DivApp socket={socket} />
 		</>
 	);
 
