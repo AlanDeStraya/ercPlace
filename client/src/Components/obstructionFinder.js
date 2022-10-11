@@ -14,8 +14,8 @@ const ObstructionFinder = ({diversionActive, setDiversionActive}) => {
 
 	useEffect(() => {
 		setNumTrains(findScheduledTrains());
-	});
-	
+	}, []);
+
 	function declareTrains() {
 		setNumTrains(prompt('How many trains?'));
 		setNumTrainsDeclared(true);
