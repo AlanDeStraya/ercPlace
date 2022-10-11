@@ -34,6 +34,10 @@ const Diversion = ({ diversionPageOpen }) => {
 		console.log(`${num} users are online`);
 	});
 
+	// works
+	socket.on('sAckTest', str => {
+		console.log(str);
+	});
 
 	let userAlan = '';
 
@@ -49,8 +53,6 @@ const Diversion = ({ diversionPageOpen }) => {
 
 //temp if/else
 	if(testMode) {
-///////////////
-
 	return (
 		<>
 			<button
@@ -58,8 +60,8 @@ const Diversion = ({ diversionPageOpen }) => {
 					const eventStartTime = Date.now();
 					socket.emit('cStartEvent', eventStartTime)} } >START</button>
 			<ObstructionFinder
-				obstructionPlanNumber={obstructionPlanNumber}
-				setObstructionPlanNumber={setObstructionPlanNumber} />
+				diversionActive={diversionActive}
+				setDiversionActive={setDiversionActive} />
 
 			<button onClick={() => socket.emit('cTestSend', {user: 'me', test: 'yes a test'})}>Test button</button>
 			<button
@@ -68,13 +70,6 @@ const Diversion = ({ diversionPageOpen }) => {
 					socket.emit('cIsAlan', pass)} } >Testing mode</button>
 		</>
 	);
-
-
-
-
-
-
-
 } else {
 
 	return (
