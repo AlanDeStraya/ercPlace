@@ -28,6 +28,11 @@ Adding sockets for live syncing, updates, and chat capability.
 - Which host, Heroku or Digital Ocean?
 - Where to install modules/dependencies?
 
+## Final cleanup:
+- sort imports consistently
+- remove test log statements
+- consistent formatting
+
 ---
 
 ## ERC Place Diversion App

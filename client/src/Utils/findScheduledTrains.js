@@ -1,10 +1,10 @@
-export function findScheduledTrains() {
+function findScheduledTrains() {
 	const now = new Date();
 	const day = now.getDay();
 	const hour = now.getHours();
-	
+
 	//if 13 train schedule
-	
+
 	if(day === 0) {
 		//sun
 		if(hour < 3) {
@@ -69,3 +69,5 @@ export function findScheduledTrains() {
 		}
 	}
 };
+
+export default findScheduledTrains;

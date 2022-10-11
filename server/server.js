@@ -27,12 +27,16 @@ io.on('connection', socket => {
   socket.on('disconnect', () => {
     usersOnline--;
     console.log('A client disconnected, users online: ' + usersOnline);
-		io.emit('sNumUsersOnline', usersOnline);		
+		io.emit('sNumUsersOnline', usersOnline);
   });
 
   socket.on('cStartEvent', time => {
     console.log(time);
     io.emit('sStartEvent', time);
+  });
+
+  socket.on('ack', () => {
+    console.log('ackd');
   });
 
   socket.on('cIsAlan', str => {
@@ -175,7 +179,7 @@ socket.use(([event, ...args], next) => {
 
   // to individual socketid (private message)
   io.to(socketId).emit(...);
-	
+
 	// possible // to originator
 	io.to(socket.id).emit(...);
 

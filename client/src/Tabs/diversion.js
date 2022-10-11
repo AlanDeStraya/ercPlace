@@ -2,10 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-import ObstructionFinder from '../Components/obstructionFinder.js';
+import DivApp from '../Components/divApp.js';
 
 const socket = io();
-console.log(socket);
 
 const Diversion = ({ diversionPageOpen }) => {
 
@@ -29,18 +28,11 @@ const Diversion = ({ diversionPageOpen }) => {
 		};
 	}, []);
 
-	// hopefully works now
 	socket.on('sNumUsersOnline', num => {
 		console.log(`${num} users are online`);
 	});
 
-	// works
-	socket.on('sAckTest', str => {
-		console.log(str);
-	});
-
 	let userAlan = '';
-
 	socket.on('sAuthAlan', str => {
 		//nope/ok
 		console.log(str);
@@ -51,25 +43,23 @@ const Diversion = ({ diversionPageOpen }) => {
 		}
 	});
 
+
 //temp if/else
 	if(testMode) {
-	return (
-		<>
-			<button
-				onClick={() => {
-					const eventStartTime = Date.now();
-					socket.emit('cStartEvent', eventStartTime)} } >START</button>
-			<ObstructionFinder
-				diversionActive={diversionActive}
-				setDiversionActive={setDiversionActive} />
+///////////////
 
-			<button onClick={() => socket.emit('cTestSend', {user: 'me', test: 'yes a test'})}>Test button</button>
-			<button
-				onClick={() => {
-					const pass = prompt('Enter password:');
-					socket.emit('cIsAlan', pass)} } >Testing mode</button>
-		</>
+	return (
+		<DivApp
+			obstructionPlanNumber={obstructionPlanNumber}
+			setObstructionPlanNumber={setObstructionPlanNumber} />
 	);
+
+
+
+
+
+
+
 } else {
 
 	return (
