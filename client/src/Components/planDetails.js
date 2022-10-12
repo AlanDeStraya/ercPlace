@@ -2,6 +2,7 @@ import React from 'react';
 
 const PlanDetails = ({ obstructionPlanNumber, setObstructionPlanNumber, openBoxes, setOpenBoxes }) => {
 
+  console.log(`openboxes.tables = ${openBoxes.tables}`);
 	if(openBoxes.tables) {
     return (
       <div id='plan-details'>

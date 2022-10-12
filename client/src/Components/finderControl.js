@@ -40,13 +40,16 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					{!openBoxes.details && <button
             onClick={() => {
               setOpenBoxes(prevState => {
+                console.log(`prevState = ${prevState}`);
                 let obj = Object.assign({}, prevState);
                 obj.tables = true;
+                console.log(`obj=${obj}`);
                 return { obj };
               })
             }}>Show Details</button>}
 					{openBoxes.details && <button
             onClick={() => {
+              console.log('showing details?');
               setOpenBoxes(prevState => {
                 let obj = Object.assign({}, prevState);
                 obj.tables = false;
