@@ -11,8 +11,7 @@ import Log from '../Components/log.js';
 
 const Diversion = ({ testMode, setTestMode, socket }) => {
 
-	const [diversionActive, setDiversionActive] = useState(false);
-	const [obstructionPlanNumber, setObstructionPlanNumber] = useState();
+	const [diversionState, setDiversionState] = useState({active: false, planNum: '', issueType: '', location: ''});
 
 //temp if/else
 	if(testMode) {
@@ -24,18 +23,16 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 		
 			<div id='diversion-top'>
 				<ObstructionFinder
-					obstructionPlanNumber={obstructionPlanNumber}
-					setObstructionPlanNumber={setObstructionPlanNumber}
+				diversionState={diversionState}
+				setDiversionState={setDiversionState}
 					socket={socket} />
 				<DiversionControl
 					socket={socket} />
 			</div>
 			
 			<DiversionLive
-				diversionActive={diversionActive}
-				setDiversionActive={setDiversionActive}
-				obstructionPlanNumber={obstructionPlanNumber}
-				setObstructionPlanNumber={setObstructionPlanNumber}
+				diversionState={diversionState}
+				setDiversionState={setDiversionState}
 				socket={socket} />
 			<button
 				onClick={() => {

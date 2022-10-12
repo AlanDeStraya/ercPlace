@@ -67,6 +67,7 @@ html, body, #diversion {
   justify-content: space-around;
   align-items: center;
 	padding: 8px;
+  position: relative;
 }
 #finder-tools p {
   font-size: 18px;

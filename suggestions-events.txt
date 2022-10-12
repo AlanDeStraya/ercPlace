@@ -1,0 +1,37 @@
+COMMS
+
+call tocc supt
+advise cs/cc
+announcements
+call safety duty
+call escalation contact
+enhanced email
+
+
+
+MLC
+
+event start
+event end
+system hold on
+system hold off
+diversion implemented
+diversion lifted
+divert one train
+IGA issued
+IGA cancelled
+TOP issued
+TOP cancelled
+work instruction/procedure start**
+
+
+SCADA
+
+call RTM
+tech ETA
+tech arrival
+call SCU
+SCU arrival
+call EMS
+EMS arrival
+troubleshooting start**

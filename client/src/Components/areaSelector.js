@@ -1,8 +1,9 @@
 import React from 'react';
 
-const AreaSelector = () => {
+const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
-	return (
+	if(openBoxes.areas) { 
+    return (
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 			<div id='track-one-areas'>
@@ -111,13 +112,13 @@ const AreaSelector = () => {
 				<button className='area' id='area-fourteen-two'></button>
 			</div>
 			<div id='bottom-buttons'>
-				<button id='manual'>Enter Plan Manually</button>
+				<button id='enter-plan-manually'>Enter Plan Manually</button>
 				<button id='tunnel-one'>Downtown Tunnel Closed</button>
 				<button id='tunnel-two'>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
-				<button id='clear'>Clear all</button>
+				<button id='clear-all-areas'>Clear all</button>
 			</div>
 		</div>
-	);
+	)}
 
 };
 

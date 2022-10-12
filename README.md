@@ -16,6 +16,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - diversion > log > filterable; preformatted for email, cad; filter for written log
 - finder button Enter Plan Manually, move to finder control
 - diversion dark mode
+- comms todo enhanced email mailto: ??
 
 - EMS call questions
 - logs => prewrite comms emails?
@@ -31,6 +32,7 @@ Adding sockets for live syncing, updates, and chat capability.
 - Where to install modules/dependencies?
 
 ## Final cleanup:
+- remove unused props
 - sort imports consistently
 - remove test log statements
 - consistent formatting

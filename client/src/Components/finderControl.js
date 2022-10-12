@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrainsDeclared, obstructionPlanNumber, setObstructionPlanNumber, openBoxes, setOpenBoxes }) => {
+const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrainsDeclared, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
 	function declareTrains() {
 		setNumTrains(prompt('How many trains?'));
@@ -14,6 +14,8 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					<p>{numTrainsDeclared ? 'Declared' : 'Scheduled'} # of Trains: {numTrains}</p>
 					<button	onClick={declareTrains}>Change</button>
 				</div>
+
+{/* convert to invert buttons per mini buttons below */}
 				<div id='selectAreas'>
 					{!openBoxes.areas && <button 
 						onClick={() => {
@@ -23,12 +25,72 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 								return { obj };
 							})
 						}}>Select Areas</button>}
-					{openBoxes.areas && <button onClick={() => console.log('removethis')}>Confirm Areas</button>}
+					{openBoxes.areas && <button
+            onClick={() =>  {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.areas);
+                obj.areas = false;
+                return { obj };
+              })
+            }}>Confirm Areas</button>}
 				</div>
+
+
 				<div id='selectVisibility'>
-					{!openBoxes.details && <button onClick={() => console.log('removethis')}>Show Details</button>}
-					{openBoxes.details && <button onClick={() => console.log('removethis')}>Hide Details</button>}
+					{!openBoxes.details && <button
+            onClick={() => {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.tables);
+                obj.tables = true;
+                return { obj };
+              })
+            }}>Show Details</button>}
+					{openBoxes.details && <button
+            onClick={() => {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.tables);
+                obj.tables = false;
+                return { obj };
+              })
+            }}>Hide Details</button>}
 				</div>
+        
+
+        <div id='select-detail-section'>
+          <button className='mini-button'
+            onClick={() => {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.pic);
+                obj.pic = !prevState.pic;
+                return { obj }
+              })
+            }}>Graphic</button>
+          <button className='mini-button'
+            onClick={() => {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.plan);
+                obj.plan = !prevState.plan;
+                return { obj }
+              })
+            }}>Plan Details</button>
+          <button className='mini-button'
+            onClick={() => {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.comm);
+                obj.comm = !prevState.comm;
+                return { obj }
+              })
+            }}>PA/PIDS</button>
+          <button className='mini-button'
+            onClick={() => {
+              setOpenBoxes(prevState => {
+                let obj = Object.assign({}, prevState.tweet);
+                obj.tweet = !prevState.tweet;
+                return { obj }
+              })
+            }}>Twitter/SMS</button>
+        </div>
+
 			</div>
 			<p id='statement'></p>
 		</div>

@@ -8,13 +8,13 @@ import PlanDetails from './planDetails.js';
 import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
 
-const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) => {
+const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 
 	console.log('rendering finder');
 	const [numTrains, setNumTrains] = useState();
 	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
 	const [selectedAreas, setSelectedAreas] = useState([]);
-	const [openBoxes, setOpenBoxes] = useState({areas: false, details: false, pic: false, plan: false, papids: false, tweet: false});
+	const [openBoxes, setOpenBoxes] = useState({areas: false, tables: false, pic: false, plan: false, comm: false, tweet: false});
 
 	useEffect(() => {
 		numTrainsDeclared === false && setNumTrains(findScheduledTrains());
@@ -30,15 +30,15 @@ const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) 
 				setNumTrains={setNumTrains}
 				numTrainsDeclared={numTrainsDeclared}
 				setNumTrainsDeclared={setNumTrainsDeclared}
-				obstructionPlanNumber={obstructionPlanNumber}
-				setObstructionPlanNumber={setObstructionPlanNumber}
+				diversionState={diversionState}
+				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}
 				setOpenBoxes={setOpenBoxes} />
 
 {/* finding area component */}
 			<AreaSelector
-				obstructionPlanNumber={obstructionPlanNumber}
-				setObstructionPlanNumber={setObstructionPlanNumber}
+				diversionState={diversionState}
+				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}
 				setOpenBoxes={setOpenBoxes}
 				selectedAreas={selectedAreas}
@@ -46,8 +46,8 @@ const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) 
 
 {/* details component */}
 			<PlanDetails
-				obstructionPlanNumber={obstructionPlanNumber}
-				setObstructionPlanNumber={setObstructionPlanNumber}
+				diversionState={diversionState}
+				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}
 				setOpenBoxes={setOpenBoxes} />
 

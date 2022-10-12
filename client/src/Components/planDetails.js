@@ -2,14 +2,16 @@ import React from 'react';
 
 const PlanDetails = ({ obstructionPlanNumber, setObstructionPlanNumber, openBoxes, setOpenBoxes }) => {
 
-	return (
-		<div id='plan-details'>
-			<div id='graphic'></div>
-			<div id='details' className='bolded'></div>
-			<div id='papids' className='bolded'></div>
-			<div id='cs'></div>
-		</div>
-	);
+	if(openBoxes.tables) {
+    return (
+      <div id='plan-details'>
+        {openBoxes.pic && <div id='graphic'></div>}
+        {openBoxes.plan && <div id='details' className='bolded'></div>}
+        {openBoxes.comm && <div id='papids' className='bolded'></div>}
+        {openBoxes.tweet && <div id='cs'></div>}
+      </div>
+	  )
+  }
 
 };
 
