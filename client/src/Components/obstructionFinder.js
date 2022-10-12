@@ -14,7 +14,7 @@ const ObstructionFinder = ({ obstructionPlanNumber, setObstructionPlanNumber }) 
 	const [numTrains, setNumTrains] = useState();
 	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
 	const [selectedAreas, setSelectedAreas] = useState([]);
-	const [openBoxes, setOpenBoxes] = useState({});
+	const [openBoxes, setOpenBoxes] = useState({areas: false, details: false, pic: false, plan: false, papids: false, tweet: false});
 
 	useEffect(() => {
 		numTrainsDeclared === false && setNumTrains(findScheduledTrains());

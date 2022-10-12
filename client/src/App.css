@@ -258,25 +258,6 @@ h3 {
   align-items: center;
   justify-content: space-around;
 }
-.search {
-  animation: highlight 3s, remind 300ms cubic-bezier(0.5,0,0.5,1) 2s 5;
-}
-@keyframes highlight {
-  0% {
-    box-shadow: 0 0 300px 300px var(--text);
-  }
-  100% {
-    box-shadow: none;
-  }
-}
-@keyframes remind {
-  0% {
-    background-color: var(--link);
-  }
-  100% {
-    background-color: var(--transparent);
-  }
-}
 #headways th, td {
   text-align: center;
   width: 80px;

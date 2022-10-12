@@ -76,9 +76,6 @@ html, body, #diversion {
   display: flex;
   align-items: center;
 }
-#finder-tools div:nth-of-type(1) {
-	flex-direction: column;
-}
 #finder-tools button {
 	padding: 5px;
 	border-radius: 5px;
