@@ -20,7 +20,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					{!openBoxes.areas && <button 
 						onClick={() => {
 							setOpenBoxes(prevState => {
-								let obj = Object.assign({}, prevState.areas); 
+								let obj = Object.assign({}, prevState); 
 								obj.areas = true;
 								return { obj };
 							})
@@ -28,7 +28,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					{openBoxes.areas && <button
             onClick={() =>  {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.areas);
+                let obj = Object.assign({}, prevState);
                 obj.areas = false;
                 return { obj };
               })
@@ -40,7 +40,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					{!openBoxes.details && <button
             onClick={() => {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.tables);
+                let obj = Object.assign({}, prevState);
                 obj.tables = true;
                 return { obj };
               })
@@ -48,7 +48,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					{openBoxes.details && <button
             onClick={() => {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.tables);
+                let obj = Object.assign({}, prevState);
                 obj.tables = false;
                 return { obj };
               })
@@ -60,23 +60,23 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
           <button className='mini-button'
             onClick={() => {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.pic);
-                obj.pic = !prevState.pic;
+                let obj = Object.assign({}, prevState);
+                obj.pic = !obj.pic;
                 return { obj }
               })
             }}>Graphic</button>
           <button className='mini-button'
             onClick={() => {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.plan);
-                obj.plan = !prevState.plan;
+                let obj = Object.assign({}, prevState);
+                obj.plan = !obj.plan;
                 return { obj }
               })
             }}>Plan Details</button>
           <button className='mini-button'
             onClick={() => {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.comm);
+                let obj = Object.assign({}, prevState);
                 obj.comm = !prevState.comm;
                 return { obj }
               })
@@ -84,7 +84,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
           <button className='mini-button'
             onClick={() => {
               setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState.tweet);
+                let obj = Object.assign({}, prevState);
                 obj.tweet = !prevState.tweet;
                 return { obj }
               })
