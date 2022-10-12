@@ -22,7 +22,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 							setOpenBoxes(openBoxes => {
 								let obj = Object.assign({}, openBoxes); 
 								obj.areas = true;
-								return { obj };
+								return obj;
 							})
 						}}>Select Areas</button>}
 					{openBoxes.areas && <button
@@ -30,7 +30,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.areas = false;
-                return { obj };
+                return obj;
               })
             }}>Confirm Areas</button>}
 				</div>
@@ -44,7 +44,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 let obj = Object.assign({}, openBoxes);
                 obj.tables = true;
                 console.log(`obj=${obj}`);
-                return { obj };
+                return obj;
               })
             }}>Show Details</button>}
 					{openBoxes.details && <button
@@ -53,7 +53,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.tables = false;
-                return { obj };
+                return obj;
               })
             }}>Hide Details</button>}
 				</div>
@@ -65,7 +65,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.pic = !obj.pic;
-                return { obj }
+                return obj;
               })
             }}>Graphic</button>
           <button className='mini-button'
@@ -73,7 +73,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.plan = !obj.plan;
-                return { obj }
+                return obj;
               })
             }}>Plan Details</button>
           <button className='mini-button'
@@ -81,7 +81,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.comm = !openBoxes.comm;
-                return { obj }
+                return obj;
               })
             }}>PA/PIDS</button>
           <button className='mini-button'
@@ -89,7 +89,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.tweet = !openBoxes.tweet;
-                return { obj }
+                return obj;
               })
             }}>Twitter/SMS</button>
         </div>
