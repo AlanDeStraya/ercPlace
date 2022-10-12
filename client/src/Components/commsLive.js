@@ -15,7 +15,7 @@ const CommsLive = ({ socket }) => {
 				<Chat
 					socket={socket} />
 			</div>
-			
+		</div>
 		
 	);
 
