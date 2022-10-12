@@ -37,7 +37,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 
 
 				<div id='selectVisibility'>
-					{!openBoxes.details && <button
+					{!openBoxes.tables && <button
             onClick={() => {
               setOpenBoxes(openBoxes => {
                 console.log(`prevState = ${JSON.stringify(openBoxes)}`);
@@ -47,7 +47,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 return obj;
               })
             }}>Show Details</button>}
-					{openBoxes.details && <button
+					{openBoxes.tables && <button
             onClick={() => {
               console.log('showing details?');
               setOpenBoxes(openBoxes => {
