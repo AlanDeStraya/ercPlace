@@ -19,16 +19,16 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 				<div id='selectAreas'>
 					{!openBoxes.areas && <button 
 						onClick={() => {
-							setOpenBoxes(prevState => {
-								let obj = Object.assign({}, prevState); 
+							setOpenBoxes(openBoxes => {
+								let obj = Object.assign({}, openBoxes); 
 								obj.areas = true;
 								return { obj };
 							})
 						}}>Select Areas</button>}
 					{openBoxes.areas && <button
             onClick={() =>  {
-              setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState);
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
                 obj.areas = false;
                 return { obj };
               })
@@ -39,9 +39,9 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 				<div id='selectVisibility'>
 					{!openBoxes.details && <button
             onClick={() => {
-              setOpenBoxes(prevState => {
-                console.log(`prevState = ${prevState}`);
-                let obj = Object.assign({}, prevState);
+              setOpenBoxes(openBoxes => {
+                console.log(`prevState = ${openBoxes}`);
+                let obj = Object.assign({}, openBoxes);
                 obj.tables = true;
                 console.log(`obj=${obj}`);
                 return { obj };
@@ -50,8 +50,8 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					{openBoxes.details && <button
             onClick={() => {
               console.log('showing details?');
-              setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState);
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
                 obj.tables = false;
                 return { obj };
               })
@@ -62,33 +62,33 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
         <div id='select-detail-section'>
           <button className='mini-button'
             onClick={() => {
-              setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState);
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
                 obj.pic = !obj.pic;
                 return { obj }
               })
             }}>Graphic</button>
           <button className='mini-button'
             onClick={() => {
-              setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState);
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
                 obj.plan = !obj.plan;
                 return { obj }
               })
             }}>Plan Details</button>
           <button className='mini-button'
             onClick={() => {
-              setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState);
-                obj.comm = !prevState.comm;
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
+                obj.comm = !openBoxes.comm;
                 return { obj }
               })
             }}>PA/PIDS</button>
           <button className='mini-button'
             onClick={() => {
-              setOpenBoxes(prevState => {
-                let obj = Object.assign({}, prevState);
-                obj.tweet = !prevState.tweet;
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
+                obj.tweet = !openBoxes.tweet;
                 return { obj }
               })
             }}>Twitter/SMS</button>
