@@ -9,18 +9,21 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 
 	return (
 		<div id='finder-control'>
-			<div id='selectNumOfTrains'>
-				<p>{numTrainsDeclared ? 'Declared' : 'Scheduled'} # of Trains: {numTrains}</p>
-				<button	onClick={declareTrains}>Declare Manually</button>
+			<div id='finder-tools'>
+				<div id='selectNumOfTrains'>
+					<p>{numTrainsDeclared ? 'Declared' : 'Scheduled'} # of Trains: {numTrains}</p>
+					<button	onClick={declareTrains}>Declare Manually</button>
+				</div>
+				<div id='selectAreas'>
+					<button onClick={() => console.log('removethis')}>Select Areas</button>
+					<button onClick={() => console.log('removethis')}>Confirm Areas</button>
+				</div>
+				<div id='selectVisibility'>
+					<button onClick={() => console.log('removethis')}>Show Details</button>
+					<button onClick={() => console.log('removethis')}>Hide Details</button>
+				</div>
 			</div>
-			<div id='selectAreas'>
-				<button onClick={() => console.log('removethis')}>Select Areas</button>
-				<button onClick={() => console.log('removethis')}>Confirm Areas</button>
-			</div>
-			<div id='selectVisibility'>
-				<button onClick={() => console.log('removethis')}>Show Details</button>
-				<button onClick={() => console.log('removethis')}>Hide Details</button>
-			</div>
+			<p id='statement'></p>
 		</div>
 	);
 

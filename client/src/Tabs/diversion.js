@@ -20,13 +20,17 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 
 	return (
 
-		<>
-			<ObstructionFinder
-				obstructionPlanNumber={obstructionPlanNumber}
-				setObstructionPlanNumber={setObstructionPlanNumber}
-				socket={socket} />
-			<DiversionControl
-				socket={socket} />
+		<div id='diversion'>
+		
+			<div id='diversion-top'>
+				<ObstructionFinder
+					obstructionPlanNumber={obstructionPlanNumber}
+					setObstructionPlanNumber={setObstructionPlanNumber}
+					socket={socket} />
+				<DiversionControl
+					socket={socket} />
+			</div>
+			
 			<DiversionLive
 				diversionActive={diversionActive}
 				setDiversionActive={setDiversionActive}
@@ -39,7 +43,8 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 				const pass = prompt('Enter password:');
 				socket.emit('cIsAlan', pass);
 				console.log(pass)} } >Testing mode</button>
-		</>
+				
+		</div>
 	);
 
 

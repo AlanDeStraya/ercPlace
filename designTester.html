@@ -7,179 +7,292 @@
   <title>ti</title>
 </head>
 <body>
+<div id='diversion'>
+	<div id='diversion-top'>
+		
+		<div id='obstruction-plan-finder'>
+			<div id='finder-control'>
+				<div id='finder-tools'>
+					<div id='selectNumOfTrains'>
+						<p> # of Trains: </p>
+						<button>Declare Manually</button>
+					</div>
+					<div id='selectAreas'>
+						<button id='openarea'>Select Areas</button>
+						<button id='closearea'>Confirm Areas</button>
+					</div>
+					<div id='selectVisibility'>
+						<button id='opendeets'>Show Details</button>
+						<button id='closedeets'>Hide Details</button>
+					</div>
+				</div>
+				<p id='statement'>[Some kind of] issue at [location] [with Train 23/34]</p>
+			</div>
 
-  <div id='obstruction-plan-finder'>
-		<div id='finder-control'>
-			<div id='selectNumOfTrains'>
-				<p> # of Trains: </p>
-				<button>Declare Manually</button>
+			<div id='area-selector'>
+				<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
+				<div id='track-one-areas'>
+					<button class='area' id='area-one-one'></button>
+					<button class='area' id='area-two-one'></button>
+					<button class='area' id='area-three-one'></button>
+					<button class='area' id='area-four-one'></button>
+					<button class='area' id='area-five-one'></button>
+					<button class='area' id='area-six-one'></button>
+					<button class='area' id='area-seven-one'></button>
+					<button class='area' id='area-eight-one'></button>
+					<button class='area' id='area-nine-one'></button>
+					<button class='area' id='area-ten-one'></button>
+					<button class='area' id='area-eleven-one'></button>
+					<button class='area' id='area-twelve-one'></button>
+					<button class='area' id='area-thirteen-one'></button>
+					<button class='area' id='area-fourteen-one'></button>
+				</div>
+				<div class='labels'>
+					<p>TUN-W</p>
+					<p>BAY-W</p>
+					<p>PIM-W</p>
+					<p>LYO-W</p>
+					<p>PAR-W</p>
+					<p>RID-W</p>
+					<p>UOT-W</p>
+					<p>LEE-W</p>
+					<p>HUR-W</p>
+					<p>TRE-W</p>
+					<p class='label-extra-one'>STL-W</p>
+					<p>CYR-W</p>
+					<p class='label-extra-two'>BLA-W</p>
+				</div>
+				<div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station cplat1'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station'></div>
+					<div class='t1s station stl'></div>
+					<div class='t1s station cplat1'></div>
+					<div class='t1s station cplat1 bla'></div>
+				</div>
+
+				<div id='track1'></div>
+				<div id='xovers'>
+					<div class='xover' id='tunx'><p>X</p></div>
+					<div class='xover' id='lyox'><p>X</p></div>
+					<div class='xover' id='uotx'><p>X</p></div>
+					<div class='xover' id='hurx'><p>/ \</p></div>
+					<div class='xover' id='trex'><p>/ \</p></div>
+					<div class='xover' id='stlx'><p>/ \</p></div>
+					<div class='xover' id='blax'><p>\ /</p></div>
+				</div>
+				<div id='track2'></div>
+
+				<div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station cplat2'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station'></div>
+					<div class='t2s station stl'></div>
+					<div class='t2s station cplat2'></div>
+					<div class='t2s station cplat2 bla'></div>
+				</div>
+				<div class='labels'>
+					<p>TUN-E</p>
+					<p>BAY-E</p>
+					<p>PIM-E</p>
+					<p>LYO-E</p>
+					<p>PAR-E</p>
+					<p>RID-E</p>
+					<p>UOT-E</p>
+					<p>LEE-E</p>
+					<p>HUR-E</p>
+					<p>TRE-E</p>
+					<p class='label-extra-one'>STL-E</p>
+					<p>CYR-E</p>
+					<p class='label-extra-two'>BLA-E</p>
+				</div>
+				<div id='track-two-areas'>
+					<button class='area' id='area-one-two'></button>
+					<button class='area' id='area-two-two'></button>
+					<button class='area' id='area-three-two'></button>
+					<button class='area' id='area-four-two'></button>
+					<button class='area' id='area-five-two'></button>
+					<button class='area' id='area-six-two'></button>
+					<button class='area' id='area-seven-two'></button>
+					<button class='area' id='area-eight-two'></button>
+					<button class='area' id='area-nine-two'></button>
+					<button class='area' id='area-ten-two'></button>
+					<button class='area' id='area-eleven-two'></button>
+					<button class='area' id='area-twelve-two'></button>
+					<button class='area' id='area-thirteen-two'></button>
+					<button class='area' id='area-fourteen-two'></button>
+				</div>
+				<div id='bottom-buttons'>
+					<button id='manual'>Enter Plan Manually</button>
+					<button id='tunnel-one'>Downtown Tunnel Closed</button>
+					<button id='tunnel-two'>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
+					<button id='clear'>Clear all</button>
+				</div>
 			</div>
-			<div id='selectAreas'>
-				<button>Select Areas</button>
-				<button>Confirm Areas</button>
+ 
+			<div id='plan-details'>
+				<div id='graphic'>
+				</div>
+				<div id='details' class='bolded'>
+					<table>
+						<thead>
+							<tr>
+								<th>Obstruction Location</th><th>Routing</th><th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${oblocation}</td><td>${routing}</td><td>${notes}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id='papids' class='bolded'>
+					<table>
+						<thead>
+							<tr>
+								<th>Obstruction Location</th><th>Routing</th><th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${oblocation}</td><td>${routing}</td><td>${notes}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id='cs'>
+					<table>
+						<thead>
+							<tr>
+								<th>Obstruction Location</th><th>Routing</th><th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${oblocation}</td><td>${routing}</td><td>${notes}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-			<div id='selectVisibility'>
-				<button>Show Details</button>
-				<button>Hide Details</button>
-			</div>
+
+
+			<br /><br /><br /><br />
 		</div>
 
-    <div id='area-selector'>
-      <p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
-      <div id='track-one-areas'>
-	<button class='area' id='area-one-one'></button>
-	<button class='area' id='area-two-one'></button>
-	<button class='area' id='area-three-one'></button>
-	<button class='area' id='area-four-one'></button>
-	<button class='area' id='area-five-one'></button>
-	<button class='area' id='area-six-one'></button>
-	<button class='area' id='area-seven-one'></button>
-	<button class='area' id='area-eight-one'></button>
-	<button class='area' id='area-nine-one'></button>
-	<button class='area' id='area-ten-one'></button>
-	<button class='area' id='area-eleven-one'></button>
-	<button class='area' id='area-twelve-one'></button>
-	<button class='area' id='area-thirteen-one'></button>
-	<button class='area' id='area-fourteen-one'></button>
-      </div>
-			<div class='labels'>
-				<p>TUN-W</p>
-				<p>BAY-W</p>
-				<p>PIM-W</p>
-				<p>LYO-W</p>
-				<p>PAR-W</p>
-				<p>RID-W</p>
-				<p>UOT-W</p>
-				<p>LEE-W</p>
-				<p>HUR-W</p>
-				<p>TRE-W</p>
-				<p class='label-extra-one'>STL-W</p>
-				<p>CYR-W</p>
-				<p class='label-extra-two'>BLA-W</p>
-			</div>
-			<div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station cplat1'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station'></div>
-				<div class='t1s station stl'></div>
-				<div class='t1s station cplat1'></div>
-				<div class='t1s station cplat1 bla'></div>
-			</div>
-
-			<div id='track1'></div>
-			<div id='xovers'>
-				<div class='xover' id='tunx'><p>X</p></div>
-				<div class='xover' id='lyox'><p>X</p></div>
-				<div class='xover' id='uotx'><p>X</p></div>
-				<div class='xover' id='hurx'><p>/ \</p></div>
-				<div class='xover' id='trex'><p>/ \</p></div>
-				<div class='xover' id='stlx'><p>/ \</p></div>
-				<div class='xover' id='blax'><p>\ /</p></div>
-			</div>
-			<div id='track2'></div>
-
-			<div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station cplat2'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station'></div>
-				<div class='t2s station stl'></div>
-				<div class='t2s station cplat2'></div>
-				<div class='t2s station cplat2 bla'></div>
-			</div>
-			<div class='labels'>
-				<p>TUN-E</p>
-				<p>BAY-E</p>
-				<p>PIM-E</p>
-				<p>LYO-E</p>
-				<p>PAR-E</p>
-				<p>RID-E</p>
-				<p>UOT-E</p>
-				<p>LEE-E</p>
-				<p>HUR-E</p>
-				<p>TRE-E</p>
-				<p class='label-extra-one'>STL-E</p>
-				<p>CYR-E</p>
-				<p class='label-extra-two'>BLA-E</p>
-			</div>
-			<div id='track-two-areas'>
-				<button class='area' id='area-one-two'></button>
-				<button class='area' id='area-two-two'></button>
-				<button class='area' id='area-three-two'></button>
-				<button class='area' id='area-four-two'></button>
-				<button class='area' id='area-five-two'></button>
-				<button class='area' id='area-six-two'></button>
-				<button class='area' id='area-seven-two'></button>
-				<button class='area' id='area-eight-two'></button>
-				<button class='area' id='area-nine-two'></button>
-				<button class='area' id='area-ten-two'></button>
-				<button class='area' id='area-eleven-two'></button>
-				<button class='area' id='area-twelve-two'></button>
-				<button class='area' id='area-thirteen-two'></button>
-				<button class='area' id='area-fourteen-two'></button>
-			</div>
-			<div id='bottom-buttons'>
-				<button id='manual'>Enter Plan Manually</button>
-				<button id='tunnel-one'>Downtown Tunnel Closed</button>
-				<button id='tunnel-two'>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
-				<button id='clear'>Clear all</button>
-			</div>
+		<div id='diversion-control'>
+			<button id='event-start-button'>START</button>
+			<!-- <p id='stopwatch'>00:55</p> -->
+			<button id='event-end-button'>End Event</button>
 		</div>
-
-		<div id='plan-details'>
-			<div id='graphic'></div>
-			<div id='details' class='bolded'></div>
-			<div id='papids' class='bolded'></div>
-			<div id='cs'></div>
-		</div>
-
-		<br /><br /><br /><br />
-  </div>
-
-  <div id='diversion-control'>
-    <button>START</button>
-    <p id='stopwatch'></p>
-    <button>End Event</button>
-  </div>
-
+	</div>
 
   <div id='diversion-live'>
 
-		<div id='chat'>
-			<div id='chat-window'>
-				<div id='chat-window-messages'></div>
-				<div id='chat-window-typing'></div>
+		<div id='comms-live'>
+			<h4>Comms</h4>
+			<div class='after-title'>
+				<div id='comms-log' class='log'>
+					<p>14:53 Called someone</p>
+					<p>14:55 Played announcements</p>
+				</div>
+				<div id='comms-suggestions' class='suggestions'>
+					<span>Call super</span>
+					<span>Call everyone</span>
+				</div>
+				<div id='chat'>
+					<div id='chat-window'>
+						<div id='chat-window-messages'>
+							<p><em>14:33 Sarah</em><br />Something is happening</p>
+							<p><em>14:22 Dan</em><br />Oh nooo</p>
+						</div>
+						<div id='chat-window-typing'>
+						</div>
+					</div>
+					<form id='chat-form' autocomplete='off'>
+						<label id='chat-label' for='chat-input'>&nbsp;Chat:&nbsp;</label>
+						<input class='input' id='chat-input' />
+						<input class='submit' type='submit' value=' send ' />
+					</form>
+				</div>
 			</div>
-			<form id='chat-form' autocomplete='off'>
-				<label id='chat-label' for='chat-input'>&nbsp;Message:&nbsp;</label>
-				<input class='input' id='chat-input' />
-				<input class='submit' type='submit' value=' send ' />
-			</form>
 		</div>
 
 		<div id='mainline-live'>
+			<h4>Main</h4>
+			<div class='after-title'>
+				<div id='mainline-log' class='log'>
+					<p>14:53 Event started</p>
+					<p>14:55 First thing done</p>
+					<p>14:59 Second thing done</p>
+				</div>
+				<div id='mainline-suggestions' class='suggestions'>
+					<span>Call RTM</span><span>Issue TOP</span>
+				</div>
+			</div>
 		</div>
 
 		<div id='scada-live'>
-			<button>Train</button>
-			<button>Infrastructure</button>
-			<button>Other</button>
+			<h4>SCADA</h4>
+			<div class='after-title'>
+				<div id='scada-log' class='log'>
+					<p>15:02 Isolated brake</p>
+				</div>
+				<div id='scada-suggestions' class='suggestions'>
+					<span>Train</span>
+					<span>Infrastructure</span>
+					<span>Other</span>
+				</div>
+			</div>
 		</div>
 
   </div>
+</div>
 
+
+<script>
+let area = document.getElementById('area-selector');
+let deets = document.getElementById('plan-details');
+let openarea = document.getElementById('openarea');
+let closearea = document.getElementById('closearea');
+let opendeets = document.getElementById('opendeets');
+let closedeets = document.getElementById('closedeets');
+
+openarea.addEventListener('click', openArea);
+closearea.addEventListener('click', closeArea);
+opendeets.addEventListener('click', openDeets);
+closedeets.addEventListener('click', closeDeets);
+
+function openArea() {
+	area.style.display='block';
+}
+function closeArea() {
+	area.style.display='none';
+}
+
+function openDeets() {
+	deets.style.display='block';
+}
+function closeDeets() {
+	deets.style.display='none';
+}
+
+
+</script>
 </body>
 </html>

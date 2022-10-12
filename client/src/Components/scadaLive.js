@@ -4,9 +4,13 @@ const ScadaLive = ({ socket }) => {
 
 	return (
 		<div id='scada-live'>
-			<button>Train</button>
-			<button>Infrastructure</button>
-			<button>Other</button>
+			<h4>SCADA</h4>
+			<div className='after-title'>
+				<div id='scada-log' className='log'>
+				</div>
+				<div id='scada-suggestions' className='suggestions'>
+				</div>
+			</div>
 		</div>
 	);
 

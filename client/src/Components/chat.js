@@ -9,7 +9,7 @@ const Chat = ({ socket }) => {
 				<div id='chat-window-typing'></div>
 			</div>
 			<form id='chat-form' autocomplete='off'>
-				<label id='chat-label' for='chat-input'>&nbsp;Message:&nbsp;</label>
+				<label id='chat-label' for='chat-input'>&nbsp;Chat:&nbsp;</label>
 				<input className='input' id='chat-input' />
 				<input id='submit' type='submit' value=' send ' />
 			</form>

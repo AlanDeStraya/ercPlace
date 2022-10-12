@@ -61,38 +61,117 @@ section li {
 
 /****************************************************************************/
 
+html, body, #diversion {
+	height: 100%;
+}
+
 :root {
   --tracks: rgb(230, 230, 230);
 }
+
+#obstruction-plan-finder,
+#finder-control,
+#diversion-control,
+#diversion-live,
+#comms-live,
+#chat,
+#mainline-live,
+#scada-live,
+.suggestions,
+.log {
+	/*border: 1px solid blue;*/
+}
+
+#diversion {
+	display: flex;
+	flex-direction: column;
+}
+
+#diversion-top {
+	display: flex;
+	justify-content: center;
+	padding: 0 10px 10px;
+	background: linear-gradient(0deg, rgb(190, 190, 190) 0%, rgb(250, 250, 250) 50%, rgb(165, 165, 165) 100%);
+}
+
 #obstruction-plan-finder {
   font-family: sans-serif;
-  width: 1000px;
-  margin: 20px auto;
+  min-width: 1000px;
+	width: 75vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	padding-top: 5px;
 }
 #area-selector, .buttons, h1 {
   user-select: none;
 }
 
+#diversion-control {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	max-width: 25vw;
+	padding: 10px;
+}
+#event-start-button {
+	background-color: red;
+	font-weight: bold;
+	padding: 8px;
+	font-size: 20px;
+}
+#event-end-button {
+	background-color: green;
+	font-weight: bold;
+	padding: 8px;
+	font-size: 20px;
+	color: white;
+}
+#stopwatch {
+	padding: 8px;
+	font-size: 34px;
+	font-weight: bold;
+	border: 3px solid black;
+}
+
 #finder-control {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+#finder-tools {
   display: flex;
   width: 1000px;
   justify-content: space-around;
   align-items: center;
-  margin: 8px auto;
-  border: 1px solid var(--text);
+	padding: 8px;
 }
-#finder-control p {
+#finder-tools p {
   font-size: 18px;
   font-weight: bold;
 }
-#finder-control div {
+#finder-tools div {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
-
+#finder-tools div:nth-of-type(1) {
+	flex-direction: column;
+}
+#finder-tools button {
+	padding: 5px;
+	border-radius: 5px;
+	color: black;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+	background-color: white;
+}
+#statement {
+	text-align: center;
+}
 #area-selector {
-  margin: 5px auto;
+	margin: 15px 0;
   width: 1000px;
   padding: 20px 0;
   position: relative;
@@ -276,14 +355,14 @@ section li {
 }
 #graphic {
 	width: 1000px;
-	margin: 25px auto;
+	margin: 15px 0;
 	text-align: center;
 }
 
 /***************************************************************/
 
 #obstruction-plan-finder table {
-	margin: 20px auto;
+	margin: 15px 0;
 	width: 1000px;
 }
 #obstruction-plan-finder th {
@@ -345,3 +424,98 @@ section li {
   color: #ccc;
 }
 
+
+
+
+#diversion-live {
+	flex: 2;
+	display: flex;
+}
+h4 {
+	text-align: center;
+}
+.after-title {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.suggestions {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	background-color: #999;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+.suggestions span {
+	border-radius: 3px;
+	background-color: #ddd;
+	padding: 3px;
+	margin: 5px;
+	color: #333;
+}
+.definite-suggestion {
+	font-weight: bold;
+}
+
+
+#comms-live {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	padding: 10px;
+	justify-content: space-between;
+	background: radial-gradient(ellipse at center, hsl(60,30%,100%) 0%, hsl(60,20%,70%) 100%);
+}
+#comms-log {
+	flex: 2;
+}
+#chat {
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #ffd;
+}
+#chat-window {
+	flex: 1;
+	overflow-y: scroll;
+	padding: 4px;
+}
+#chat-window-messages p {
+	margin: 5px 0;
+}
+#chat-window-messages em {
+	font-size: 12px;
+}
+#chat-form {
+	display: flex;
+	padding: 4px;
+}
+#chat-input {
+	flex: 1;
+}
+
+#mainline-live {
+	flex: 5;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	background: radial-gradient(ellipse at center, hsl(230,30%,100%) 0%, hsl(230,10%,70%) 100%);
+}
+#mainline-log {
+	flex: 4;
+}
+
+
+#scada-live {
+	flex: 2;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	background: radial-gradient(ellipse at center, hsl(120,30%,100%) 0%, hsl(120,10%,70%) 100%);
+}
+#scada-log {
+	flex: 3;
+}

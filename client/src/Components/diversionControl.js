@@ -12,12 +12,12 @@ const DiversionControl = ({ socket }) => {
 
   return (
     <div id='diversion-control'>
-      <button
+      <button id='event-start-button'
 	  onClick={() => {
 					const eventStartTime = Date.now();
 					socket.emit('cStartEvent', eventStartTime)} } >START</button>
       <p id='stopwatch'></p>
-      <button>End Event</button>
+      <button id='event-end-button'>End Event</button>
     </div>
   );
 
