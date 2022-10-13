@@ -1,26 +1,76 @@
 import React from 'react';
+import { useRef } from 'react';
 
 const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
+
+  let areaOneOne = useRef();
+  let areaTwoOne = useRef();
+  let areaThreeOne = useRef();
+  let areaFourOne = useRef();
+  let areaFiveOne = useRef();
+  let areaSixOne = useRef();
+  let areaSevenOne = useRef();
+  let areaEightOne = useRef();
+  let areaNineOne = useRef();
+  let areaTenOne = useRef();
+  let areaElevenOne = useRef();
+  let areaTwelveOne = useRef();
+  let areaThirteenOne = useRef();
+  let areaFourteenOne = useRef();
+      
+  let areaOneTwo = useRef();
+  let areaTwoTwo = useRef();
+  let areaThreeTwo = useRef();
+  let areaFourTwo = useRef();
+  let areaFiveTwo = useRef();
+  let areaSixTwo = useRef();
+  let areaSevenTwo = useRef();
+  let areaEightTwo = useRef();
+  let areaNineTwo = useRef();
+  let areaTenTwo = useRef();
+  let areaElevenTwo = useRef();
+  let areaTwelveTwo = useRef();
+  let areaThirteenTwo = useRef();
+  let areaFourteenTwo = useRef();
+
+
+  function toggleArea(event) {
+    const target = event.currentTarget;
+    if(!selectedAreas.includes(target)) {
+      target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
+      // closedAreas.push(target);
+      setSelectedAreas(() => {
+        return [...selectedAreas, target]
+      });
+    } else {
+      target.style.backgroundColor = 'transparent';
+      setSelectedAreas(() => {
+        let areaIndex = selectedAreas.indexOf(target);
+        let arr = [...selectedAreas];
+        return arr.splice(areaIndex, 1);
+      });
+    }
+  }
 
 	if(openBoxes.areas) { 
     return (
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 			<div id='track-one-areas'>
-				<button className='area' id='area-one-one'></button>&nbsp;
-				<button className='area' id='area-two-one'></button>&nbsp;
-				<button className='area' id='area-three-one'></button>&nbsp;
-				<button className='area' id='area-four-one'></button>&nbsp;
-				<button className='area' id='area-five-one'></button>&nbsp;
-				<button className='area' id='area-six-one'></button>&nbsp;
-				<button className='area' id='area-seven-one'></button>&nbsp;
-				<button className='area' id='area-eight-one'></button>&nbsp;
-				<button className='area' id='area-nine-one'></button>&nbsp;
-				<button className='area' id='area-ten-one'></button>&nbsp;
-				<button className='area' id='area-eleven-one'></button>&nbsp;
-				<button className='area' id='area-twelve-one'></button>&nbsp;
-				<button className='area' id='area-thirteen-one'></button>&nbsp;
-				<button className='area' id='area-fourteen-one'></button>
+				<button className='area' onClick={toggleArea} ref={areaOneOne} id='area-one-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaTwoOne} id='area-two-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaThreeOne} id='area-three-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaFourOne} id='area-four-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaFiveOne} id='area-five-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaSixOne} id='area-six-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaSevenOne} id='area-seven-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaEightOne} id='area-eight-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaNineOne} id='area-nine-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaTenOne} id='area-ten-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaElevenOne} id='area-eleven-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaTwelveOne} id='area-twelve-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaThirteenOne} id='area-thirteen-one'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaFourteenOne} id='area-fourteen-one'></button>
 			</div>
 			<div className='labels'>
 				<p>TUN-W</p>&nbsp;
@@ -96,20 +146,20 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
 				<p className='label-extra-two'>BLA-E</p>
 			</div>
 			<div id='track-two-areas'>
-				<button className='area' id='area-one-two'></button>&nbsp;
-				<button className='area' id='area-two-two'></button>&nbsp;
-				<button className='area' id='area-three-two'></button>&nbsp;
-				<button className='area' id='area-four-two'></button>&nbsp;
-				<button className='area' id='area-five-two'></button>&nbsp;
-				<button className='area' id='area-six-two'></button>&nbsp;
-				<button className='area' id='area-seven-two'></button>&nbsp;
-				<button className='area' id='area-eight-two'></button>&nbsp;
-				<button className='area' id='area-nine-two'></button>&nbsp;
-				<button className='area' id='area-ten-two'></button>&nbsp;
-				<button className='area' id='area-eleven-two'></button>&nbsp;
-				<button className='area' id='area-twelve-two'></button>&nbsp;
-				<button className='area' id='area-thirteen-two'></button>&nbsp;
-				<button className='area' id='area-fourteen-two'></button>
+				<button className='area' onClick={toggleArea} ref={areaOneTwo} id='area-one-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaTwoTwo} id='area-two-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaThreeTwo} id='area-three-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaFourTwo} id='area-four-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaFiveTwo} id='area-five-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaSixTwo} id='area-six-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaSevenTwo} id='area-seven-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaEightTwo} id='area-eight-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaNineTwo} id='area-nine-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaTenTwo} id='area-ten-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaElevenTwo} id='area-eleven-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaTwelveTwo} id='area-twelve-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaThirteenTwo} id='area-thirteen-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} ref={areaFourteenTwo} id='area-fourteen-two'></button>
 			</div>
 			<div id='bottom-buttons'>
 				<button id='enter-plan-manually'>Enter Plan Manually</button>

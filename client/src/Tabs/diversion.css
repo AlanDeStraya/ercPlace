@@ -195,6 +195,10 @@ html, body, div.App, #diversion, #diversion-live {
   background: linear-gradient(rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2));
   z-index: 2;
 }
+.area:active {
+  background: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 0, 0, 0.6));
+  z-index: 2;
+}
 #obstruction-plan-finder .labels p {
   font-family: 'courier new';
   font-weight: bold;

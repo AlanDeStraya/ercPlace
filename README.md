@@ -8,6 +8,7 @@ Adding sockets for live syncing, updates, and chat capability.
 ## To-Do:
 
 - finder js
+- finder tables content
 - comms card
 - in diversion app comms side announcement timer
 - cad section/option tree
