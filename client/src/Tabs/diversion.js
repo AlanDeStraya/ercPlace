@@ -8,10 +8,23 @@ import DiversionControl from '../Components/diversionControl.js';
 import DiversionLive from '../Components/diversionLive.js';
 import Log from '../Components/log.js';
 
+// Function to persist state
+// import React from 'react';
+
+// export default function usePersistedState(key, defaultValue) {
+//   const [state, setState] = React.useState(() => {
+//     const persistedState = localStorage.getItem(key);
+//     return persistedState ? JSON.parse(persistedState) : defaultValue;
+//   });
+//   React.useEffect(() => {
+//     window.localStorage.setItem(key, JSON.stringify(state));
+//   }, [state, key]);
+//   return [state, setState];
+// }
 
 const Diversion = ({ testMode, setTestMode, socket }) => {
 
-	const [diversionState, setDiversionState] = useState({active: false, open: false, planNumber: '', issue: '', trainNumber: '', location: ''});
+	const [diversionState, setDiversionState] = useState({active: false, open: false, numTrains: undefined, numTrainsDeclared: false, planNumber: '', issue: '', trainNumber: '', location: ''});
 
 //temp if/else
 	if(testMode) {
@@ -39,10 +52,10 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 
 			<button id='test-mode-button'
 				onClick={() => {
-				// test / off
-				const pass = prompt('Enter password:');
-				socket.emit('cIsAlan', pass);
-				console.log(pass)} } >Testing mode</button>
+          // test / off
+          const pass = prompt('Enter password:');
+          socket.emit('cIsAlan', pass);
+          console.log(pass)} } >Testing mode</button>
 				
 		</div>
 	);

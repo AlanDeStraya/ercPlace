@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 
-const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
+const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDiversionState, openBoxes }) => {
 
   let areaOneOne = useRef();
   let areaTwoOne = useRef();
@@ -38,7 +38,6 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
     const target = event.currentTarget;
     if(!selectedAreas.includes(target)) {
       target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
-      // closedAreas.push(target);
       setSelectedAreas(() => {
         return [...selectedAreas, target]
       });
@@ -50,6 +49,7 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
         return arr.splice(areaIndex, 1);
       });
     }
+    console.log(selectedAreas);
   }
 
 	if(openBoxes.areas) { 

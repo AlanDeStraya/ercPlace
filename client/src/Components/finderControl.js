@@ -1,10 +1,26 @@
 import React from 'react';
+import { useEffect } from 'react';
 
-const FinderControl = ({ numTrains, setNumTrains, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
+import findScheduledTrains from '../Utils/findScheduledTrains.js';
+
+const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
 	function declareTrains(event) {
-		setNumTrains(event.target.value);
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.numTrains = event.target.value;
+      obj.numTrainsDeclared = true;
+      return obj;
+    });
 	};
+
+  useEffect(() => {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.numTrains = findScheduledTrains();
+      return obj;
+    });
+  }, [])
 
   let trainStatement = ''
   let locationStatement = ''
@@ -15,11 +31,13 @@ const FinderControl = ({ numTrains, setNumTrains, diversionState, setDiversionSt
     locationStatement = ` ${diversionState.location}`;
   }
 
+
+
 	return (
 		<div id='finder-control'>
 			<div id='finder-tools'>
 				<div id='selectNumOfTrains'>
-					<p>Number of Trains: </p><input onChange={declareTrains} id='input-number-of-trains' placeholder={numTrains} ></input>
+					<p>Number of Trains:&nbsp;</p><input onChange={declareTrains} id='input-number-of-trains' placeholder={diversionState.numTrains} ></input>
 				</div>
 
         <button 

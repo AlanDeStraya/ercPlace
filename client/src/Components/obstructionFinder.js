@@ -5,27 +5,29 @@ import FinderControl from './finderControl.js';
 import AreaSelector from './areaSelector.js';
 import PlanDetails from './planDetails.js';
 
-import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
 
 const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 
-	const [numTrains, setNumTrains] = useState();
 	const [selectedAreas, setSelectedAreas] = useState([]);
 	const [openBoxes, setOpenBoxes] = useState({areas: false, tables: false, pic: false, plan: false, comm: false, tweet: false});
 
-	useEffect(() => {
-		setNumTrains(findScheduledTrains());
-	}, []);
 
+  // useEffect(() => {
+  //   window.localStorage.setItem('numTrains', numTrains);
+  // }, [numTrains]);
+
+  // useEffect(() => {
+  //   setNumTrains(JSON.parse(window.localStorage.getItem('numTrains')));
+  // }, []);
+
+  // setNumTrains(findScheduledTrains());
 
 	return (
 		<div id='obstruction-plan-finder'>
 
 {/* finder control component */}
 			<FinderControl
-				numTrains={numTrains}
-				setNumTrains={setNumTrains}
 				diversionState={diversionState}
 				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}
@@ -46,8 +48,6 @@ const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}
 				setOpenBoxes={setOpenBoxes} />
-
-			<br /><br /><br /><br />
 
 		</div>
 	);

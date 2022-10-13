@@ -1,4 +1,4 @@
-html, body, div.App, #diversion, #diversion-live {
+html, #root, div.App, #diversion, #diversion-live {
 	height: 100%;
 }
 :root {
@@ -74,6 +74,9 @@ html, body, div.App, #diversion, #diversion-live {
   align-items: center;
 	padding: 8px;
   position: relative;
+}
+#input-number-of-trains {
+  width: 30px;
 }
 #finder-tools p {
   font-size: 18px;
