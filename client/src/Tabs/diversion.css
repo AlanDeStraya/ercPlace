@@ -1,4 +1,4 @@
-html, body, #diversion, #diversion-live {
+html, body, div.App, #diversion, #diversion-live {
 	height: 100%;
 }
 :root {
