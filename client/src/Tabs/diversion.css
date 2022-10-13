@@ -9,6 +9,12 @@ html, body, #diversion {
 	flex-direction: column;
 }
 
+#test-mode-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
 #diversion-top {
 	display: flex;
 	justify-content: center;
@@ -84,6 +90,12 @@ html, body, #diversion {
 	font-size: 15px;
 	letter-spacing: 0.5px;
 	background-color: white;
+}
+#finder-tools .mini-button {
+  padding: 3px;
+  font-size: 8px;
+  letter-spacing: normal;
+  border-radius: none;
 }
 #statement {
 	text-align: center;

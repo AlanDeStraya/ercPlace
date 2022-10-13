@@ -30,7 +30,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 							let obj = Object.assign({}, openBoxes); 
 							obj.areas = !openBoxes.areas;
 							return obj;
-						})
+						});
 					}}>{openBoxes.areas ? `Confirm Areas` : 'Select Areas'}</button>
 
 
@@ -40,7 +40,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                let obj = Object.assign({}, openBoxes);
                obj.tables = !openBoxes.tables;
                return obj;
-             })
+             });
            }}>{openBoxes.tables ? `Hide Details` : `Show Details`}</button>
         
 
@@ -52,7 +52,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 let obj = Object.assign({}, openBoxes);
                 obj.pic = !openBoxes.pic;
                 return obj;
-              })
+              });
             }}>Graphic</button>
 
           <button className='mini-button'
@@ -62,7 +62,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 let obj = Object.assign({}, openBoxes);
                 obj.plan = !openBoxes.plan;
                 return obj;
-              })
+              });
             }}>Plan Details</button>
 
           <button className='mini-button'
@@ -72,7 +72,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 let obj = Object.assign({}, openBoxes);
                 obj.comm = !openBoxes.comm;
                 return obj;
-              })
+              });
             }}>PA/PIDS</button>
 
           <button className='mini-button'
@@ -82,7 +82,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 let obj = Object.assign({}, openBoxes);
                 obj.tweet = !openBoxes.tweet;
                 return obj;
-              })
+              });
             }}>Twitter/SMS</button>
         </div>
 

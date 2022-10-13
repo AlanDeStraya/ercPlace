@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const DiversionControl = ({ socket }) => {
+const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 
   const [eventStartTime, setEventStartTime] = useState();
 
@@ -10,14 +10,40 @@ const DiversionControl = ({ socket }) => {
 	setEventStartTime(time);
   });
 
+
   return (
     <div id='diversion-control'>
-      <button id='event-start-button'
-	  onClick={() => {
-					const eventStartTime = Date.now();
-					socket.emit('cStartEvent', eventStartTime)} } >START</button>
-      <p id='stopwatch'></p>
-      <button id='event-end-button'>End Event</button>
+      {!diversionState.open && <button id='event-start-button'
+	        onClick={() => {
+					  const eventStartTime = Date.now();
+					  socket.emit('cStartEvent', eventStartTime)
+            setDiversionState(diversionState => {
+              let obj = Object.assign({}, diversionState);
+              obj.active = true;
+              obj.open = true;
+              return obj;
+            });
+          }} >START</button>}
+
+      {diversionState.open ? diversionState.active ? <p id='stopwatch'></p> 
+      : <button
+        onClick={() => {
+          setDiversionState(diversionState => {
+            let obj = Object.assign({}, diversionState);
+            obj.open = false;
+            return obj;
+          });
+        }}>Close and Log</button> : null }
+
+      {diversionState.active && <button id='event-end-button'
+          onClick={() => {
+            if(window.confirm('Are you sure?') === false) {return};
+            setDiversionState(diversionState => {
+              let obj = Object.assign({}, diversionState);
+              obj.active = false;
+              return obj;
+            });
+          }}>End Event</button>}
     </div>
   );
 
@@ -25,7 +51,14 @@ const DiversionControl = ({ socket }) => {
 
 export default DiversionControl;
 
+
+
+
+
 /*
+
+example timer in react
+
 import React, { useState, useEffect } from 'react';
 
 const Timer = () => {

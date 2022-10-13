@@ -11,7 +11,7 @@ import Log from '../Components/log.js';
 
 const Diversion = ({ testMode, setTestMode, socket }) => {
 
-	const [diversionState, setDiversionState] = useState({active: false, planNumber: '', issue: '', trainNumber: '', location: ''});
+	const [diversionState, setDiversionState] = useState({active: false, open: false, planNumber: '', issue: '', trainNumber: '', location: ''});
 
 //temp if/else
 	if(testMode) {
@@ -27,6 +27,8 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 				setDiversionState={setDiversionState}
 					socket={socket} />
 				<DiversionControl
+          diversionState={diversionState}
+          setDiversionState={setDiversionState}
 					socket={socket} />
 			</div>
 			
@@ -34,7 +36,8 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 				diversionState={diversionState}
 				setDiversionState={setDiversionState}
 				socket={socket} />
-			<button
+
+			<button id='test-mode-button'
 				onClick={() => {
 				// test / off
 				const pass = prompt('Enter password:');
