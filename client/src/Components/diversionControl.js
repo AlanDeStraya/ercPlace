@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import findStopwatchTime from '../Utils/findStopwatchTime.js';
 
 const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
-
+	
   socket.on('sStartEvent', time => {
 		console.log(time);
 		setDiversionState(() => {
@@ -14,19 +14,20 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 		});
   });
 
-	let time;
+
 	useEffect(() => {
 		let interval = null;
 		if(diversionState.active) {
 			interval = setInterval(() => {
-				time = findStopwatchTime(diversionState.startTime);
+				setDiversionState.stopwatchTime(findStopwatchTime(diversionState.startTime));
 			});
 		} else if(!diversionState.active && time != 0) {
 			clearInterval(interval);
 			console.log('clear interval');
 		}
 		return () => clearInterval(interval);
-	}, [diversionState.active, time]);
+	}, [diversionState.active, diversionState.stopwatchTime]);
+
 
   return (
     <div id='diversion-control'>

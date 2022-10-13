@@ -9,7 +9,8 @@ import PlanDetails from './planDetails.js';
 
 const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 
-	const [selectedAreas, setSelectedAreas] = useState([]);
+	const [selectedAreas, setSelectedAreas] = useState({oneOne: false, oneTwo: false, oneThree: false, oneFour: false, onefive: false, oneSix: false, oneSeven: false, oneEight: false, oneNine: false, oneTen: false, oneEleven: false, oneTwelve: false, oneThirteen: false, oneFourteen: false, twoOne: false, twoTwo: false, twoThree: false, twoFour: false, twoFive: false, twoSix: false, twoSeven: false, twoEight: false, twoNine: false, twoTen: false, twoEleven: false, twoTwelve: false, twoThirteen: false, twoFourteen: false});
+	
 	const [openBoxes, setOpenBoxes] = useState({areas: false, tables: false, pic: false, plan: false, comm: false, tweet: false});
 
 

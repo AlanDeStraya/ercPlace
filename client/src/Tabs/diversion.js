@@ -24,7 +24,7 @@ import Log from '../Components/log.js';
 
 const Diversion = ({ testMode, setTestMode, socket }) => {
 
-	const [diversionState, setDiversionState] = useState({active: false, open: false, startTime: undefined, numTrains: undefined, numTrainsDeclared: false, planNumber: '', issue: '', trainNumber: '', location: ''});
+	const [diversionState, setDiversionState] = useState({active: false, open: false, startTime: undefined, stopwatchTime: undefined, numTrains: undefined, numTrainsDeclared: false, planNumber: '', issue: '', trainNumber: '', location: ''});
 
 //temp if/else
 	if(testMode) {
