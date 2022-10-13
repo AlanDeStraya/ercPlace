@@ -1,13 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 
+import findStopwatchTime from '../Utils/findStopwatchTime.js';
+
 const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 
-  const [eventStartTime, setEventStartTime] = useState();
-
   socket.on('sStartEvent', time => {
-	console.log(time);
-	setEventStartTime(time);
+		console.log(time);
+		setDiversionState(() => {
+			let obj = Object.assign({}, diversionState);
+			obj.startTime = time;
+			return obj;
+		});
   });
 
 
@@ -23,9 +27,9 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
               obj.open = true;
               return obj;
             });
-          }} >START</button>}
+          }}>START</button>}
 
-      {diversionState.open ? diversionState.active ? <p id='stopwatch'></p> 
+      {diversionState.open ? diversionState.active ? <p id='stopwatch'>{findStopwatchTime(diversionState.startTime)}</p> 
       : <button
         onClick={() => {
           setDiversionState(diversionState => {

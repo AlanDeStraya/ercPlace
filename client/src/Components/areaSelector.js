@@ -36,7 +36,7 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
 
   function toggleArea(event) {
     const target = event.currentTarget;
-    if(!selectedAreas.includes(target)) {
+    if(selectedAreas.includes(target) === false) {
       target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
       setSelectedAreas(() => {
         return [...selectedAreas, target]
@@ -44,8 +44,8 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
     } else {
       target.style.backgroundColor = 'transparent';
       setSelectedAreas(() => {
-        let areaIndex = selectedAreas.indexOf(target);
         let arr = [...selectedAreas];
+        let areaIndex = arr.indexOf(target);
         return arr.splice(areaIndex, 1);
       });
     }
