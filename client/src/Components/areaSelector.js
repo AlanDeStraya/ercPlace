@@ -125,30 +125,31 @@ function toggleArea() {
 				<p className='label-extra-two'>BLA-E</p>
 			</div>
 			<div id='track-two-areas'>
-				<button className='area' onClick={toggleArea} ref={areaOneTwo} id='area-one-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaTwoTwo} id='area-two-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaThreeTwo} id='area-three-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaFourTwo} id='area-four-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaFiveTwo} id='area-five-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaSixTwo} id='area-six-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaSevenTwo} id='area-seven-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaEightTwo} id='area-eight-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaNineTwo} id='area-nine-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaTenTwo} id='area-ten-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaElevenTwo} id='area-eleven-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaTwelveTwo} id='area-twelve-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaThirteenTwo} id='area-thirteen-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} ref={areaFourteenTwo} id='area-fourteen-two'></button>
+				<button className='area' onClick={toggleArea} id='area-one-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-two-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-three-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-four-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-five-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-six-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-seven-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-eight-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-nine-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-ten-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-eleven-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-twelve-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-thirteen-two'></button>&nbsp;
+				<button className='area' onClick={toggleArea} id='area-fourteen-two'></button>
 			</div>
 			<div id='bottom-buttons'>
 				<button id='enter-plan-manually' onClick={() => {
 					setDiversionState(() => {
 						let obj = Object.assign({}, diversionState);
-						num = window.prompt('Enter plan number:');
+						let num = window.prompt('Enter plan number:');
 						console.log(num);
-						diversionState.planNumber = num.replace('.', 'p');
-						console.log(diversionState.planNumber);
-					}
+						obj.planNumber = num.replace('.', 'p');
+						console.log(obj.planNumber);
+						return obj;
+					})
 				}
 					
 				}>Enter Plan Manually</button>

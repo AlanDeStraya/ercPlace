@@ -21,7 +21,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 			interval = setInterval(() => {
 				setDiversionState.stopwatchTime(findStopwatchTime(diversionState.startTime));
 			});
-		} else if(!diversionState.active && time != 0) {
+		} else if(!diversionState.active && diversionState.stopwatchTime != 0) {
 			clearInterval(interval);
 			console.log('clear interval');
 		}
