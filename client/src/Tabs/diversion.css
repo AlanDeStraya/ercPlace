@@ -67,7 +67,6 @@ html, body, #root, div.App {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: 75px;
 }
 #finder-tools {
   display: flex;
@@ -76,6 +75,7 @@ html, body, #root, div.App {
   align-items: center;
 	padding: 8px;
 	position: relative;
+	height: 75px;
 }
 #input-number-of-trains {
   width: 30px;

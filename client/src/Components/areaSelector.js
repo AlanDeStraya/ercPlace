@@ -35,6 +35,8 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
 
 
   function toggleArea(event) {
+	console.log(event.currentTarget);
+	console.log(selectedAreas);
     const target = event.currentTarget;
     if(selectedAreas.includes(target) === false) {
       target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
