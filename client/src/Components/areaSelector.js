@@ -41,9 +41,10 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
     if(selectedAreas.includes(target) === false) {
       target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
       setSelectedAreas(() => {
-        return [...selectedAreas, target]
+	let arr = [...selectedAreas, target];
+        return arr;
       });
-    } else {
+    } else if(selectedAreas.includes(target) === true) {
       target.style.backgroundColor = 'transparent';
       setSelectedAreas(() => {
         let arr = [...selectedAreas];
