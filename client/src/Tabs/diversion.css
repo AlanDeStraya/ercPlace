@@ -1,4 +1,4 @@
-html, #root, div.App, #diversion, #diversion-live {
+html, body, #root, div.App, #diversion, #diversion-live {
 	height: 100%;
 }
 :root {
@@ -95,16 +95,18 @@ html, #root, div.App, #diversion, #diversion-live {
 	background-color: white;
 }
 #finder-tools .mini-button {
-  padding: 3px;
+  padding: 2px;
   font-size: 8px;
   letter-spacing: normal;
-  border-radius: none;
+  border-radius: 0;
+  width: 50px;
 }
 #mini-buttons {
   position: absolute;
   right: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 #statement {
 	text-align: center;
