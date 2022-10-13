@@ -1,4 +1,4 @@
-html, body, #diversion {
+html, body, #diversion, #diversion-live {
 	height: 100%;
 }
 :root {
@@ -96,6 +96,12 @@ html, body, #diversion {
   font-size: 8px;
   letter-spacing: normal;
   border-radius: none;
+}
+#mini-buttons {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
 }
 #statement {
 	text-align: center;

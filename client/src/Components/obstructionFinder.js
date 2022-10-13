@@ -10,14 +10,12 @@ import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
 const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 
-	console.log('rendering finder');
 	const [numTrains, setNumTrains] = useState();
-	const [numTrainsDeclared, setNumTrainsDeclared] = useState(false);
 	const [selectedAreas, setSelectedAreas] = useState([]);
 	const [openBoxes, setOpenBoxes] = useState({areas: false, tables: false, pic: false, plan: false, comm: false, tweet: false});
 
 	useEffect(() => {
-		numTrainsDeclared === false && setNumTrains(findScheduledTrains());
+		setNumTrains(findScheduledTrains());
 	}, []);
 
 
@@ -28,8 +26,6 @@ const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 			<FinderControl
 				numTrains={numTrains}
 				setNumTrains={setNumTrains}
-				numTrainsDeclared={numTrainsDeclared}
-				setNumTrainsDeclared={setNumTrainsDeclared}
 				diversionState={diversionState}
 				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}

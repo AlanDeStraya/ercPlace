@@ -1,10 +1,9 @@
 import React from 'react';
 
-const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrainsDeclared, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
+const FinderControl = ({ numTrains, setNumTrains, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
-	function declareTrains() {
-		setNumTrains(prompt('How many trains?'));
-		setNumTrainsDeclared(true);
+	function declareTrains(event) {
+		setNumTrains(event.target.value);
 	};
 
   let trainStatement = ''
@@ -20,8 +19,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 		<div id='finder-control'>
 			<div id='finder-tools'>
 				<div id='selectNumOfTrains'>
-					<p>{numTrainsDeclared ? 'Declared' : 'Scheduled'} # of Trains: {numTrains}</p>
-					<button	onClick={declareTrains}>Change</button>
+					<p>Number of Trains: </p><input onChange={declareTrains} id='input-number-of-trains' placeholder={numTrains} ></input>
 				</div>
 
         <button 
@@ -44,7 +42,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
            }}>{openBoxes.tables ? `Hide Details` : `Show Details`}</button>
         
 
-        <div id='select-detail-section'>
+        <div id='mini-buttons'>
           <button className='mini-button'
             style={{backgroundColor: openBoxes.pic && 'orange'}}
             onClick={() => {
@@ -87,7 +85,7 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
         </div>
 
 			</div>
-      {diversionState.active && <p id='statement'>`Obstruction plan ${diversionState.planNumber} due to ${diversionState.issue}${trainStatement}${locationStatement}.` </p>}
+      {diversionState.active && <p id='statement'>{`Obstruction plan ${diversionState.planNumber} due to ${diversionState.issue}${trainStatement}${locationStatement}.`}</p>}
 
 		</div>
 	);
