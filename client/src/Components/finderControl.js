@@ -7,6 +7,15 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 		setNumTrainsDeclared(true);
 	};
 
+  let trainStatement = ''
+  let locationStatement = ''
+  if(diversionState.trainNumber) {
+    trainStatement = ` with train ${diversionState.trainNumber}`;
+  }
+  if(diversionState.location) {
+    locationStatement = ` ${diversionState.location}`;
+  }
+
 	return (
 		<div id='finder-control'>
 			<div id='finder-tools'>
@@ -15,68 +24,49 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
 					<button	onClick={declareTrains}>Change</button>
 				</div>
 
-{/* convert to invert buttons per mini buttons below */}
-				<div id='selectAreas'>
-					{!openBoxes.areas && <button 
-						onClick={() => {
-							setOpenBoxes(openBoxes => {
-								let obj = Object.assign({}, openBoxes); 
-								obj.areas = true;
-								return obj;
-							})
-						}}>Select Areas</button>}
-					{openBoxes.areas && <button
-            onClick={() =>  {
-              setOpenBoxes(openBoxes => {
-                let obj = Object.assign({}, openBoxes);
-                obj.areas = false;
-                return obj;
-              })
-            }}>Confirm Areas</button>}
-				</div>
+        <button 
+					onClick={() => {
+						setOpenBoxes(openBoxes => {
+							let obj = Object.assign({}, openBoxes); 
+							obj.areas = !openBoxes.areas;
+							return obj;
+						})
+					}}>{openBoxes.areas ? `Confirm Areas` : 'Select Areas'}</button>
 
 
-				<div id='selectVisibility'>
-					{!openBoxes.tables && <button
-            onClick={() => {
-              setOpenBoxes(openBoxes => {
-                console.log(`prevState = ${JSON.stringify(openBoxes)}`);
-                let obj = Object.assign({}, openBoxes);
-                obj.tables = true;
-                console.log(`obj=${JSON.stringify(obj)}`);
-                return obj;
-              })
-            }}>Show Details</button>}
-					{openBoxes.tables && <button
-            onClick={() => {
-              console.log('showing details?');
-              setOpenBoxes(openBoxes => {
-                let obj = Object.assign({}, openBoxes);
-                obj.tables = false;
-                return obj;
-              })
-            }}>Hide Details</button>}
-				</div>
+				<button
+           onClick={() => {
+             setOpenBoxes(openBoxes => {
+               let obj = Object.assign({}, openBoxes);
+               obj.tables = !openBoxes.tables;
+               return obj;
+             })
+           }}>{openBoxes.tables ? `Hide Details` : `Show Details`}</button>
         
 
         <div id='select-detail-section'>
           <button className='mini-button'
+            style={{backgroundColor: openBoxes.pic && 'orange'}}
             onClick={() => {
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
-                obj.pic = !obj.pic;
+                obj.pic = !openBoxes.pic;
                 return obj;
               })
             }}>Graphic</button>
+
           <button className='mini-button'
+            style={{backgroundColor: openBoxes.plan && 'blue'}}
             onClick={() => {
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
-                obj.plan = !obj.plan;
+                obj.plan = !openBoxes.plan;
                 return obj;
               })
             }}>Plan Details</button>
+
           <button className='mini-button'
+            style={{backgroundColor: openBoxes.comm && 'red'}}
             onClick={() => {
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
@@ -84,7 +74,9 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
                 return obj;
               })
             }}>PA/PIDS</button>
+
           <button className='mini-button'
+            style={{backgroundColor: openBoxes.tweet && 'green'}}
             onClick={() => {
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
@@ -95,7 +87,8 @@ const FinderControl = ({ numTrains, setNumTrains, numTrainsDeclared, setNumTrain
         </div>
 
 			</div>
-			<p id='statement'></p>
+      {diversionState.active && <p id='statement'>`Obstruction plan ${diversionState.planNumber} due to ${diversionState.issue}${trainStatement}${locationStatement}.` </p>}
+
 		</div>
 	);
 
