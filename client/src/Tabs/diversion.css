@@ -397,6 +397,7 @@ h4 {
 	background-color: var(--body-bg);
 	opacity: 0.8;
 	border-radius: 10px;
+	min-height: 75px;
 }
 .suggestions span {
 	border-radius: 3px;
