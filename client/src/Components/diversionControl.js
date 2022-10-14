@@ -21,7 +21,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 			interval = setInterval(() => {
 				setDiversionState(() => {
 					let obj = Object.assign({}, diversionState);
-					let obj.stopwatchTime = findStopwatchTime(diversionState.startTime);
+					obj.stopwatchTime = findStopwatchTime(diversionState.startTime);
 					return obj
 				});
 			}, 1000);
