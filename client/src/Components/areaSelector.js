@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 
-const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDiversionState, openBoxes }) => {
+const AreaSelector = ({ diversionState, setDiversionState }) => {
 
-
+	const [selectedAreas, setSelectedAreas] = useState({oneOne: false, oneTwo: false, oneThree: false, oneFour: false, onefive: false, oneSix: false, oneSeven: false, oneEight: false, oneNine: false, oneTen: false, oneEleven: false, oneTwelve: false, oneThirteen: false, oneFourteen: false, twoOne: false, twoTwo: false, twoThree: false, twoFour: false, twoFive: false, twoSix: false, twoSeven: false, twoEight: false, twoNine: false, twoTen: false, twoEleven: false, twoTwelve: false, twoThirteen: false, twoFourteen: false});
 
 /*
   function toggleArea(event) {
@@ -27,11 +27,10 @@ const AreaSelector = ({ selectedAreas, setSelectedAreas, diversionState, setDive
     console.log(selectedAreas);
   }*/
 
-function toggleArea() {
-	console.log('eff');
-}
-
-	if(openBoxes.areas) { 
+	function toggleArea() {
+		console.log('eff');
+	}
+ 
     return (
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
@@ -144,10 +143,7 @@ function toggleArea() {
 				<button id='enter-plan-manually' onClick={() => {
 					setDiversionState(() => {
 						let obj = Object.assign({}, diversionState);
-						let num = window.prompt('Enter plan number:');
-						console.log(num);
-						obj.planNumber = num.replace('.', 'p');
-						console.log(obj.planNumber);
+						obj.planNumber = window.prompt('Enter plan number:');
 						return obj;
 					})
 				}
@@ -158,8 +154,7 @@ function toggleArea() {
 				<button id='clear-all-areas'>Clear all</button>
 			</div>
 		</div>
-	)}
-
+	)
 };
 
 export default AreaSelector;

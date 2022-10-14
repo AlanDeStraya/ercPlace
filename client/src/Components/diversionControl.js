@@ -17,6 +17,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 
 	useEffect(() => {
 		let interval = null;
+		console.log(diversionState);
 		if(diversionState.active) {
 			interval = setInterval(() => {
 				setDiversionState(() => {
@@ -27,8 +28,8 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 			}, 1000);
 		} else if(!diversionState.active && diversionState.stopwatchTime != 0) {
 			clearInterval(interval);
-			console.log('clear interval');
 		}
+		console.log(diversionState);
 		return () => clearInterval(interval);
 	}, [diversionState.active, diversionState.stopwatchTime]);
 

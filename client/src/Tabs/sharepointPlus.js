@@ -13,6 +13,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 
 	const [printPopupActive, setPrintPopupActive] = useState(false);
 	const [scadaPopupActive, setScadaPopupActive] = useState(false);
+	const [alert, setAlert] = useState('');
 
 	function closePopups() {
 		setPrintPopupActive(false);
@@ -30,6 +31,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 
 	return (
 		<div id='sharepointPlus'>
+			{alert && <p id='plus-alert'></p>}
 			<article>
 
 				<Weather />
