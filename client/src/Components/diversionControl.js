@@ -49,7 +49,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
             });
           }}>START</button>}
 
-      {diversionState.open ? diversionState.active ? <p id='stopwatch'>{findStopwatchTime(diversionState.startTime)}</p> 
+      {diversionState.open ? diversionState.active ? <p id='stopwatch'>{diversionState.stopwatchTime}</p> 
       : <button
         onClick={() => {
           setDiversionState(diversionState => {
