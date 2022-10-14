@@ -6,10 +6,12 @@ import findScheduledTrains from '../Utils/findScheduledTrains.js';
 const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
 	function declareTrains(event) {
+		console.log(event.target.value);
     setDiversionState(() => {
       let obj = Object.assign({}, diversionState);
       obj.numTrains = event.target.value;
       obj.numTrainsDeclared = true;
+			console.log(obj);
       return obj;
     });
 	};

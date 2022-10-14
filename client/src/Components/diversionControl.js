@@ -10,6 +10,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 		setDiversionState(() => {
 			let obj = Object.assign({}, diversionState);
 			obj.startTime = time;
+			console.log(obj)
 			return obj;
 		});
   });

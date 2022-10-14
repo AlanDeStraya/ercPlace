@@ -143,7 +143,7 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 				<button id='enter-plan-manually' onClick={() => {
 					setDiversionState(() => {
 						let obj = Object.assign({}, diversionState);
-						obj.planNumber = window.prompt('Enter plan number:');
+						obj.planNumber = window.prompt('Enter plan number:').replace('.', 'p');
 						return obj;
 					})
 				}

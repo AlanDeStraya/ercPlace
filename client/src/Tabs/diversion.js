@@ -45,6 +45,7 @@ const Diversion = ({ testMode, setTestMode, socket }) => {
 					socket={socket} />
 			</div>
 			
+			// {diversionState.active && ... }
 			<DiversionLive
 				diversionState={diversionState}
 				setDiversionState={setDiversionState}
