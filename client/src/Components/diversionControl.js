@@ -5,8 +5,8 @@ import findStopwatchTime from '../Utils/findStopwatchTime.js';
 
 const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 
-	const [startTime, setStartTime] = useState();
-	const [stopwatchTime, setStopwatchTime] = useState();
+	const [startTime, setStartTime] = useState(0);
+	const [stopwatchTime, setStopwatchTime] = useState('');
 
   socket.on('sStartEvent', time => {
 		console.log(time);

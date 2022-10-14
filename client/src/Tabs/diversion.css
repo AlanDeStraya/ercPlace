@@ -80,6 +80,7 @@ html, body, #root, div.App {
 #input-number-of-trains {
   width: 30px;
 	font-size: 20px;
+	text-align: center;
 }
 #finder-tools p {
   font-size: 18px;
