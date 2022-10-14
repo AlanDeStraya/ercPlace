@@ -98,7 +98,7 @@ html, body, #root, div.App {
 }
 #finder-tools .mini-button {
   padding: 2px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: normal;
   border-radius: 0;
   width: 60px;
@@ -410,7 +410,7 @@ h4 {
 	flex: 2;
 	padding: 10px;
 	justify-content: space-between;
-	background: radial-gradient(ellipse at center, hsl(60,30%,100%) 0%, hsl(60,20%,70%) 100%);
+	background: radial-gradient(ellipse at center, var(--yellow) 0%, var(--yellow-hover) 100%);
 }
 #comms-log {
 	flex: 2;
@@ -420,7 +420,7 @@ h4 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-color: #ffd;
+	background-color: var(--yellow);
 }
 #chat-window {
 	flex: 1;
@@ -446,7 +446,7 @@ h4 {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	background: radial-gradient(ellipse at center, hsl(230,30%,100%) 0%, hsl(230,10%,70%) 100%);
+	background: radial-gradient(ellipse at center, var(--blue) 0%, var(--blue-hover) 100%);
 }
 #mainline-log {
 	flex: 4;
@@ -458,7 +458,7 @@ h4 {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	background: radial-gradient(ellipse at center, hsl(120,30%,100%) 0%, hsl(120,10%,70%) 100%);
+	background: radial-gradient(ellipse at center, var(--green) 0%, var(--green-hoverr) 100%);
 }
 #scada-log {
 	flex: 3;

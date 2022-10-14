@@ -12,7 +12,7 @@
       }
 
       .tooltip a {
-        color: black;
+        color: var(--link);
         text-decoration: none;
       }
 
@@ -42,45 +42,45 @@
         border: 1px solid black;
         padding-left: 8px;
         width: 60px;
-        color: black;
+        color: var(--text);
       }
 
       .gd {
-        background-color: #DDFFDD;
+        background-color: var(--green);
       }
       .el {
-        background-color: #FFFFDD;
+        background-color: var(--yellow);
       }
       .wd {
-        background-color: #FFD9B7;
+        background-color: var(--orange);
       }
       .tp {
-        background-color: #FFC4C4;
+        background-color: var(--red);
       }
       .ms {
-        background-color: #BBCCFF;
+        background-color: var(--blue);
       }
       .nt {
-        background-color: #DDBBFF;
+        background-color: var(--purple);
       }
 
       td.gd:hover {
-        background-color: #AAFFAA;
+        background-color: var(--green-hover);
       }
       td.el:hover {
-        background-color: #FFFFAA;
+        background-color: var(--yellow-hover);
       }
       td.wd:hover {
-        background-color: #FFB98C;
+        background-color: var(--orange-hover);
       }
       td.tp:hover {
-        background-color: #FFAAAA;
+        background-color: var(--red-hover);
       }
       td.ms:hover {
-        background-color: #88AAFF;
+        background-color: var(--blue-hover);
       }
       td.nt:hover {
-        background-color: #C599FF;
+        background-color: var(--purple-hover);
       }
 
       sub:target + span.yellow {

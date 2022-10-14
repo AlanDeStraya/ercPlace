@@ -11,8 +11,18 @@
   --text: rgb(45, 5, 5);
   --link: rgb(110, 10, 10);
   --sidebar: white;
-  --smoke: rgb(255, 255, 200);
-  --flame: rgb(255, 180, 180);
+  --red: rgb(255, 196, 196);
+  --red-hover: rgb(255, 150, 150);
+  --orange: #FFD9B7;
+  --orange-hover: #faac63;
+  --yellow: rgb(255, 255, 210);
+  --yellow-hover: rgb(250, 250, 111);
+  --green: #c5fcc5;
+  --green-hover: #71fc71;
+  --blue: #afc3fd;
+  --blue-hover: #698df8;
+  --purple: #d1b1f1;
+  --purple-hover: #b879f7;
   --tr: rgb(220, 220, 220);
 }
 .dark-mode {
@@ -21,8 +31,18 @@
   --text: rgb(205, 225, 200);
   --link: rgb(180, 180, 180);
   --sidebar: rgb(65, 65, 65);
-  --smoke: rgb(65, 65, 10);
-  --flame: rgb(53, 15, 15);
+  --red: rgb(53, 15, 15);
+  --red-hover: rgb(107, 14, 14);
+  --orange: rgb(80, 37, 0);
+  --orange-hover: rgb(121, 57, 1);
+  --yellow: rgb(65, 65, 10);
+  --yellow-hover: rgb(124, 124, 0);
+  --green: rgb(12, 51, 10);
+  --green-hover: rgb(10, 88, 6);
+  --blue: rgb(12, 18, 37);
+  --blue-hover: rgb(9, 28, 90);
+  --purple: rgb(38, 16, 58);
+  --purple-hover: rgb(62, 7, 110);
   --tr: rgb(70, 70, 70);
 }
 
@@ -319,7 +339,7 @@ h3 {
   height: 50%;
   border: 1px solid black;
   width: 100%;
-  background: linear-gradient(180deg, var(--smoke) 43%, var(--flame));
+  background: linear-gradient(180deg, var(--yellow) 43%, var(--red));
   /*
   visibility: hidden;
   opacity: 0;
