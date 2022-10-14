@@ -13,15 +13,15 @@ index
 			scada popup
 			updates popup
 
-		/Diversion $state(diversionActive, obstructionPlanNumber) &props(socket)
+		/Diversion $state(diversionState) &props(socket)
 
-			ObstructionFinder $state(numTrains, numTrainsDeclared, selectedAreas, openBoxes) &props(obstructionPlanNumber)
-				FinderControl &props(numTrains, numTrainsDeclared, obstructionPlanNumber, openBoxes)
-				?AreaSelector &props(obstructionPlanNumber, openBoxes, selectedAreas)
-				?PlanDetails &props(obstructionPlanNumber, openBoxes)
+			ObstructionFinder $state(selectedAreas, openBoxes) &props(diversionState
+				FinderControl &props(diversionState, openBoxes)
+				?AreaSelector &props(diversionState, openBoxes, selectedAreas)
+				?PlanDetails &props(diversionState, openBoxes)
 
 			DiversionControl $state(eventStartTime) &props(socket)
-			DiversionLive &props(diversionActive, obstructionPlanNumber, socket)
+			DiversionLive &props(diversionState, socket)
 				CommsLive &props(socket)
 					Chat &props(socket)
 				MainlineLive
