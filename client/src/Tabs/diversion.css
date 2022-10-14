@@ -410,7 +410,7 @@ h4 {
 	flex: 2;
 	padding: 10px;
 	justify-content: space-between;
-	background: radial-gradient(ellipse at center, var(--yellow) 0%, var(--yellow-hover) 100%);
+	background: radial-gradient(ellipse at center, var(--sidebar) 0%, var(--yellow) 100%);
 }
 #comms-log {
 	flex: 2;
@@ -446,7 +446,7 @@ h4 {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	background: radial-gradient(ellipse at center, var(--blue) 0%, var(--blue-hover) 100%);
+	background: radial-gradient(ellipse at center, var(--sidebar) 0%, var(--blue) 100%);
 }
 #mainline-log {
 	flex: 4;
@@ -458,7 +458,7 @@ h4 {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	background: radial-gradient(ellipse at center, var(--green) 0%, var(--green-hoverr) 100%);
+	background: radial-gradient(ellipse at center, var(--sidebar) 0%, var(--green) 100%);
 }
 #scada-log {
 	flex: 3;
