@@ -350,9 +350,6 @@ html, body, #root, div.App {
 .bolded td:nth-of-type(1) {
 	font-weight: bold;
 }
-#papids {
-	margin-bottom: 90px;
-}
 #papids th {
   background-color: yellow;
 }

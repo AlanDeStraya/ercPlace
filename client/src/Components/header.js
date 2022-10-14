@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOpen, setDiversionPageOpen, socket }) => {
+const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, socket }) => {
 
 	function chooseTab() {
 		if(openTab === 'SharepointPlus') {
@@ -50,13 +50,11 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, diversionPageOp
 				<nav>
 					<ul>
 						<li>
-							<button
-								onClick={() => setDiversionPageOpen('diversion')} >Diversion App
+							<button>Diversion App
 							</button>
 						</li>
 						<li>
-							<button
-								onClick={() => setDiversionPageOpen('logs')} >
+							<button>
 								Logs
 							</button>
 						</li>

@@ -4,7 +4,7 @@ const PlanDetails = ({ diversionState, setDiversionState, openBoxes, setOpenBoxe
 	if(openBoxes.tables && diversionState.planNumber) {
     return (
       <div id='plan-details'>
-        {openBoxes.pic && <div id='graphic'>`<img src='./resources/images/plan${diversionState.planNumber}.png'></img>`</div>}
+        {openBoxes.pic && <div id='graphic'><img src={`./resources/images/plan${diversionState.planNumber}.png`}></img></div>}
         {openBoxes.plan && <div id='details' className='bolded'></div>}
         {openBoxes.comm && <div id='papids' className='bolded'></div>}
         {openBoxes.tweet && <div id='cs'></div>}

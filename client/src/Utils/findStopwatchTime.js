@@ -20,6 +20,10 @@ function findStopwatchTime(startTime) {
 		hours = `${hours}`;
 	}
 
+	console.log(seconds);
+	console.log(minutes);
+	console.log(hours);
+
 	if(hours == 0) {
 		return `${minutes}:${seconds}`;
 	} else {
