@@ -4,44 +4,42 @@ import { useEffect, useState } from 'react';
 import findStopwatchTime from '../Utils/findStopwatchTime.js';
 
 const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
-	
+
+	const [startTime, setStartTime] = useState();
+	const [stopwatchTime, setStopwatchTime] = useState();
+
   socket.on('sStartEvent', time => {
 		console.log(time);
-		setDiversionState(() => {
-			let obj = Object.assign({}, diversionState);
-			obj.startTime = time;
-			console.log(obj)
-			return obj;
+		setStartTime(() => {
+			return time;
 		});
   });
 
 
 	useEffect(() => {
 		let interval = null;
-		console.log(diversionState);
+		console.log(startTime);
 		if(diversionState.active) {
 			interval = setInterval(() => {
-				setDiversionState(() => {
-					let obj = Object.assign({}, diversionState);
-					obj.stopwatchTime = findStopwatchTime(diversionState.startTime);
-					return obj
+				setStopwatchTime(() => {
+					return findStopwatchTime(startTime);
 				});
 			}, 1000);
-		} else if(!diversionState.active && diversionState.stopwatchTime != 0) {
+		} else if(!diversionState.active && stopwatchTime != 0) {
 			clearInterval(interval);
 		}
-		console.log(diversionState);
+		console.log(stopwatchTime);
 		return () => clearInterval(interval);
-	}, [diversionState.active, diversionState.stopwatchTime]);
+	}, [diversionState.active, stopwatchTime]);
 
 
   return (
     <div id='diversion-control'>
       {!diversionState.open && <button id='event-start-button'
-	        onClick={() => {
-					  const eventStartTime = Date.now();
-					  socket.emit('cStartEvent', eventStartTime)
-            setDiversionState(diversionState => {
+	onClick={() => {
+		const eventStartTime = Date.now();
+		socket.emit('cStartEvent', eventStartTime)
+		setDiversionState(() => {
               let obj = Object.assign({}, diversionState);
               obj.active = true;
               obj.open = true;
@@ -49,7 +47,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
             });
           }}>START</button>}
 
-      {diversionState.open ? diversionState.active ? <p id='stopwatch'>{diversionState.stopwatchTime}</p> 
+      {diversionState.open ? diversionState.active ? <p id='stopwatch'>{stopwatchTime}</p> 
       : <button
         onClick={() => {
           setDiversionState(diversionState => {
