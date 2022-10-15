@@ -2,6 +2,21 @@ import React from 'react';
 
 const Chat = ({ socket }) => {
 
+//get username, from commslive before opening chat
+	let typing;
+	let timer;
+	socket.emit('cNewUser', username);
+	
+	socket.on('sUserConnected, name => {
+		renderMessage(`${name} joined`);
+	});
+	
+	socket.on('sListOfUsers', users => {
+		console.log(users);
+	});
+
+
+
 	return (
 		<div id='chat'>
 			<div id='chat-window'>

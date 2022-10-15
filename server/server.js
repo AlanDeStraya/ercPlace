@@ -5,6 +5,11 @@ const port = process.env.PORT || 31415;
 const io = require('socket.io')(server)
 const path = require('path');
 
+const users = {};
+const messages = [];
+let usersOnline = 0;
+
+
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/obstructionFinder', (req, res) => {
@@ -23,14 +28,23 @@ app.get('/*', (req, res) => {
 	res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
-let usersOnline = 0;
 
-io.on('connection', socket => {
 
 	// io.emit to all
 	// socket.emit to this socket connection only
 
-  // still unsure
+io.on('connection', socket => {
+	
+	// new user from richat 
+	/*
+	socket.on('cNewUser', name => {
+		users[socket.id] = name;
+		socket.broadcast.emit('sUserConnected', name);
+		io.emit('sListOfUsers', users);
+		io.emit('sMessageHistory', messages);
+	});
+		*/
+
   usersOnline++;
   console.log('A client connected, users online: ' + usersOnline);
   io.emit('sNumUsersOnline', usersOnline);
@@ -65,6 +79,39 @@ io.on('connection', socket => {
       console.log('invalid command');
     }
   });
+
+
+
+//from richat
+/*
+socket.on('cChatMessage', msg => {
+		let now = new Date();
+    let hours = now.getHours();
+    hours = hours < 10 ? '0' + hours : hours;
+    let mins = now.getMinutes();
+    mins = mins < 10 ? '0' + mins : mins;
+    let secs = now.getSeconds();
+    secs = secs < 10 ? '0' + secs : secs;
+    let stamp = now.getMonth() + "/" + now.getDate() + "/" + now.getFullYear() + ' ' + hours + ":" + mins + ":" + secs;
+    messages.push({ message: msg, sender: users[socket.id], timestamp: stamp })
+		if(messages.length > 99) {
+			messages.shift();
+		}
+		socket.broadcast.emit('sChatMessage', { message: msg, name: users[socket.id] });
+});
+
+socket.on('disconnect', () => {
+	socket.broadcast.emit('sUserDisconnected', users[socket.id])
+	delete users[socket.id];
+	io.emit('sListOfUsers', users);
+});
+socket.on('cTyping', name => {
+	socket.broadcast.emit('sTyping', name);
+});
+socket.on('cNotTyping', name => {
+	socket.broadcast.emit('sNotTyping', name);
+});
+*/
 
 });
 
