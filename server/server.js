@@ -5,10 +5,10 @@ const port = process.env.PORT || 31415;
 const io = require('socket.io')(server)
 const path = require('path');
 
-const users = {};
-const messages = [];
+let users = {};
+let messages = [];
 let usersOnline = 0;
-
+let messageId = 1;
 
 app.use(express.static(path.join(__dirname, '../client/build')));
 
@@ -35,15 +35,12 @@ app.get('/*', (req, res) => {
 
 io.on('connection', socket => {
 	
-	// new user from richat 
-	/*
+
 	socket.on('cNewUser', name => {
 		users[socket.id] = name;
 		socket.broadcast.emit('sUserConnected', name);
-		io.emit('sListOfUsers', users);
-		io.emit('sMessageHistory', messages);
+		socket.emit('sNewUserPackge', {sUusers, sMessageHistory});
 	});
-		*/
 
   usersOnline++;
   console.log('A client connected, users online: ' + usersOnline);
@@ -82,9 +79,7 @@ io.on('connection', socket => {
 
 
 
-//from richat
-/*
-socket.on('cChatMessage', msg => {
+	socket.on('cChatMessage', msg => {
 		let now = new Date();
     let hours = now.getHours();
     hours = hours < 10 ? '0' + hours : hours;
@@ -93,25 +88,33 @@ socket.on('cChatMessage', msg => {
     let secs = now.getSeconds();
     secs = secs < 10 ? '0' + secs : secs;
     let stamp = now.getMonth() + "/" + now.getDate() + "/" + now.getFullYear() + ' ' + hours + ":" + mins + ":" + secs;
-    messages.push({ message: msg, sender: users[socket.id], timestamp: stamp })
+		const newMessage = { message: msg, messageId: messageId, sender: users[socket.id], timestamp: stamp };
+    messages.push(newMessage);
 		if(messages.length > 99) {
 			messages.shift();
 		}
-		socket.broadcast.emit('sChatMessage', { message: msg, name: users[socket.id] });
-});
+		io.emit('sChatMessage', newMessage);
+	});
 
-socket.on('disconnect', () => {
-	socket.broadcast.emit('sUserDisconnected', users[socket.id])
-	delete users[socket.id];
-	io.emit('sListOfUsers', users);
-});
-socket.on('cTyping', name => {
-	socket.broadcast.emit('sTyping', name);
-});
-socket.on('cNotTyping', name => {
-	socket.broadcast.emit('sNotTyping', name);
-});
-*/
+	socket.on('disconnect', () => {
+		let now = new Date();
+    let hours = now.getHours();
+    hours = hours < 10 ? '0' + hours : hours;
+    let mins = now.getMinutes();
+    mins = mins < 10 ? '0' + mins : mins;
+    let secs = now.getSeconds();
+    secs = secs < 10 ? '0' + secs : secs;
+    let stamp = now.getMonth() + "/" + now.getDate() + "/" + now.getFullYear() + ' ' + hours + ":" + mins + ":" + secs;
+		const discoMessage = { message: `${name} left the chat`, messageId: messageId, sender: users[socket.id], timestamp: stamp };
+		io.emit('sChatMessage', discoMessage);
+		delete users[socket.id];
+	});
+	socket.on('cTyping', name => {
+		socket.broadcast.emit('sTyping', name);
+	});
+	socket.on('cNotTyping', name => {
+		socket.broadcast.emit('sNotTyping', name);
+	});
 
 });
 
