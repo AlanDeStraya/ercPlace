@@ -105,7 +105,7 @@ io.on('connection', socket => {
     let secs = now.getSeconds();
     secs = secs < 10 ? '0' + secs : secs;
     let stamp = now.getMonth() + "/" + now.getDate() + "/" + now.getFullYear() + ' ' + hours + ":" + mins + ":" + secs;
-		const discoMessage = { message: `${name} left the chat`, messageId: messageId, sender: users[socket.id], timestamp: stamp };
+		const discoMessage = { message: `${users[socket.id]} left the chat`, messageId: messageId, sender: users[socket.id], timestamp: stamp };
 		io.emit('sChatMessage', discoMessage);
 		delete users[socket.id];
 	});
