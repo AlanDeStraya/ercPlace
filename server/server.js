@@ -39,7 +39,7 @@ io.on('connection', socket => {
 	socket.on('cNewUser', name => {
 		users[socket.id] = name;
 		socket.broadcast.emit('sUserConnected', name);
-		socket.emit('sNewUserPackge', {sUsers, sMessageHistory});
+		socket.emit('sNewUserPackge', {users, messages});
 	});
 
   usersOnline++;

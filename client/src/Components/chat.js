@@ -25,10 +25,10 @@ const Chat = ({ socket }) => {
 	});
 	
 	socket.on('sNewUserPackage', pack => {
-		console.log(pack.sUsers);
-		users = pack.sUsers;
+		console.log(pack.users);
+		users = pack.users;
 		setMsgs(() => {
-			return [...msgs];
+			return [...pack.messages];
 		});
 	});
 
