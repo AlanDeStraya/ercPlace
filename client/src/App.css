@@ -166,6 +166,10 @@ nav button:hover {
 	width: 100vw;
 	z-index: 90;
 }
+#subHeaderSpacer {
+	width: 100vw;
+	height: 36px;
+}
 
 .sharepointButton {
   background-color: var(--body-bg);
