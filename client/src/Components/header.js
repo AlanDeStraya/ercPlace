@@ -85,11 +85,11 @@ const Header = ({ darkness, toggleDarkness, openTab, setOpenTab, socket }) => {
 					{ darkness === 'dark' ?
 					<button className='dark-mode-button sharepointButton'
 						onClick={() => toggleDarkness('light')} >
-						<i class="fa-solid fa-sun"></i>
+						<i className="fa-solid fa-sun"></i>
 					</button> :
 					<button className='dark-mode-button sharepointButton'
 						onClick={() => toggleDarkness('dark')} >
-						<i class="fa-solid fa-moon"></i>
+						<i className="fa-solid fa-moon"></i>
 					</button> }
 				</div>
 

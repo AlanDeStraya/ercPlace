@@ -39,17 +39,19 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   */
 
   function createArea(areaName) {
-    <div className='area-container' key={areaName}>
-      <input onCheckboxChange={handleAreaChange} isSelected={areas[areaName]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
-      <label className='area' id={areaName} for={`${areaName}-box`}></label>&nbsp;
-    </div>
+    return (
+      <div className='area-container' key={areaName}>
+        <input onCheckboxChange={handleAreaChange} isSelected={areas[areaName]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
+        <label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
+      </div>
+    )
   };
 
   function createAreasOne() {
-    areaArray.slice(0, areaArray.legnth / 2).map(createArea);
+    areaArray.slice(0, areaArray.legnth / 2).map(a => createArea(a));
   };
   function createAreasTwo() {
-    areaArray.slice(areaArray.length / 2).map(createArea);
+    areaArray.slice(areaArray.length / 2).map(a => createArea(a));
   };
 
 /*

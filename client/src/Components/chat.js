@@ -107,7 +107,7 @@ const Chat = ({ socket }) => {
 				</div>
 				{typing && <div id='chat-window-typing'>{`${typing} is typing...`}</div>}
 			</div>
-			<form id='chat-form' autocomplete='off' onSubmit={submitChat}>
+			<form id='chat-form' autoComplete='off' onSubmit={submitChat}>
 				<label id='chat-label' for='chat-input'>&nbsp;Chat:&nbsp;</label>
 				<input className='input' id='chat-input' onKeyPress={handleTyping} onChange={e => setSendMsg(e.currentTarget.value)} />
 				<input id='submit' type='submit' value=' send ' />
