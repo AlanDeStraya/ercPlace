@@ -28,7 +28,7 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 
   useEffect(() => {
     if(diversionState.active) {
-      socket.emit('cAlert', {type: 'alert', content: `** Obstruction Plan ${diversionState.planNumber.split('').join('.')} in effect due to ${diversionState.issue} at ${diversionState.location}. **`});
+      socket.emit('cAlert', {type: 'alert', content: `**TEST** Obstruction Plan ${diversionState.planNumber} in effect due to ${diversionState.issue} at ${diversionState.location}. **TEST**`});
     } else {
       socket.emit('cAlert', {type: '', content: ''});
     }
@@ -44,8 +44,8 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 		
 			<div id='diversion-top'>
 				<ObstructionFinder
-				diversionState={diversionState}
-				setDiversionState={setDiversionState}
+          diversionState={diversionState}
+          setDiversionState={setDiversionState}
 					socket={socket} />
 				<DiversionControl
           diversionState={diversionState}

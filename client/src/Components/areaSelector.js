@@ -1,30 +1,77 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 
-const AreaSelector = ({ diversionState, setDiversionState }) => {
+const areaArray = ['area-one-one', 'area-two-one', 'area-three-one', 'area-four-one', 'area-five-one', 'area-six-one', 'area-seven-one', 'area-eight-one', 'area-nine-one', 'area-ten-one', 'area-eleven-one', 'area-twelve-one', 'area-thirteen-one', 'area-fourteen-one', 'area-one-two', 'area-two-two', 'area-three-two', 'area-four-two', 'area-five-two', 'area-six-two', 'area-seven-two', 'area-eight-two', 'area-nine-two', 'area-ten-two', 'area-eleven-two', 'area-twelve-two', 'area-thirteen-two', 'area-fourteen-two'];
 
-	const [selectedAreas, setSelectedAreas] = useState([]);
+const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
+
+	const [areas, setAreas] = useState(areaArray.reduce(
+    (options, option) => ({...options, [option]: false}), {}
+  ));
+
+  function clearAll() {
+    Object.keys(areas).forEach(checkbox => {
+      setAreas(prevState => ({
+        checkboxes: {
+          ...prevState.checkboxes,
+          [checkbox]: false
+        }
+      }));
+    });
+  };
+
+  function handleAreaChange(changeEvent) {
+    const { name } = changeEvent.target;
+
+    setAreas(prevState => ({
+      checkboxes: {
+        ...prevState.checkboxes,
+        [name]: !prevState.checkboxes[name]
+      }
+    }));
+  };
+
+  /*
+  function confirmAreas(event) {
+    event.preventDefault();
+    socket.emit('cChosePlan', areas);
+  };
+  */
+
+  function createArea(areaName) {
+    <div className='area-container' key={areaName}>
+      <input onCheckboxChange={handleAreaChange} isSelected={areas[areaName]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
+      <label className='area' id={areaName} for={`${areaName}-box`}></label>&nbsp;
+    </div>
+  };
+
+  function createAreasOne() {
+    areaArray.slice(0, areaArray.legnth / 2).map(createArea);
+  };
+  function createAreasTwo() {
+    areaArray.slice(areaArray.length / 2).map(createArea);
+  };
 
 /*
   function toggleArea(event) {
 	console.log(event.currentTarget);
-	console.log(selectedAreas);
+	console.log(atreas);
     const target = event.currentTarget;
-    if(selectedAreas.includes(target) === false) {
+    if(areats.includes(target) === false) {
       target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
-      setSelectedAreas(() => {
-				let arr = [...selectedAreas, target];
+      setAreas(() => {
+				let arr = [...areas, target];
         return arr;
       });
-    } else if(selectedAreas.includes(target) === true) {
+    } else if(areas.includes(target) === true) {
       target.style.backgroundColor = 'transparent';
-      setSelectedAreas(() => {
-        let arr = [...selectedAreas];
+      setAreas(() => {
+        let arr = [...areas];
         let areaIndex = arr.indexOf(target);
         return arr.splice(areaIndex, 1);
       });
     }
-    console.log(selectedAreas);
+    console.log(areas);
   }
   ///////////////////////////////////////////////////////////////////////////////////
   good explanation for checkboxes
@@ -32,9 +79,7 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
   
    import React, { Component } from "react";
 import Checkbox from "./Checkbox";
-
 const OPTIONS = ["One", "Two", "Three"];
-
 class App extends Component {
   state = {
     checkboxes: OPTIONS.reduce(
@@ -45,10 +90,8 @@ class App extends Component {
       {}
     )
   };
-
   selectAllCheckboxes = isSelected => {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
-      // BONUS: Can you explain why we pass updater function to setState instead of an object?
       this.setState(prevState => ({
         checkboxes: {
           ...prevState.checkboxes,
@@ -57,14 +100,10 @@ class App extends Component {
       }));
     });
   };
-
   selectAll = () => this.selectAllCheckboxes(true);
-
   deselectAll = () => this.selectAllCheckboxes(false);
-
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
-
     this.setState(prevState => ({
       checkboxes: {
         ...prevState.checkboxes,
@@ -72,7 +111,6 @@ class App extends Component {
       }
     }));
   };
-
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
 
@@ -82,7 +120,6 @@ class App extends Component {
         console.log(checkbox, "is selected.");
       });
   };
-
   createCheckbox = option => (
     <Checkbox
       label={option}
@@ -141,62 +178,7 @@ export default App;
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 			<div id='track-one-areas'>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-one-one' />
-          <label className='area' id='area-one-one' for='a-one-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-two-one' />
-          <label className='area' id='area-two-one' for='a-two-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-three-one' />
-          <label className='area' id='area-three-one' for='a-three-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-four-one' />
-          <label className='area' id='area-four-one' for='a-four-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-five-one' />
-          <label className='area' id='area-five-one' for='a-five-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-six-one' />
-          <label className='area' id='area-six-one' for='a-six-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-seven-one' />
-          <label className='area' id='area-seven-one' for='a-seven-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-eight-one' />
-          <label className='area' id='area-eight-one' for='a-eight-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-nine-one' />
-          <label className='area' id='area-nine-one' for='a-nine-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-ten-one' />
-          <label className='area' id='area-ten-one' for='a-ten-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-eleven-one' />
-          <label className='area' id='area-eleven-one' for='a-eleven-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-twelve-one' />
-          <label className='area' id='area-twelve-one' for='a-twelve-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-thirteen-one' />
-          <label className='area' id='area-thirteen-one' for='a-thirteen-one'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-fourteen-one' />
-          <label className='area' id='area-fourteen-one' for='a-fourteen-one'></label>
-        </div>
+        {createAreasOne()}
 			</div>
 			<div className='labels'>
 				<p>TUN-W</p>&nbsp;
@@ -272,68 +254,13 @@ export default App;
 				<p className='label-extra-two'>BLA-E</p>
 			</div>
 			<div id='track-two-areas'>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-one-two' />
-          <label className='area' for='a-one-two' id='area-one-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-two-two' />
-          <label className='area' for='a-two-two' id='area-two-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-three-two' />
-          <label className='area' for='a-three-two' id='area-three-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-four-two' />
-          <label className='area' for='a-four-two' id='area-four-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-five-two' />
-          <label className='area' for='a-five-two' id='area-five-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-six-two' />
-          <label className='area' for='a-six-two' id='area-six-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-seven-two' />
-          <label className='area' for='a-seven-two' id='area-seven-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-eight-two' />
-          <label className='area' for='a-eight-two' id='area-eight-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-nine-two' />
-          <label className='area' for='a-nine-two' id='area-nine-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-ten-two' />
-          <label className='area' for='a-ten-two' id='area-ten-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-eleven-two' />
-          <label className='area' for='a-eleven-two' id='area-eleven-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-twelve-two' />
-          <label className='area' for='a-twelve-two' id='area-twelve-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-thirteen-two' />
-          <label className='area' for='a-thirteen-two' id='area-thirteen-two'></label>&nbsp;
-        </div>
-				<div className='area-container'>
-          <input type='checkbox' className='area-checkbox' id='a-fourteen-two' />
-          <label className='area' for='a-fourteen-two' id='area-fourteen-two'></label>
-        </div>
+				{createAreasTwo()}
 			</div>
 			<div id='bottom-buttons'>
 				<button id='enter-plan-manually' onClick={() => {
 					setDiversionState(() => {
 						let obj = Object.assign({}, diversionState);
-						obj.planNumber = window.prompt('Enter plan number:').replace('.', 'p');
+						obj.planNumber = window.prompt('Enter plan number:');
 						return obj;
 					})
 				}
@@ -341,7 +268,7 @@ export default App;
 				}>Enter Plan Manually</button>
 				<button id='tunnel-one'>Downtown Tunnel Closed</button>
 				<button id='tunnel-two'>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
-				<button id='clear-all-areas'>Clear all</button>
+				<button id='clear-all-areas' onClick={clearAll}>Clear all</button>
 			</div>
 		</div>
 	)

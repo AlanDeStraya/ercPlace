@@ -7,7 +7,7 @@ import PlanDetails from './planDetails.js';
 
 
 
-const ObstructionFinder = ({ diversionState, setDiversionState }) => {
+const ObstructionFinder = ({ diversionState, setDiversionState, socket }) => {
 
 	
 	const [openBoxes, setOpenBoxes] = useState({areas: false, tables: false, pic: false, plan: false, comm: false, tweet: false});
@@ -31,7 +31,8 @@ const ObstructionFinder = ({ diversionState, setDiversionState }) => {
 				diversionState={diversionState}
 				setDiversionState={setDiversionState}
 				openBoxes={openBoxes}
-				setOpenBoxes={setOpenBoxes} />
+				setOpenBoxes={setOpenBoxes}
+        socket={socket} />
 
 {/* finding area component */}
 			{openBoxes.areas && <AreaSelector
