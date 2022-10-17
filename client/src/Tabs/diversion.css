@@ -146,6 +146,16 @@ html, body, #root, div.App {
   height: 65px;
   background-color: transparent;
   z-index: 10;
+  display: inline-block;
+}
+.area-container {
+  display: inline-block;
+}
+.area-checkbox:checked + .area {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+.area-checkbox {
+  display: none;
 }
 #area-one-one, #area-one-two {
   top: 50px;

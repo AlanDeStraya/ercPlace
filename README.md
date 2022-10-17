@@ -5,6 +5,13 @@ Migrating to Heroku(Digital ocean?) as full stack web app.
 Refactoring front end to React.
 Adding sockets for live syncing, updates, and chat capability.
 
+https://blog.logrocket.com/how-to-secure-react-app-login-authentication/
+in server directory
+nodemon server.js
+in the client folder
+npm start
+
+
 ## To-Do:
 
 - finder js

@@ -18,6 +18,7 @@ function App() {
   const [darkness, setDarkness] = useState();
   const [openTab, setOpenTab] = useState('SharepointPlus');
   const [siteUpdatesPopupActive, setSiteUpdatesPopupActive] = useState(false);
+  const [subHeader, setSubHeader] = useState({type: '', content: ''});
 
   useEffect(() => {
     toggleDarkness(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -61,6 +62,15 @@ function App() {
     console.log(`${num} users are online`);
   });
 
+  socket.on('sAlert', obj => {
+    setSubHeader(() => {
+      let prev = Object.assign({}, subHeader);
+      prev.type = obj.type;
+      prev.content = obj.content;
+      return prev;
+    });
+  });
+
   let userAlan = '';
   socket.on('sAuthAlan', str => {
     //nope/ok
@@ -90,6 +100,8 @@ function App() {
 
         socket={socket} />
 
+      { subHeader.type && <h2 id='subHeader' style={subHeader.type ? {backgroundColor: 'yellow', color: 'black'} : {backgroundColor: 'red', color: 'white'} }>{subHeader.content}</h2>}
+
       { openTab === 'SharepointPlus'
         ? <SharepointPlus
           siteUpdatesPopupActive={siteUpdatesPopupActive}
@@ -98,7 +110,9 @@ function App() {
         ? <Diversion
             socket={socket}
             testMode={testMode}
-            setTestMode={setTestMode} />
+            setTestMode={setTestMode}
+            subHeader={subHeader}
+            setSubHeader={setSubHeader} />
         : <IosReference /> }
 
       { openTab === 'SharepointPlus' && <Footer

@@ -22,9 +22,17 @@ import Log from '../Components/log.js';
 //   return [state, setState];
 // }
 
-const Diversion = ({ testMode, setTestMode, socket }) => {
+const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) => {
 
 	const [diversionState, setDiversionState] = useState({active: false, open: false, startTime: 0, stopwatchTime: 0, numTrains: undefined, numTrainsDeclared: false, planNumber: '', issue: '', trainNumber: '', location: ''});
+
+  useEffect(() => {
+    if(diversionState.active) {
+      socket.emit('cAlert', {type: 'alert', content: `** Obstruction Plan ${diversionState.planNumber.split('').join('.')} in effect due to ${diversionState.issue} at ${diversionState.location}. **`});
+    } else {
+      socket.emit('cAlert', {type: '', content: ''});
+    }
+  }, [diversionState.active]);
 
 //temp if/else
 	if(testMode) {

@@ -35,19 +35,20 @@ app.get('/*', (req, res) => {
 
 io.on('connection', socket => {
 	
-
+  users[socket.id] = {status: 'online'};
 	socket.on('cNewUser', name => {
-		users[socket.id] = name;
+		users[socket.id].name = name;
 		socket.broadcast.emit('sUserConnected', name);
 		socket.emit('sNewUserPackge', {users, messages});
 	});
 
-  usersOnline++;
+  usersOnline = Object.keys(users).length;
   console.log('A client connected, users online: ' + usersOnline);
   io.emit('sNumUsersOnline', usersOnline);
 
   socket.on('disconnect', () => {
-    usersOnline--;
+    delete users[socket.id].status;
+    usersOnline = Object.keys(users).length;
     console.log('A client disconnected, users online: ' + usersOnline);
 		io.emit('sNumUsersOnline', usersOnline);
   });
@@ -75,6 +76,10 @@ io.on('connection', socket => {
       socket.emit('sAuthAlan', usersOnline);
       console.log('invalid command');
     }
+
+    socket.on('cAlert', obj => {
+      io.emit('sAlert', obj);
+    });
   });
 
 

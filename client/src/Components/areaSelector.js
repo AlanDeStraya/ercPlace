@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 
 const AreaSelector = ({ diversionState, setDiversionState }) => {
 
-	const [selectedAreas, setSelectedAreas] = useState({oneOne: false, oneTwo: false, oneThree: false, oneFour: false, onefive: false, oneSix: false, oneSeven: false, oneEight: false, oneNine: false, oneTen: false, oneEleven: false, oneTwelve: false, oneThirteen: false, oneFourteen: false, twoOne: false, twoTwo: false, twoThree: false, twoFour: false, twoFive: false, twoSix: false, twoSeven: false, twoEight: false, twoNine: false, twoTen: false, twoEleven: false, twoTwelve: false, twoThirteen: false, twoFourteen: false});
+	const [selectedAreas, setSelectedAreas] = useState([]);
 
 /*
   function toggleArea(event) {
@@ -25,7 +25,113 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
       });
     }
     console.log(selectedAreas);
-  }*/
+  }
+  ///////////////////////////////////////////////////////////////////////////////////
+  good explanation for checkboxes
+  http://react.tips/checkboxes-in-react-16/
+  
+   import React, { Component } from "react";
+import Checkbox from "./Checkbox";
+
+const OPTIONS = ["One", "Two", "Three"];
+
+class App extends Component {
+  state = {
+    checkboxes: OPTIONS.reduce(
+      (options, option) => ({
+        ...options,
+        [option]: false
+      }),
+      {}
+    )
+  };
+
+  selectAllCheckboxes = isSelected => {
+    Object.keys(this.state.checkboxes).forEach(checkbox => {
+      // BONUS: Can you explain why we pass updater function to setState instead of an object?
+      this.setState(prevState => ({
+        checkboxes: {
+          ...prevState.checkboxes,
+          [checkbox]: isSelected
+        }
+      }));
+    });
+  };
+
+  selectAll = () => this.selectAllCheckboxes(true);
+
+  deselectAll = () => this.selectAllCheckboxes(false);
+
+  handleCheckboxChange = changeEvent => {
+    const { name } = changeEvent.target;
+
+    this.setState(prevState => ({
+      checkboxes: {
+        ...prevState.checkboxes,
+        [name]: !prevState.checkboxes[name]
+      }
+    }));
+  };
+
+  handleFormSubmit = formSubmitEvent => {
+    formSubmitEvent.preventDefault();
+
+    Object.keys(this.state.checkboxes)
+      .filter(checkbox => this.state.checkboxes[checkbox])
+      .forEach(checkbox => {
+        console.log(checkbox, "is selected.");
+      });
+  };
+
+  createCheckbox = option => (
+    <Checkbox
+      label={option}
+      isSelected={this.state.checkboxes[option]}
+      onCheckboxChange={this.handleCheckboxChange}
+      key={option}
+    />
+  );
+
+  createCheckboxes = () => OPTIONS.map(this.createCheckbox);
+
+  render() {
+    return (
+      <div className="container">
+        <div className="row mt-5">
+          <div className="col-sm-12">
+            <form onSubmit={this.handleFormSubmit}>
+              {this.createCheckboxes()}
+
+              <div className="form-group mt-2">
+                <button
+                  type="button"
+                  className="btn btn-outline-primary mr-2"
+                  onClick={this.selectAll}
+                >
+                  Select All
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary mr-2"
+                  onClick={this.deselectAll}
+                >
+                  Deselect All
+                </button>
+                <button type="submit" className="btn btn-primary">
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
+  
+  */
 
 	function toggleArea() {
 		console.log('eff');
@@ -35,20 +141,62 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 			<div id='track-one-areas'>
-				<button className='area' onClick={toggleArea} id='area-one-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-two-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-three-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-four-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-five-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-six-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-seven-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-eight-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-nine-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-ten-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-eleven-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-twelve-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-thirteen-one'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-fourteen-one'></button>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-one-one' />
+          <label className='area' id='area-one-one' for='a-one-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-two-one' />
+          <label className='area' id='area-two-one' for='a-two-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-three-one' />
+          <label className='area' id='area-three-one' for='a-three-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-four-one' />
+          <label className='area' id='area-four-one' for='a-four-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-five-one' />
+          <label className='area' id='area-five-one' for='a-five-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-six-one' />
+          <label className='area' id='area-six-one' for='a-six-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-seven-one' />
+          <label className='area' id='area-seven-one' for='a-seven-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-eight-one' />
+          <label className='area' id='area-eight-one' for='a-eight-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-nine-one' />
+          <label className='area' id='area-nine-one' for='a-nine-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-ten-one' />
+          <label className='area' id='area-ten-one' for='a-ten-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-eleven-one' />
+          <label className='area' id='area-eleven-one' for='a-eleven-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-twelve-one' />
+          <label className='area' id='area-twelve-one' for='a-twelve-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-thirteen-one' />
+          <label className='area' id='area-thirteen-one' for='a-thirteen-one'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-fourteen-one' />
+          <label className='area' id='area-fourteen-one' for='a-fourteen-one'></label>
+        </div>
 			</div>
 			<div className='labels'>
 				<p>TUN-W</p>&nbsp;
@@ -124,20 +272,62 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 				<p className='label-extra-two'>BLA-E</p>
 			</div>
 			<div id='track-two-areas'>
-				<button className='area' onClick={toggleArea} id='area-one-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-two-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-three-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-four-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-five-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-six-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-seven-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-eight-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-nine-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-ten-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-eleven-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-twelve-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-thirteen-two'></button>&nbsp;
-				<button className='area' onClick={toggleArea} id='area-fourteen-two'></button>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-one-two' />
+          <label className='area' for='a-one-two' id='area-one-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-two-two' />
+          <label className='area' for='a-two-two' id='area-two-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-three-two' />
+          <label className='area' for='a-three-two' id='area-three-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-four-two' />
+          <label className='area' for='a-four-two' id='area-four-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-five-two' />
+          <label className='area' for='a-five-two' id='area-five-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-six-two' />
+          <label className='area' for='a-six-two' id='area-six-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-seven-two' />
+          <label className='area' for='a-seven-two' id='area-seven-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-eight-two' />
+          <label className='area' for='a-eight-two' id='area-eight-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-nine-two' />
+          <label className='area' for='a-nine-two' id='area-nine-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-ten-two' />
+          <label className='area' for='a-ten-two' id='area-ten-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-eleven-two' />
+          <label className='area' for='a-eleven-two' id='area-eleven-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-twelve-two' />
+          <label className='area' for='a-twelve-two' id='area-twelve-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-thirteen-two' />
+          <label className='area' for='a-thirteen-two' id='area-thirteen-two'></label>&nbsp;
+        </div>
+				<div className='area-container'>
+          <input type='checkbox' className='area-checkbox' id='a-fourteen-two' />
+          <label className='area' for='a-fourteen-two' id='area-fourteen-two'></label>
+        </div>
 			</div>
 			<div id='bottom-buttons'>
 				<button id='enter-plan-manually' onClick={() => {
