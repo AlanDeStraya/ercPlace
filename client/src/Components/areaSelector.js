@@ -48,35 +48,20 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
     )
   };
 
+//	const trackOneAreas = areaArray.slice(0, areaArray.
+
+
+
   function createAreasOne() {
 	console.log('creating areasss');
-    return areaArray.slice(0, areaArray.legnth / 2).map(a => createArea(a));
+    return areaArray.slice(0, areaArray.length / 2).map(a => createArea(a));
   };
   function createAreasTwo() {
     areaArray.slice(areaArray.length / 2).map(a => createArea(a));
   };
 
+
 /*
-  function toggleArea(event) {
-	console.log(event.currentTarget);
-	console.log(atreas);
-    const target = event.currentTarget;
-    if(areats.includes(target) === false) {
-      target.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
-      setAreas(() => {
-				let arr = [...areas, target];
-        return arr;
-      });
-    } else if(areas.includes(target) === true) {
-      target.style.backgroundColor = 'transparent';
-      setAreas(() => {
-        let arr = [...areas];
-        let areaIndex = arr.indexOf(target);
-        return arr.splice(areaIndex, 1);
-      });
-    }
-    console.log(areas);
-  }
   ///////////////////////////////////////////////////////////////////////////////////
   good explanation for checkboxes
   http://react.tips/checkboxes-in-react-16/
@@ -169,15 +154,8 @@ class App extends Component {
     );
   }
 }
-
-export default App;
-  
   */
 
-	function toggleArea() {
-		console.log('eff');
-	}
- 
     return (
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
