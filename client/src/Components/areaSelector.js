@@ -50,7 +50,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
 
   function createAreasOne() {
 	console.log('creating areasss');
-    areaArray.slice(0, areaArray.legnth / 2).map(a => createArea(a));
+    return areaArray.slice(0, areaArray.legnth / 2).map(a => createArea(a));
   };
   function createAreasTwo() {
     areaArray.slice(areaArray.length / 2).map(a => createArea(a));
