@@ -182,7 +182,8 @@ export default App;
 		<div id='area-selector'>
 			<p id='area-instruction'>Click all obstructed areas (click again to de-select)</p>
 			<div id='track-one-areas'>
-        {createAreasOne()}
+        {areaArray.slice(0, areaArray.legnth / 2).map(a => createArea(a))}
+	{/* creatAreas() */}
 			</div>
 			<div className='labels'>
 				<p>TUN-W</p>&nbsp;
