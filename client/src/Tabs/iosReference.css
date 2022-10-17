@@ -24,7 +24,7 @@
         height: 250px;
       }
       #codes td {
-        font-family: lucida console;
+        font-family: 'Courier New', monospace;
       }
       #codes, #index-table {
         border: 2px solid;

@@ -84,6 +84,7 @@ const Chat = ({ socket }) => {
 		setMsgs(() => {
 			return [...msgs, message];
 		});
+    console.log(message);
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	};
 		
