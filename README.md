@@ -1,63 +1,27 @@
 # ERC Place - Tools for ERCs
 (Formerly Sharepoint++)
 
-Migrating to Heroku(Digital ocean?) as full stack web app.
-Refactoring front end to React.
-Adding sockets for live syncing, updates, and chat capability.
-
-https://blog.logrocket.com/how-to-secure-react-app-login-authentication/
-in server directory
-nodemon server.js
-in the client folder
-npm start
-
-
-## To-Do:
-
-- finder js
-- finder tables content
-- comms card
-- in diversion app comms side announcement timer
-- cad section/option tree
-- sharepoint search bar
-- diversion all staff broadcast script
-- diversion > log > filterable; preformatted for email, cad; filter for written log
-- finder button Enter Plan Manually, move to finder control
-- diversion dark mode
-- comms todo enhanced email mailto: ??
-
-- EMS call questions
-- logs => prewrite comms emails?
-- auto select number of trains for obstruction plan finder based on date and time
-- swap ercplace h2 and ul L margins, set popup h3 back to h2
-- refactor IOS reference to React with single location for code description
-- match table colors for dark mode, consider fire docs element colors
-- npm 6 high severity vulnerabilities
-- radar map
-
-## Questions:
-- Which host, Heroku or Digital Ocean?
-
-## Final cleanup:
-- remove unused props
-- sort imports consistently
-- remove test log statements
-- consistent formatting
-- alphabetize state and props?
+Migrating to (?) as full stack web app.
+Refactored front end to React.
+Adding socket.io for live syncing, updates, and chat capability.
 
 ---
 
-## ERC Place Diversion App
-### Based on diversion checklist
+## DiversionLive
+### An app to coordinate information and communication during diversion events
 
-- Login/auth
-- Initiate diversion -> plan finder, broadcast alert, start clock
-- Clock -> top right, change color at key times
-- Initial screen mainline, switch to comms or SCADA on sides
-- Chat box in corner
-- Stream - log at top and suggestions below
-    * Tech requested -> ETA -> arrival
-    * Track authority -> cancellation
+- Use obstruction plan finder to determine plan number.
+- See info on plan.
+- Add event details.
+- Initiate diversion to broadcast alert?, start clock, open DiversionLive section.
+- Action suggestions are populated based on event details and completed actions.
+- Action suggestions include train troubleshooting guides and work instruction procdures.
+- Completed actions logged and editable, viewable in real time.
+- Chat box for questions to and within controller group.
+- Populate emails based on completed actions.
+- Log filterable for paper book entries, per desk, etc.
+- Database query-able for past incidents.
+- State persist throughout ERC.Place, across refreshes.
 
 ---
 
@@ -83,7 +47,7 @@ Added train EB visual and functionality.
 
 #### 2.0 - Diversions
 
-In progress
+In progress, on hold.
 
 ---
 
@@ -96,6 +60,8 @@ A user-friendly obstruction plan tool for general use.
 - Provide visual of obstruction plan as well as simple description with more details available if needed
 - Includes PA/PIDS info
 - Includes customer service info
+
+Merged into DiversionLive
 
 ---
 

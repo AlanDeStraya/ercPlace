@@ -1,4 +1,4 @@
-//timer
+//timer flow for debugging
 
 const [diversionState, setDiversionState] = useState({active: false, open: false, startTime: 0, stopwatchTime: 0, numTrains: undefined, numTrainsDeclared: false, planNumber: '', issue: '', trainNumber: '', location: ''});
 

@@ -1,0 +1,41 @@
+# To-Do:
+
+- finder js
+- finder tables content
+- comms card
+- in diversion app comms side announcement timer
+- cad section/option tree
+- sharepoint search bar
+- diversion all staff broadcast script
+- diversion > log > filterable; preformatted for email, cad; filter for written log
+- finder button Enter Plan Manually, move to finder control
+- diversion dark mode
+- comms todo enhanced email mailto: ??
+
+- EMS call questions
+- logs => prewrite comms emails?
+- auto select number of trains for obstruction plan finder based on date and time
+- swap ercplace h2 and ul L margins, set popup h3 back to h2
+- refactor IOS reference to React with single location for code description
+- match table colors for dark mode, consider fire docs element colors
+- npm 6 high severity vulnerabilities
+- radar map
+
+## Questions:
+- Which host, Heroku or Digital Ocean?
+
+## Final cleanup:
+- remove unused props
+- sort imports consistently
+- remove test log statements
+- consistent formatting
+- alphabetize state and props?
+
+
+
+
+https://blog.logrocket.com/how-to-secure-react-app-login-authentication/
+in server directory
+nodemon server.js
+in the client folder
+npm start
