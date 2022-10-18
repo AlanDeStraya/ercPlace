@@ -53,11 +53,11 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 					socket={socket} />
 			</div>
 			
-			{/* diversionState.active && ... */}
+			{ diversionState.open && 
 			<DiversionLive
 				diversionState={diversionState}
 				setDiversionState={setDiversionState}
-				socket={socket} />
+				socket={socket} /> }
 
 			<button id='test-mode-button'
 				onClick={() => {

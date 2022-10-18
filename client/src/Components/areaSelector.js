@@ -27,7 +27,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   function clearAll() {
     setAreas(() =>{
       return areaArray.reduce(
-        (options, option) => ({...options, [option]: false}), {}
+        (options, option) => ({...options, [option]: true}), {}
       )
     });
   }

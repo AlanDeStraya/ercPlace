@@ -116,8 +116,11 @@ html, body, #root, div.App {
   flex-direction: column;
   align-items: flex-end;
 }
+#statement * {
+	display: inline-block;
+}
 #statement {
-	text-align: center;
+  display: flex;
 }
 
 #area-selector {

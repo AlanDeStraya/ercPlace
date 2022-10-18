@@ -14,6 +14,31 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
     });
 	};
 
+  function declareLocation(event) {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.location = event.target.value;
+      return obj;
+    });
+  };
+
+  function declareIssue(event) {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.issue = event.target.value;
+      return obj;
+    });
+  };
+
+  function declareIncidentTrain(event) {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.trainNumber = event.target.value;
+      return obj;
+    });
+  };
+  
+
   useEffect(() => {
     setDiversionState(() => {
       let obj = Object.assign({}, diversionState);
@@ -22,8 +47,8 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
     });
   }, [])
 
-  let trainStatement = ''
-  let locationStatement = ''
+  let trainStatement = '';
+  let locationStatement = '';
   if(diversionState.trainNumber) {
     trainStatement = ` with train ${diversionState.trainNumber}`;
   }
@@ -104,7 +129,17 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 					</div>
 				</div>
 			</div>
-      {diversionState.active && <p id='statement'>{`Obstruction plan ${diversionState.planNumber} due to ${diversionState.issue}${trainStatement}${locationStatement}.`}</p>}
+      {diversionState.active && <div id='statement'>
+        <p>{`Obstruction plan ${diversionState.planNumber} due to ${diversionState.issue}${trainStatement}${locationStatement}.`}</p>
+        <select onChange={declareIssue} >
+          <option value='Issue' selected disabled></option>
+          <option value='train'>Train</option>
+          <option value='infrastructure'>Infrastructure</option>
+          <option value='passenger'>Passenger</option>
+        </select>
+        <input autoComplete='off' placeholder='Train (####)' onChange={declareIncidentTrain} ></input>
+        <input autoComplete='off' placeholder='Location' onChange={declareLocation} ></input>
+      </div>}
 
 		</div>
 	);
