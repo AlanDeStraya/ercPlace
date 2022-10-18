@@ -141,15 +141,15 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
       <div id='statement'>
         <p>{`Obstruction plan ${diversionState.planNumber} due to `}</p>
         <select onChange={declareIssue} >
-          <option value='Issue' selected></option>
+          <option value='Issue' selected>-issue-</option>
           <option value='a train issue'>Train</option>
           <option value='an infrastructure issue'>Infrastructure</option>
           <option value='a passenger incident'>Passenger</option>
         </select>
         <p>{` at `}</p>
-        <input autoComplete='off' placeholder='Location' onChange={declareLocation} ></input>
+        <input autoComplete='off' placeholder='-location-' onChange={declareLocation} ></input>
         <p>{` involving train `}</p>
-        <input autoComplete='off' placeholder='####' onChange={declareIncidentTrain} ></input>
+        <input autoComplete='off' placeholder='-####-' onChange={declareIncidentTrain} ></input>
       </div>}
 
 		</div>
