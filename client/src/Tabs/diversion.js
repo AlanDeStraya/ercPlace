@@ -64,7 +64,7 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
           // test / off
           const pass = prompt('Enter password:');
           socket.emit('cIsAlan', pass);
-          console.log(pass)} } >Testing mode</button>
+          } } >Testing mode</button>
 				
 		</div>
 	);

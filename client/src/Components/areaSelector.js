@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState, useRef } from 'react';
 
 const areaArray = ['area-one-one', 'area-two-one', 'area-three-one', 'area-four-one', 'area-five-one', 'area-six-one', 'area-seven-one', 'area-eight-one', 'area-nine-one', 'area-ten-one', 'area-eleven-one', 'area-twelve-one', 'area-thirteen-one', 'area-fourteen-one', 'area-one-two', 'area-two-two', 'area-three-two', 'area-four-two', 'area-five-two', 'area-six-two', 'area-seven-two', 'area-eight-two', 'area-nine-two', 'area-ten-two', 'area-eleven-two', 'area-twelve-two', 'area-thirteen-two', 'area-fourteen-two'];
@@ -8,6 +8,10 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
 	const [areas, setAreas] = useState(areaArray.reduce(
     (options, option) => ({...options, [option]: false}), {}
   ));
+
+  useEffect(() => {
+    console.log(areas);
+  }, [areas]);
 
   function clearAll() {
     Object.keys(areas).forEach(checkbox => {
@@ -29,6 +33,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
         [name]: !prevState.checkboxes[name]
       }
     }));
+    console.log('handled area change');
   };
 
   /*

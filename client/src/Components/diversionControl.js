@@ -9,7 +9,6 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 	const [stopwatchTime, setStopwatchTime] = useState('00:00');
 
   socket.on('sStartEvent', time => {
-		console.log(time);
 		setStartTime(() => {
 			return time;
 		});
@@ -18,7 +17,6 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 
 	useEffect(() => {
 		let interval = null;
-		console.log(startTime);
 		if(diversionState.active) {
 			interval = setInterval(() => {
 				setStopwatchTime(() => {
@@ -28,7 +26,6 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
 		} else if(!diversionState.active && stopwatchTime != 0) {
 			clearInterval(interval);
 		}
-		console.log(stopwatchTime);
 		return () => clearInterval(interval);
 	}, [diversionState.active, stopwatchTime]);
 

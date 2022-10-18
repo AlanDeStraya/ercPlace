@@ -152,7 +152,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/:x:/r/sites/TransitOperations/Shared%20Documents/Rail%20Operations/Track%20Speeds.xlsx?d=w85df5510f11941ecbcea361829d0da17&csf=1&web=1&e=QMj7Qo' target='_blank' rel="noreferrer">Track Segment Speeds</a></li>
 						<li><a href='https://ottawacity.sharepoint.com/:x:/r/sites/TransitOperations/Shared%20Documents/Rail%20Operations/Lieu%20Requests.xlsx?d=w8b6096fa128143e5825b02268a8a4dc2&csf=1&web=1&e=5ubWjc' target='_blank' rel="noreferrer">Lieu Requests</a></li>
 						<li><a href='https://ottawacity.sharepoint.com/:w:/r/sites/TransitOperations/Shared%20Documents/Rail%20Operations/CBTC%20-%20ERC%20Mentoring.docx?d=w1be91cff15b848d4ab9b49fdd262182b&csf=1&web=1&e=a24Lzx' target='_blank' rel="noreferrer">CBTC/ATS Mentoring Checklist</a></li>
-						<li>(These are normally found on Teams >  Transit Ops > ERCs. You can open/edit in browser.)</li>
+						<li>(These are normally found on Teams {'>'} Transit Ops {'>'} ERCs. You can open/edit in browser.)</li>
 					</ul>
 				</section>
 
@@ -175,8 +175,8 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 
 						<li className='setUp'>To consider when setting up city PC:
 							<ul>
-								<li>Printer - Windows + R => \\cmfp037\BLFB01F02MFD</li>
-								<li>Auto-start apps - Windows + R => shell:startup</li>
+								<li>Printer - Windows + R ={'>'} \\cmfp037\BLFB01F02MFD</li>
+								<li>Auto-start apps - Windows + R ={'>'} shell:startup</li>
 								<li>Email signature</li>
 								<li>Taskbar pins</li>
 								<li>Default browser</li>
@@ -197,11 +197,11 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 					</ul>
 						<h3>Shortcuts</h3>
 						<ul>
-							<li>Windows + L => Lock your computer!</li>
-							<li>Windows + Shift + S => Snip tool shortcut</li>
-							<li>Windows + E => Windows explorer</li>
-							<li>Windows + D => Minimize all windows</li>
-							<li>Ctrl + L, Alt + Enter => duplicate tab (eg to make another CAD)</li>
+							<li>Windows + L ={'>'} Lock your computer!</li>
+							<li>Windows + Shift + S ={'>'} Snip tool shortcut</li>
+							<li>Windows + E ={'>'} Windows explorer</li>
+							<li>Windows + D ={'>'} Minimize all windows</li>
+							<li>Ctrl + L, Alt + Enter ={'>'} duplicate tab (eg to make another CAD)</li>
 						</ul>
 				</section>
 
