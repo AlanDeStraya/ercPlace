@@ -129,16 +129,19 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 					</div>
 				</div>
 			</div>
-      {diversionState.active && <div id='statement'>
-        <p>{`Obstruction plan ${diversionState.planNumber} due to ${diversionState.issue}${trainStatement}${locationStatement}.`}</p>
+      {diversionState.planNumber && 
+      <div id='statement'>
+        <p>{`Obstruction plan ${diversionState.planNumber} due to `}</p>
         <select onChange={declareIssue} >
-          <option value='Issue' selected disabled></option>
-          <option value='train'>Train</option>
-          <option value='infrastructure'>Infrastructure</option>
-          <option value='passenger'>Passenger</option>
+          <option value='Issue' selected></option>
+          <option value='a train issue'>Train</option>
+          <option value='an infrastructure issue'>Infrastructure</option>
+          <option value='a passenger incident'>Passenger</option>
         </select>
-        <input autoComplete='off' placeholder='Train (####)' onChange={declareIncidentTrain} ></input>
+        <p>{` at `}</p>
         <input autoComplete='off' placeholder='Location' onChange={declareLocation} ></input>
+        <p>{` involving train `}</p>
+        <input autoComplete='off' placeholder='####' onChange={declareIncidentTrain} ></input>
       </div>}
 
 		</div>
