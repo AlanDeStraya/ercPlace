@@ -47,6 +47,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
     });
   }, [])
 
+  /*
   let trainStatement = '';
   let locationStatement = '';
   if(diversionState.trainNumber) {
@@ -55,7 +56,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
   if(diversionState.location) {
     locationStatement = ` ${diversionState.location}`;
   }
-
+*/
 
 
 	return (
@@ -68,6 +69,13 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 
         <button 
 					onClick={() => {
+            if(openBoxes.areas === true) {
+              setOpenBoxes(() => {
+                let obj = Object.assign({}, openBoxes);
+                obj.tables = true;
+                return obj;
+              });
+            }
 						setOpenBoxes(openBoxes => {
 							let obj = Object.assign({}, openBoxes); 
 							obj.areas = !openBoxes.areas;

@@ -15,8 +15,8 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
 
 
   function handleAreaChange(changeEvent) {
-    const { name } = changeEvent.target;
-    console.log(changeEvent.target);
+    const name = changeEvent.target.id.slice(0, -4);
+    console.log(name);
     setAreas(prevState => {
       let obj = Object.assign({}, prevState);
       obj[name] = !prevState[name];
@@ -27,7 +27,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   function clearAll() {
     setAreas(() =>{
       return areaArray.reduce(
-        (options, option) => ({...options, [option]: true}), {}
+        (options, option) => ({...options, [option]: false}), {}
       )
     });
   }
@@ -55,7 +55,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   function createArea(areaName) {
     return (
       <div className='area-container' key={areaName}>
-        <input onChange={handleAreaChange} isSelected={areas[areaName]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
+        <input onChange={handleAreaChange} isselected={areas[areaName]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
         <label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
       </div>
     )

@@ -10,7 +10,7 @@ import PlanDetails from './planDetails.js';
 const ObstructionFinder = ({ diversionState, setDiversionState, socket }) => {
 
 	
-	const [openBoxes, setOpenBoxes] = useState({areas: false, tables: false, pic: false, plan: false, comm: false, tweet: false});
+	const [openBoxes, setOpenBoxes] = useState({areas: true, tables: false, pic: true, plan: true, comm: false, tweet: false});
 
 
   // useEffect(() => {

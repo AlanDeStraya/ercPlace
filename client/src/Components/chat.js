@@ -82,9 +82,11 @@ const Chat = ({ socket }) => {
 	
 	function renderMessage(message) {
 		setMsgs(() => {
-			return [...msgs, message];
+			let arr = [...msgs, message];
+      return arr;
 		});
     console.log(message);
+    console.log(msgs);
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	};
 		
