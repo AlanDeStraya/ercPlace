@@ -73,7 +73,6 @@ function App() {
   let userAlan = '';
   socket.on('sAuthAlan', str => {
     //nope/ok
-    console.log(str);
     if(str === 'nope') {
       setTestMode(false);
     } else if(str === 'ok') {

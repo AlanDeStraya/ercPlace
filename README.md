@@ -37,7 +37,6 @@ npm start
 
 ## Questions:
 - Which host, Heroku or Digital Ocean?
-- Where to install modules/dependencies?
 
 ## Final cleanup:
 - remove unused props
