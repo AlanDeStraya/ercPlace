@@ -37,9 +37,7 @@ const ObstructionFinder = ({ diversionState, setDiversionState, socket }) => {
 {/* finding area component */}
 			{openBoxes.areas && <AreaSelector
 				diversionState={diversionState}
-				setDiversionState={setDiversionState}
-				openBoxes={openBoxes}
-				setOpenBoxes={setOpenBoxes} />}
+				setDiversionState={setDiversionState} />}
 
 {/* details component */}
 			{openBoxes.tables && <PlanDetails

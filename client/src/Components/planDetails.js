@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlanDetails = ({ diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
+const PlanDetails = ({ diversionState, openBoxes }) => {
 
     return (
       <div id='plan-details'>

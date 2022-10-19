@@ -1,21 +1,41 @@
 import React, { useEffect } from 'react';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 const areaArray = ['area-one-one', 'area-two-one', 'area-three-one', 'area-four-one', 'area-five-one', 'area-six-one', 'area-seven-one', 'area-eight-one', 'area-nine-one', 'area-ten-one', 'area-eleven-one', 'area-twelve-one', 'area-thirteen-one', 'area-fourteen-one', 'area-one-two', 'area-two-two', 'area-three-two', 'area-four-two', 'area-five-two', 'area-six-two', 'area-seven-two', 'area-eight-two', 'area-nine-two', 'area-ten-two', 'area-eleven-two', 'area-twelve-two', 'area-thirteen-two', 'area-fourteen-two'];
 
-const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
+const AreaSelector = ({ diversionState, setDiversionState }) => {
 
 	const [checkedAreas, setCheckedAreas] = useState(new Array(areaArray.length).fill(false));
 
 	useEffect(() => {
-		console.log(checkedAreas);
+		choosePlan();
 	}, [checkedAreas]);
 
 
 	function handleAreaChange(position) {
 		setCheckedAreas(() => checkedAreas.map((item, index) => index === position ? !item : item));
 	};
-
+	function enterPlanManually() {
+		setDiversionState(() => {
+			let obj = Object.assign({}, diversionState);
+			obj.planNumber = window.prompt('Enter plan number:');
+			return obj;
+		})
+	}
+	function handleTunnelOne() {
+		setCheckedAreas(() => checkedAreas.map((item, index) => {
+			if((index > 0 && index < 5) || (index > 14 && index < 19)) {
+				item = true;
+			}
+		}));
+	}
+	function handleTunnelTwo() {
+		setCheckedAreas(() => checkedAreas.map((item, index) => {
+			if((index > 0 && index < 6) || (index > 14 && index < 20)) {
+				item = true;
+			}
+		}));
+	}
 
   function clearAll() {
     setCheckedAreas(() =>{
@@ -23,28 +43,6 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
 	return arr;
     });
   }
-
-
-  /*
-  function clearAll() {
-    Object.keys(areas).forEach(checkbox => {
-      setAreas(prevState => ({
-        areas: {
-          ...prevState.areas,
-          [checkbox]: false
-        }
-      }));
-    });
-  };
-  */
-
-  /*
-  function confirmAreas(event) {
-    event.preventDefault();
-    socket.emit('cChosePlan', areas);
-  };
-  */
-
 
 
  function createAreasOne() {
@@ -165,17 +163,9 @@ function createAreasTwo() {
 				{createAreasTwo()}
 			</div>
 			<div id='bottom-buttons'>
-				<button id='enter-plan-manually' onClick={() => {
-					setDiversionState(() => {
-						let obj = Object.assign({}, diversionState);
-						obj.planNumber = window.prompt('Enter plan number:');
-						return obj;
-					})
-				}
-					
-				}>Enter Plan Manually</button>
-				<button id='tunnel-one'>Downtown Tunnel Closed</button>
-				<button id='tunnel-two'>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
+				<button id='enter-plan-manually' onClick={enterPlanManually}>Enter Plan Manually</button>
+				<button id='tunnel-one' onClick={handleTunnelOne}>Downtown Tunnel Closed</button>
+				<button id='tunnel-two'onClick={handleTunnelTwo}>Downtown Tunnel Closed, Stage 2 Fire Alarm</button>
 				<button id='clear-all-areas' onClick={clearAll}>Clear all</button>
 			</div>
 		</div>

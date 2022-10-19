@@ -70,6 +70,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
         <button 
 					onClick={() => {
             if(openBoxes.areas === true) {
+							socket.emit('cChoosePlan', areas);
               setOpenBoxes(() => {
                 let obj = Object.assign({}, openBoxes);
                 obj.tables = true;
