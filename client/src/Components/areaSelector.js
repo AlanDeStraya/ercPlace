@@ -24,10 +24,9 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
 
 
   function clearAll() {
-    setAreas(() =>{
-      return areaArray.reduce(
-        (options, option) => ({...options, [option]: false}), {}
-      )
+    setCheckedAreas(() =>{
+	const arr = new Array(areaArray.length).fill(false);
+	return arr;
     });
   }
 
