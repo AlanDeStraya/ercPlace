@@ -9,6 +9,7 @@ const CommsLive = ({ socket }) => {
 			<h4>Comms</h4>
 			<div className='after-title'>
 				<div id='comms-log' className='log'>
+					<a href='mailto:pte-ts-to-ocenhancedline1incidentreporting@ottawa.ca?subject=Test Diversion?body=Diversion in place'>Test email</a>
 				</div>
 				<div id='comms-suggestions' className='suggestions'>
 				</div>

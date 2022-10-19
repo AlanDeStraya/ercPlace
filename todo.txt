@@ -4,33 +4,30 @@
 - finder tables content
 - comms card
 - in diversion app comms side announcement timer
-- cad section/option tree
-- sharepoint search bar
 - diversion all staff broadcast script
 - diversion > log > filterable; preformatted for email, cad; filter for written log
 - finder button Enter Plan Manually, move to finder control
-- diversion dark mode
 - comms todo enhanced email mailto: ??
-
 - EMS call questions
 - logs => prewrite comms emails?
-- auto select number of trains for obstruction plan finder based on date and time
 - swap ercplace h2 and ul L margins, set popup h3 back to h2
-- refactor IOS reference to React with single location for code description
-- match table colors for dark mode, consider fire docs element colors
+- ? refactor IOS reference to React with single location for code description
 - npm 6 high severity vulnerabilities
 - radar map
 
 ## Questions:
-- Which host, Heroku or Digital Ocean?
+- Which host: Heroku, Digital Ocean, Firebase?
 
 ## Final cleanup:
 - remove unused props
 - sort imports consistently
 - remove test log statements
-- consistent formatting
+- consistent formatting, style standards
 - alphabetize state and props?
 
+## ERC.Place
+- cad section/option tree
+- search bar
 
 
 

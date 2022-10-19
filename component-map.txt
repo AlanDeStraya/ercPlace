@@ -15,12 +15,13 @@ index
 
 		/Diversion $state(diversionState) &props(socket)
 
-			ObstructionFinder $state(selectedAreas, openBoxes) &props(diversionState
+			ObstructionFinder $state(selectedAreas, openBoxes) &props(diversionState)
 				FinderControl &props(diversionState, openBoxes)
 				?AreaSelector &props(diversionState, openBoxes, selectedAreas)
 				?PlanDetails &props(diversionState, openBoxes)
 
-			DiversionControl $state(eventStartTime) &props(socket)
+			DiversionControl $state(startTime, stopwatchTime) &props(socket, diversionState)
+
 			DiversionLive &props(diversionState, socket)
 				CommsLive &props(socket)
 					Chat &props(socket)

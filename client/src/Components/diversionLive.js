@@ -6,6 +6,8 @@ import ScadaLive from './scadaLive.js';
 
 const DiversionLive = ({ diversionState, setDiversionState, socket }) => {
 
+	const [liveLog, setLiveLog] = useState({}) 
+
 	return (
 		<div id='diversion-live'>
 			<CommsLive
@@ -20,3 +22,13 @@ const DiversionLive = ({ diversionState, setDiversionState, socket }) => {
 };
 
 export default DiversionLive;
+
+
+/*
+
+- onclick diversion start, populate initial set
+- initial set depends on statement info for SCADA
+- ? otherwise SCADA can determine statement info dynamically
+- function to populate based on argument
+
+*/

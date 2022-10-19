@@ -40,6 +40,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
               let obj = Object.assign({}, diversionState);
               obj.active = true;
               obj.open = true;
+              obj.startTime = eventStartTime;
               return obj;
             });
           }}>START</button>}
