@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
-const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
+const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBoxes, socket }) => {
 
 	function declareTrains(event) {
     setDiversionState(() => {
@@ -70,7 +70,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
         <button 
 					onClick={() => {
             if(openBoxes.areas === true) {
-							socket.emit('cChoosePlan', areas);
+							socket.emit('cChoosePlan', diversionState.planNumber);
               setOpenBoxes(() => {
                 let obj = Object.assign({}, openBoxes);
                 obj.tables = true;

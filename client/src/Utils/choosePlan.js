@@ -1,14 +1,9 @@
-function choosePlan() {
+function choosePlan(stateObj, areas) {
+	const checkedAreas = [...areas];
   const numAreas = checkedAreas.filter(i => i).length;
-  let numTrains = diversionState.numTrains;
+  let numTrains = stateObj.numTrains;
   let plan;
-  /*
-
-24 areaElevenTwo
-25 areaTwelveTwo
-26 areaThirteenTwo
-27 areaFourteenTwo
-*/
+  
 	if((numTrains >= 7 && numTrains <= 12) && (((checkedAreas[0] || checkedAreas[1]) && numAreas === 1) 
 			|| (checkedAreas[0] && checkedAreas[1] && numAreas === 2))) {
 		plan = '1p1';
@@ -150,7 +145,7 @@ function choosePlan() {
 		plan = '7p2';
 		
 	} else {
-		diversionState.planNumber = '';
+		plan = '';
 	}
 
   return plan.replace('p', '.');
