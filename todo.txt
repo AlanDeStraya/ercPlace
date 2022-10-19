@@ -15,6 +15,7 @@
 - ? refactor IOS reference to React with single location for code description
 - npm 6 high severity vulnerabilities
 - radar map
+- eventually remake areaFinder for specificity, auto-detect location
 
 ## Questions:
 - Which host: Heroku, Digital Ocean, Firebase?

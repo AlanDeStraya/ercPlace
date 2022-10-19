@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import choosePlan from '../utils/choosePlan.js';
 
 const areaArray = ['area-one-one', 'area-two-one', 'area-three-one', 'area-four-one', 'area-five-one', 'area-six-one', 'area-seven-one', 'area-eight-one', 'area-nine-one', 'area-ten-one', 'area-eleven-one', 'area-twelve-one', 'area-thirteen-one', 'area-fourteen-one', 'area-one-two', 'area-two-two', 'area-three-two', 'area-four-two', 'area-five-two', 'area-six-two', 'area-seven-two', 'area-eight-two', 'area-nine-two', 'area-ten-two', 'area-eleven-two', 'area-twelve-two', 'area-thirteen-two', 'area-fourteen-two'];
 
@@ -8,24 +9,34 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 	const [checkedAreas, setCheckedAreas] = useState(new Array(areaArray.length).fill(false));
 
 	useEffect(() => {
-		choosePlan();
+		setDiversionState(() => {
+			let obj = Object.assign({}, diversionState);
+			obj.planNumber = choosePlan();
+			return obj;
+		})
 	}, [checkedAreas]);
 
 
 	function handleAreaChange(position) {
 		setCheckedAreas(() => checkedAreas.map((item, index) => index === position ? !item : item));
 	};
+
+
 	function enterPlanManually() {
+		clearAll();
 		setDiversionState(() => {
 			let obj = Object.assign({}, diversionState);
 			obj.planNumber = window.prompt('Enter plan number:');
 			return obj;
 		})
 	}
+
 	function handleTunnelOne() {
 		setCheckedAreas(() => checkedAreas.map((item, index) => {
 			if((index > 0 && index < 5) || (index > 14 && index < 19)) {
 				item = true;
+			} else {
+				item = false;
 			}
 		}));
 	}
@@ -33,6 +44,8 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 		setCheckedAreas(() => checkedAreas.map((item, index) => {
 			if((index > 0 && index < 6) || (index > 14 && index < 20)) {
 				item = true;
+			} else {
+				item = false;
 			}
 		}));
 	}
