@@ -81,6 +81,9 @@ function logarea() {
   ///////////////////////////////////////////////////////////////////////////////////
   good explanation for checkboxes
   http://react.tips/checkboxes-in-react-16/
+
+  another tut
+  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
 */
 
     return (
