@@ -5,7 +5,7 @@ const areaArray = ['area-one-one', 'area-two-one', 'area-three-one', 'area-four-
 
 const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
 
-	const [areas, setAreas] = useState(areaArray.reduce(
+  const [areas, setAreas] = useState(areaArray.reduce(
     (options, option) => ({...options, [option]: false}), {}
   ));
 
@@ -17,9 +17,9 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   function handleAreaChange(changeEvent) {
     const name = changeEvent.target.id.slice(0, -4);
     console.log(name);
-    setAreas(() => {
+    setAreas(prevState => {
       let obj = Object.assign({}, areas);
-      obj.name = !areas.name;
+      obj.name = !prevState.name;
     });
     console.log(areas);
   };
