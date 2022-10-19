@@ -33,7 +33,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   }
 
 
-/*
+  /*
   function clearAll() {
     Object.keys(areas).forEach(checkbox => {
       setAreas(prevState => ({
@@ -44,7 +44,8 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
       }));
     });
   };
-*/
+  */
+
   /*
   function confirmAreas(event) {
     event.preventDefault();
@@ -57,7 +58,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   function createArea(areaName) {
     return (
       <div className='area-container' key={areaName}>
-        <input onChange={handleAreaChange} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
+        <input onChange={handleAreaChange} checked={areas[areaName]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
         <label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
       </div>
     )
