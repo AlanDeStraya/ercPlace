@@ -14,8 +14,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   }, [areas]);
 
 
-  function handleAreaChange(changeEvent) {
-    const name = changeEvent.target.id.slice(0, -4);
+  function handleAreaChange(name) {
     console.log(name);
     setAreas(prevState => {
       let obj = Object.assign({}, areas);
@@ -63,7 +62,7 @@ function logarea() {
   function createArea(areaName) {
     return (
       <div className='area-container' key={areaName}>
-        <input onChange={handleAreaChange} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
+        <input onChange={() => handleAreaChange(areaName)} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
         <label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
       </div>
     )
