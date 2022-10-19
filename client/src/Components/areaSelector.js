@@ -21,8 +21,12 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
       let obj = Object.assign({}, areas);
       obj.name = !prevState.name;
     });
-    console.log(areas);
+    window.setTimeout(logarea, 5000);
   };
+
+function logarea() {
+	console.log(areas);
+}
 
   function clearAll() {
     setAreas(() =>{
