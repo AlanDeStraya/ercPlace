@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Chat = ({ socket }) => {
 	
@@ -7,8 +7,8 @@ const Chat = ({ socket }) => {
 	const [typing, setTyping] = useState('');
 	const [sendMsg, setSendMsg] = useState('');
 	
-	const chatWindow = document.getElementById('chat-window');
-	const chatInput = document.getElementById('chat-input');
+	const chatWindow = useRef();
+	const chatInput = useRef();
 	
 	useEffect(() => {
 		console.log('chg msg');
@@ -98,7 +98,7 @@ const Chat = ({ socket }) => {
 
 	return (
 		<div id='chat'>
-			<div id='chat-window'>
+			<div id='chat-window' ref={chatWindow}>
 				<div id='chat-window-messages'>
 					{[msgs]
 					.sort((a, b) => a.timestamp - b.timestamp)
@@ -113,7 +113,7 @@ const Chat = ({ socket }) => {
 			</div>
 			<form id='chat-form' autoComplete='off' onSubmit={submitChat}>
 				<label id='chat-label' htmlFor='chat-input'>&nbsp;Chat:&nbsp;</label>
-				<input className='input' id='chat-input' onKeyPress={handleTyping} onChange={e => setSendMsg(e.currentTarget.value)} />
+				<input className='input' useRef={chatInput} id='chat-input' onKeyPress={handleTyping} onChange={e => setSendMsg(e.currentTarget.value)} />
 				<input id='submit' type='submit' value='Send' />
 			</form>
 		</div>
