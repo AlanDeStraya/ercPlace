@@ -17,9 +17,9 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   function handleAreaChange(changeEvent) {
     const name = changeEvent.target.id.slice(0, -4);
     console.log(name);
-    setAreas(prevState => {
-      let obj = Object.assign({}, prevState);
-      obj[name] = !prevState[name];
+    setAreas(() => {
+      let obj = Object.assign({}, areas);
+      obj[name] = !areas[name];
     });
     console.log(areas);
   };
