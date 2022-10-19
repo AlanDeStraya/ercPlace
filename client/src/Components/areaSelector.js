@@ -11,7 +11,7 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 	useEffect(() => {
 		setDiversionState(() => {
 			let obj = Object.assign({}, diversionState);
-			obj.planNumber = choosePlan();
+			obj.planNumber = choosePlan(diversionState, checkedAreas);
 			return obj;
 		})
 	}, [checkedAreas]);
