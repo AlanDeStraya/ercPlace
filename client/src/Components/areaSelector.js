@@ -19,7 +19,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
     console.log(name);
     setAreas(() => {
       let obj = Object.assign({}, areas);
-      obj[name] = !areas[name];
+      obj.name = !areas.name;
     });
     console.log(areas);
   };
