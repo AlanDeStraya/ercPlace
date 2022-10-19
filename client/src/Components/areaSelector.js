@@ -21,7 +21,7 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
       let obj = Object.assign({}, prevState);
       obj[name] = !prevState[name];
     });
-    console.log('handled area change');
+    console.log(areas);
   };
 
   function clearAll() {
