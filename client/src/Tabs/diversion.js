@@ -28,7 +28,7 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 
   useEffect(() => {
     if(diversionState.active) {
-      socket.emit('cAlert', {type: 'alert', content: `**TEST** Obstruction Plan ${diversionState.planNumber} in effect due to ${diversionState.issue} at ${diversionState.location}. **TEST**`});
+      socket.emit('cAlert', {type: 'alert', content: `**TEST** Obstruction Plan ${diversionState.planNumber} in effect due to ${diversionState.issue} at ${diversionState.location} involving ${diversionState.trainNumber}. **TEST**`});
     } else {
       socket.emit('cAlert', {type: '', content: ''});
     }

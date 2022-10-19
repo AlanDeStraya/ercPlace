@@ -8,6 +8,7 @@ const Chat = ({ socket }) => {
 	const [sendMsg, setSendMsg] = useState('');
 	
 	const chatWindow = document.getElementById('chat-window');
+	const chatInput = document.getElementById('chat-input');
 	
 	useEffect(() => {
 		console.log('chg msg');
@@ -78,6 +79,7 @@ const Chat = ({ socket }) => {
 		}
 		socket.emit('cChatMessage', sendMsg);
 		setSendMsg(() => '');
+		chatInput.value = '';
 	};
 	
 	function renderMessage(message) {
@@ -110,9 +112,9 @@ const Chat = ({ socket }) => {
 				{typing && <div id='chat-window-typing'>{`${typing} is typing...`}</div>}
 			</div>
 			<form id='chat-form' autoComplete='off' onSubmit={submitChat}>
-				<label id='chat-label' for='chat-input'>&nbsp;Chat:&nbsp;</label>
+				<label id='chat-label' htmlFor='chat-input'>&nbsp;Chat:&nbsp;</label>
 				<input className='input' id='chat-input' onKeyPress={handleTyping} onChange={e => setSendMsg(e.currentTarget.value)} />
-				<input id='submit' type='submit' value=' send ' />
+				<input id='submit' type='submit' value='Send' />
 			</form>
 		</div>
 	);

@@ -11,6 +11,8 @@ const DiversionLive = ({ diversionState, setDiversionState, socket }) => {
 	return (
 		<div id='diversion-live'>
 			<CommsLive
+				diversionState={diversionState}
+				liveLog={liveLog}
 				socket={socket} />
 			<MainlineLive
 				socket={socket} />

@@ -5,6 +5,7 @@
 - comms card
 - in diversion app comms side announcement timer
 - diversion all staff broadcast script
+- manual/misc action creator button for each desk
 - diversion > log > filterable; preformatted for email, cad; filter for written log
 - finder button Enter Plan Manually, move to finder control
 - comms todo enhanced email mailto: ??
