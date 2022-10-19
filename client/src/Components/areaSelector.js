@@ -21,14 +21,15 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 		setCheckedAreas(() => checkedAreas.map((item, index) => index === position ? !item : item));
 	};
 
-
 	function enterPlanManually() {
 		clearAll();
-		setDiversionState(() => {
-			let obj = Object.assign({}, diversionState);
-			obj.planNumber = window.prompt('Enter plan number:');
-			return obj;
-		})
+		window.setTimeout(() => {
+			setDiversionState(() => {
+				let obj = Object.assign({}, diversionState);
+				obj.planNumber = window.prompt('Enter plan number:');
+				return obj;
+			})
+		}, 1000)
 	}
 
 	function handleTunnelOne() {
