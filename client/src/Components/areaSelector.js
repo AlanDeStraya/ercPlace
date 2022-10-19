@@ -54,11 +54,12 @@ const AreaSelector = ({ diversionState, setDiversionState, socket }) => {
   */
 
   //in input
- //isselected={areas[areaName]}
+ // isselected={areas[areaName]} or
+ // checked={areas.areaName} 
   function createArea(areaName) {
     return (
       <div className='area-container' key={areaName}>
-        <input onChange={handleAreaChange} checked={areas.areaName} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
+        <input onChange={handleAreaChange} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
         <label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
       </div>
     )
