@@ -5,21 +5,23 @@ import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
 const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBoxes, socket }) => {
 
-	function declareTrains(event) {
+  function declareTrains(event) {
     setDiversionState(() => {
       let obj = Object.assign({}, diversionState);
       obj.numTrains = event.target.value;
       obj.numTrainsDeclared = true;
       return obj;
     });
-	};
+  };
 
   function declareLocation(event) {
-    setDiversionState(() => {
-      let obj = Object.assign({}, diversionState);
-      obj.location = event.target.value;
-      return obj;
-    });
+    window.setTimeout(() => {
+      setDiversionState(() => {
+        let obj = Object.assign({}, diversionState);
+        obj.location = event.target.value;
+        return obj;
+      });
+    }, 5000);
   };
 
   function declareIssue(event) {
@@ -31,13 +33,15 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
   };
 
   function declareIncidentTrain(event) {
-    setDiversionState(() => {
-      let obj = Object.assign({}, diversionState);
-      obj.incidentTrain = event.target.value;
-      return obj;
-    });
+    window.setTimeout(() => {
+      setDiversionState(() => {
+        let obj = Object.assign({}, diversionState);
+        obj.incidentTrain = event.target.value;
+        return obj;
+      })
+    }, 5000);
   };
-  
+
   function resetIssue() {
     setDiversionState(() => {
       let obj = Object.assign({}, diversionState);
@@ -73,45 +77,45 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 */
 
 
-	return (
-		<div id='finder-control'>
-			<div id='finder-tools'>
+  return (
+    <div id='finder-control'>
+      <div id='finder-tools'>
 				
-				<div id='selectNumOfTrains'>
-					<p>Number of Trains:&nbsp;</p><input onChange={declareTrains} id='input-number-of-trains' placeholder={diversionState.numTrains} ></input>
-				</div>
+        <div id='selectNumOfTrains'>
+          <p>Number of Trains:&nbsp;</p><input onChange={declareTrains} id='input-number-of-trains' placeholder={diversionState.numTrains} ></input>
+        </div>
 
-        <button 
-					onClick={() => {
+        <button
+          onClick={() => {
             if(openBoxes.areas === true) {
-							socket.emit('cChoosePlan', diversionState.planNumber);
+              socket.emit('cChoosePlan', diversionState.planNumber);
               setOpenBoxes(openBoxes => {
                 let obj = Object.assign({}, openBoxes);
                 obj.tables = true;
                 return obj;
               });
             }
-						setOpenBoxes(openBoxes => {
-							let obj = Object.assign({}, openBoxes); 
-							obj.areas = !openBoxes.areas;
-							return obj;
-						});
-					}}>{openBoxes.areas ? `Confirm Areas` : 'Select Areas'}</button>
+            setOpenBoxes(openBoxes => {
+              let obj = Object.assign({}, openBoxes); 
+              obj.areas = !openBoxes.areas;
+              return obj;
+            });
+          }}>{openBoxes.areas ? `Confirm Areas` : 'Select Areas'}</button>
 
-				<div id='show-tables-control'>
-					<button
-						 onClick={() => {
-							 setOpenBoxes(openBoxes => {
-								 let obj = Object.assign({}, openBoxes);
-								 obj.tables = !openBoxes.tables;
-								 return obj;
-							 });
-						 }}>{openBoxes.tables ? `Hide Details` : `Show Details`}</button>
-					
+        <div id='show-tables-control'>
+          <button
+            onClick={() => {
+              setOpenBoxes(openBoxes => {
+                let obj = Object.assign({}, openBoxes);
+                obj.tables = !openBoxes.tables;
+                return obj;
+              });
+            }}>{openBoxes.tables ? `Hide Details` : `Show Details`}</button>
 
-					<div id='mini-buttons'>
-						<button className='mini-button'
-							style={{backgroundColor: openBoxes.pic && 'orange'}}
+
+          <div id='mini-buttons'>
+            <button className='mini-button'
+              style={{backgroundColor: openBoxes.pic && 'orange'}}
 							onClick={() => {
 								setOpenBoxes(openBoxes => {
 									let obj = Object.assign({}, openBoxes);
@@ -152,27 +156,27 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 					</div>
 				</div>
 			</div>
-      {diversionState.planNumber && 
+      {diversionState.planNumber &&
       <div id='statement'>
 
         <p>{`Obstruction plan ${diversionState.planNumber} due to `}</p>
-        
-        {diversionState.issue ? <p onClick={resetIssue} style={{textDecoration: 'underline'}}>{diversionState.issue}</p> : 
+
+        {diversionState.issue ? <p onClick={resetIssue} style={{textDecoration: 'underline'}}>{diversionState.issue}</p> :
         <select onChange={declareIssue} >
           <option value='Issue' selected>-issue-</option>
           <option value='a train issue'>Train</option>
           <option value='an infrastructure issue'>Infrastructure</option>
           <option value='a passenger incident'>Passenger</option>
         </select>}
-        
+
         <p>{` at `}</p>
-        
-        {diversionState.location ? <p onClick={resetLocation} style={{textDecoration: 'underline'}}>{diversionState.location}</p> :
+
+        {diversionState.location ? <p className='former-input' onClick={resetLocation} style={{textDecoration: 'underline'}}>{diversionState.location}</p> :
         <input autoComplete='off' placeholder='-location-' onChange={declareLocation} ></input>}
-        
+
         <p>{` involving train `}</p>
-        
-        {diversionState.incidentTrain ? <p onClick={resetIncidentTrain} style={{textDecoration: 'underline'}}>{diversionState.incidentTrain}</p> :
+
+        {diversionState.incidentTrain ? <p className='former-input' onClick={resetIncidentTrain} style={{textDecoration: 'underline'}}>{diversionState.incidentTrain}</p> :
         <input autoComplete='off' placeholder='-####-' onChange={declareIncidentTrain} ></input>}
 
       </div>}

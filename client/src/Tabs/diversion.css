@@ -125,8 +125,18 @@ html, body, #root, div.App {
 #statement {
   display: flex;
   justify-content: center;
+  align-items: baseline;
   background-color: yellow;
   padding: 3px;
+}
+#statement input {
+  max-width: 115px;
+}
+.former-input {
+  cursor: pointer;
+}
+.former-input:hover {
+  font-weight: bold;
 }
 
 #area-selector {

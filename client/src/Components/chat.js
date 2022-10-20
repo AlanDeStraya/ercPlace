@@ -11,7 +11,7 @@ const Chat = ({ socket }) => {
 	const chatInput = useRef();
 	
 	useEffect(() => {
-		console.log('chg msg');
+		console.log('rndr msg?');
 	},[msgs]);
 	
 	
@@ -26,7 +26,6 @@ const Chat = ({ socket }) => {
 	});
 	
 	socket.on('sNewUserPackage', pack => {
-		console.log(pack.users);
 		users = pack.users;
 		setMsgs(() => {
 			return [...pack.messages];
@@ -87,8 +86,6 @@ const Chat = ({ socket }) => {
 			let arr = [...msgs, message];
       return arr;
 		});
-    console.log(message);
-    console.log(msgs);
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	};
 		
