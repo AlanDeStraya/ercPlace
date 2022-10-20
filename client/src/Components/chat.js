@@ -8,7 +8,6 @@ const Chat = ({ socket }) => {
 	const [sendMsg, setSendMsg] = useState('');
 	
 	const chatWindow = useRef();
-	const chatInput = useRef();
 	
 	useEffect(() => {
 		console.log('rndr msg?');
@@ -78,7 +77,6 @@ const Chat = ({ socket }) => {
 		}
 		socket.emit('cChatMessage', sendMsg);
 		setSendMsg(() => '');
-		chatInput.value = '';
 	};
 	
 	function renderMessage(message) {
@@ -110,7 +108,7 @@ const Chat = ({ socket }) => {
 			</div>
 			<form id='chat-form' autoComplete='off' onSubmit={submitChat}>
 				<label id='chat-label' htmlFor='chat-input'>&nbsp;Chat:&nbsp;</label>
-				<input className='input' useRef={chatInput} id='chat-input' onKeyPress={handleTyping} onChange={e => setSendMsg(e.currentTarget.value)} />
+				<input className='input' id='chat-input' onKeyPress={handleTyping} value={setSendMsg} onChange={e => setSendMsg(e.currentTarget.value)} />
 				<input id='submit' type='submit' value='Send' />
 			</form>
 		</div>
