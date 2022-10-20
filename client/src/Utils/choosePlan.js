@@ -2,7 +2,6 @@ function choosePlan(stateObj, areas) {
 	const checkedAreas = [...areas];
   const numAreas = checkedAreas.filter(i => i).length;
   let numTrains = stateObj.numTrains;
-	console.log(numTrains);
   let plan;
   
 	if((numTrains >= 7 && numTrains <= 12) && (((checkedAreas[0] || checkedAreas[1]) && numAreas === 1) 
