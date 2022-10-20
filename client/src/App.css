@@ -292,7 +292,16 @@ h3 {
   align-items: center;
   justify-content: space-around;
 }
-#headways th, td {
+
+#sidebar summary {
+  color: var(--link);
+}
+
+summary:hover {
+  cursor: pointer;
+}
+
+#headways th, #headways td {
   text-align: center;
   width: 80px;
 }

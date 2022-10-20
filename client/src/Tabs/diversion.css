@@ -387,19 +387,20 @@ html, body, #root, div.App {
 }
 #papids th {
   background-color: yellow;
+  color: black;
 }
-.cs .red th {
+#cs .red th {
   background-color: #a00;
   color: white;
 }
-.cs .green th {
+#cs .green th {
   background-color: #080;
   color: white;
 }
-.reasons {
+#cs .reasons {
   width: 600px;
 }
-.reasons th {
+#cs .reasons th {
   background-color: #333;
   color: #ccc;
 }
