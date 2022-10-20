@@ -34,8 +34,8 @@ function choosePlan(stateObj, areas) {
 			|| (checkedAreas[0] && checkedAreas[14] && checkedAreas[15] && numAreas === 3)) {
 		plan = '1p5';
 		
-	} else if(((checkedAreas[1] && checkedAreas[15]) && numAreas === 2)
-			|| ((checkedAreas[1] && checkedAreas[15] && checkedAreas[0])	|| (checkedAreas[1] && checkedAreas[15] && checkedAreas[14]) && numAreas === 3)
+	} else if((((checkedAreas[1] && checkedAreas[15]) && numAreas === 2)
+			|| ((checkedAreas[1] && checkedAreas[15] && checkedAreas[0])	|| (checkedAreas[1] && checkedAreas[15] && checkedAreas[14])) && numAreas === 3)
 			|| (checkedAreas[1] && checkedAreas[15] && checkedAreas[0] && checkedAreas[14] && numAreas === 4)) {
 		plan = '1p6';
 		
@@ -72,11 +72,11 @@ function choosePlan(stateObj, areas) {
 			&& checkedAreas[16] && checkedAreas[17] && checkedAreas[18] && numAreas === 6) {
 		plan = '2p6';
 		
-	} else if(checkedAreas[5] && checkedAreas[19] && numAreas == 2) {
+	} else if(checkedAreas[5] && checkedAreas[19] && numAreas === 2) {
 		plan = '2p7';
 		
-	} else if(numTrains < 13 && ((checkedAreas[6] || checkedAreas[7] || checkedAreas[8]) && numAreas === 1) 
-			|| (((checkedAreas[6] && checkedAreas[7]) || (checkedAreas[7] && checkedAreas[8]) || (checkedAreas[6] && checkedAreas[8]) ) && numAreas === 2 ) || (checkedAreas[6] && checkedAreas[7] && checkedAreas[8] && numAreas === 3)) {
+	} else if(numTrains < 13 && (((checkedAreas[6] || checkedAreas[7] || checkedAreas[8]) && numAreas === 1) 
+			|| (((checkedAreas[6] && checkedAreas[7]) || (checkedAreas[7] && checkedAreas[8]) || (checkedAreas[6] && checkedAreas[8]) ) && numAreas === 2 ) || (checkedAreas[6] && checkedAreas[7] && checkedAreas[8] && numAreas === 3))) {
 		plan = '3p1';
 		
 	} else if(numTrains < 13 && ( ((checkedAreas[20] || checkedAreas[21] || checkedAreas[22]) && numAreas === 1) 
@@ -121,12 +121,12 @@ function choosePlan(stateObj, areas) {
 	} else if(numTrains > 6 && numTrains < 13 && (checkedAreas[26] || checkedAreas[27]) && numAreas === 1) {
 		plan = '6p2';
 		
-	} else if(numTrains < 7 && ((checkedAreas[12] || checkedAreas[13]) && numAreas === 1)
-			|| (checkedAreas[12] && checkedAreas[13] && numAreas === 2)) {
+	} else if(numTrains < 7 && (((checkedAreas[12] || checkedAreas[13]) && numAreas === 1)
+			|| (checkedAreas[12] && checkedAreas[13] && numAreas === 2))) {
 		plan = '6p3';
 		
-	} else if(numTrains < 7 && ((checkedAreas[26] || checkedAreas[27]) && numAreas === 1)
-			|| (checkedAreas[26] && checkedAreas[27] && numAreas === 2)) {
+	} else if(numTrains < 7 && (((checkedAreas[26] || checkedAreas[27]) && numAreas === 1)
+			|| (checkedAreas[26] && checkedAreas[27] && numAreas === 2))) {
 		plan = '6p4';
 		
 	} else if(
