@@ -120,10 +120,13 @@ html, body, #root, div.App {
 	display: inline-block;
   margin-left: 5px;
   font-size: 18px;
+  color: black;
 }
 #statement {
   display: flex;
+  justify-content: center;
   background-color: yellow;
+  padding: 3px;
 }
 
 #area-selector {

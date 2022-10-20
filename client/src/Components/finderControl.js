@@ -141,7 +141,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 							}}>PA/PIDS</button>
 
 						<button className='mini-button'
-							style={{backgroundColor: openBoxes.tweet && 'green', color: openBoxes.plan && 'white'}}
+							style={{backgroundColor: openBoxes.tweet && 'green', color: openBoxes.tweet && 'white'}}
 							onClick={() => {
 								setOpenBoxes(openBoxes => {
 									let obj = Object.assign({}, openBoxes);
