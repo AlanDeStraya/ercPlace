@@ -29,7 +29,7 @@ const DiversionControl = ({ socket, diversionState, setDiversionState, openBoxes
 		}
 		return () => clearInterval(interval);
 	}, [diversionState.active, stopwatchTime]);
-
+//replace multiple useState with useReducer
 
   return (
     <div id='diversion-control'>

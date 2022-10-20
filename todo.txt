@@ -4,7 +4,7 @@
 - finder tables content
 - area box spacing
 - finder tunnel buttons not working
-- choose manually delay 500ms
+- choose manually delay 300ms
 - email subject comma after plannum
 - close and log button reset state
 - chat box
@@ -21,6 +21,7 @@
 - ? refactor IOS reference to React with single location for code description
 - npm 6 high severity vulnerabilities
 - radar map
+- weather timestamp (weather as of Date.now())
 - eventually remake areaFinder for specificity, auto-detect location
 
 ## Questions:

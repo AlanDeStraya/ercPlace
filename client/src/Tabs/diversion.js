@@ -6,7 +6,7 @@ import './diversion.css';
 import ObstructionFinder from '../Components/obstructionFinder.js';
 import DiversionControl from '../Components/diversionControl.js';
 import DiversionLive from '../Components/diversionLive.js';
-import Log from '../Components/log.js';
+// import Log from '../Components/log.js';
 
 import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
@@ -29,7 +29,7 @@ import findScheduledTrains from '../Utils/findScheduledTrains.js';
 const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) => {
 
 	const [openBoxes, setOpenBoxes] = useState({areas: true, tables: false, pic: true, plan: true, comm: false, tweet: false});
-	
+
 	const [diversionState, setDiversionState] = useState({
 		active: false,
 		open: false,
