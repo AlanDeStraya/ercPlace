@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import findStopwatchTime from '../Utils/findStopwatchTime.js';
 
-const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
+const DiversionControl = ({ socket, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
 	const [startTime, setStartTime] = useState(0);
 	const [stopwatchTime, setStopwatchTime] = useState('00:00');
@@ -33,17 +33,17 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
   return (
     <div id='diversion-control'>
       {!diversionState.open && <button id='event-start-button'
-	onClick={() => {
-		const eventStartTime = Date.now();
-		socket.emit('cStartEvent', eventStartTime)
-		setDiversionState(() => {
-              let obj = Object.assign({}, diversionState);
-              obj.active = true;
-              obj.open = true;
-              obj.startTime = eventStartTime;
-              return obj;
-            });
-          }}>START</button>}
+        onClick={() => {
+          const eventStartTime = Date.now();
+          socket.emit('cStartEvent', eventStartTime)
+          setDiversionState(() => {
+            let obj = Object.assign({}, diversionState);
+            obj.active = true;
+            obj.open = true;
+            obj.startTime = eventStartTime;
+            return obj;
+          });
+        }}>START</button>}
 
       {diversionState.open ? diversionState.active ? <p id='stopwatch'>{stopwatchTime}</p> 
       : <button
@@ -51,8 +51,26 @@ const DiversionControl = ({ socket, diversionState, setDiversionState }) => {
           setDiversionState(diversionState => {
             let obj = Object.assign({}, diversionState);
             obj.open = false;
+            obj.startTime = 0;
+            obj.stopwatchTime = 0;
+            obj.numTrains = findScheduledTrains();
+            obj.numTrainsDeclared = false;
+            obj.planNumber = '';
+            obj.issue = '';
+            obj.trainNumber = '';
+            obj.location = '';
             return obj;
           });
+          setOpenBoxes(() => {
+            let obj = Object.assign({}, openBoxes);
+            obj.areas = true;
+            obj.tables = false;
+            obj.pic = true;
+            obj.plan = true;
+            obj.comm = false;
+            obj.tweet = false;
+            return obj;
+          })
         }}>Close and Log</button> : null }
 
       {diversionState.active && <button id='event-end-button'

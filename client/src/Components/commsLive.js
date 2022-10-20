@@ -4,7 +4,7 @@ import Chat from './chat.js';
 
 const CommsLive = ({ diversionState, liveLog, socket }) => {
 
-	const subject = `Obstruction Plan ${diversionState.planNumber}, at ${diversionState.location} involving ${diversionState.trainNumber}.`
+	const subject = `Obstruction Plan ${diversionState.planNumber} at ${diversionState.location} involving ${diversionState.trainNumber}.`
 	const body = JSON.stringify(diversionState);
 
 	return (

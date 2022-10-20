@@ -69,7 +69,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
                 return obj;
               });
             }
-						setOpenBoxes(openBoxes => {
+						setOpenBoxes(() => {
 							let obj = Object.assign({}, openBoxes); 
 							obj.areas = !openBoxes.areas;
 							return obj;
@@ -79,7 +79,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 				<div id='show-tables-control'>
 					<button
 						 onClick={() => {
-							 setOpenBoxes(openBoxes => {
+							 setOpenBoxes(() => {
 								 let obj = Object.assign({}, openBoxes);
 								 obj.tables = !openBoxes.tables;
 								 return obj;
@@ -91,7 +91,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 						<button className='mini-button'
 							style={{backgroundColor: openBoxes.pic && 'orange'}}
 							onClick={() => {
-								setOpenBoxes(openBoxes => {
+								setOpenBoxes(() => {
 									let obj = Object.assign({}, openBoxes);
 									obj.pic = !openBoxes.pic;
 									return obj;
@@ -101,7 +101,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 						<button className='mini-button'
 							style={{backgroundColor: openBoxes.plan && 'blue'}}
 							onClick={() => {
-								setOpenBoxes(openBoxes => {
+								setOpenBoxes(() => {
 									let obj = Object.assign({}, openBoxes);
 									obj.plan = !openBoxes.plan;
 									return obj;
@@ -111,7 +111,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 						<button className='mini-button'
 							style={{backgroundColor: openBoxes.comm && 'red'}}
 							onClick={() => {
-								setOpenBoxes(openBoxes => {
+								setOpenBoxes(() => {
 									let obj = Object.assign({}, openBoxes);
 									obj.comm = !openBoxes.comm;
 									return obj;
@@ -121,7 +121,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 						<button className='mini-button'
 							style={{backgroundColor: openBoxes.tweet && 'green'}}
 							onClick={() => {
-								setOpenBoxes(openBoxes => {
+								setOpenBoxes(() => {
 									let obj = Object.assign({}, openBoxes);
 									obj.tweet = !openBoxes.tweet;
 									return obj;

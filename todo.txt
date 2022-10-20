@@ -2,6 +2,12 @@
 
 - finder js
 - finder tables content
+- area box spacing
+- finder tunnel buttons not working
+- choose manually delay 500ms
+- email subject comma after plannum
+- close and log button reset state
+- chat box
 - comms card
 - in diversion app comms side announcement timer
 - diversion all staff broadcast script
@@ -26,6 +32,7 @@
 - remove test log statements
 - consistent formatting, style standards
 - alphabetize state and props?
+- console errors (This page uses the non standard property “zoom”. Consider using calc() in the relevant property values, or using “transform” along with “transform-origin: 0 0”.)
 
 ## ERC.Place
 - cad section/option tree

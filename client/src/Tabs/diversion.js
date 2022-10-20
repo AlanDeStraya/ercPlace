@@ -24,8 +24,12 @@ import findScheduledTrains from '../Utils/findScheduledTrains.js';
 //   return [state, setState];
 // }
 
+
+
 const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) => {
 
+	const [openBoxes, setOpenBoxes] = useState({areas: true, tables: false, pic: true, plan: true, comm: false, tweet: false});
+	
 	const [diversionState, setDiversionState] = useState({
 		active: false,
 		open: false,
@@ -59,10 +63,14 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 				<ObstructionFinder
           diversionState={diversionState}
           setDiversionState={setDiversionState}
+					openBoxes={openBoxes}
+					setOpenBoxes={setOpenBoxes}
 					socket={socket} />
 				<DiversionControl
           diversionState={diversionState}
           setDiversionState={setDiversionState}
+					openBoxes={openBoxes}
+					setOpenBoxes={setOpenBoxes}
 					socket={socket} />
 			</div>
 			

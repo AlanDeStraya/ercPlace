@@ -29,27 +29,34 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 				obj.planNumber = window.prompt('Enter plan number:');
 				return obj;
 			})
-		}, 1000)
+		}, 500)
 	}
 
 	function handleTunnelOne() {
-		setCheckedAreas(() => checkedAreas.map((item, index) => {
-			if((index > 0 && index < 5) || (index > 14 && index < 19)) {
-				item = true;
-			} else {
-				item = false;
-			}
-		}));
-	}
+		setCheckedAreas(() => {
+			let arr = checkedAreas.map((item, index) => {
+				if((index > 0 && index < 5) || (index > 14 && index < 19)) {
+					item = true;
+				} else {
+					item = false;
+				}
+			})
+			return arr;
+		})
+	};
 	function handleTunnelTwo() {
-		setCheckedAreas(() => checkedAreas.map((item, index) => {
-			if((index > 0 && index < 6) || (index > 14 && index < 20)) {
-				item = true;
-			} else {
-				item = false;
-			}
-		}));
-	}
+		setCheckedAreas(() => {
+			let arr = checkedAreas.map((item, index) => {
+				if((index > 0 && index < 6) || (index > 14 && index < 20)) {
+					item = true;
+				} else {
+					item = false;
+				}
+			})
+			return arr;
+		})
+	};
+	
 
   function clearAll() {
     setCheckedAreas(() =>{
