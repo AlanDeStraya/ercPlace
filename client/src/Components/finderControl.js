@@ -36,7 +36,10 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
     window.setTimeout(() => {
       setDiversionState(() => {
         let obj = Object.assign({}, diversionState);
-        obj.incidentTrain = event.target.value;
+	let num = event.target.value.split('');
+	num.splice(2, 0, '/');
+	let newNum = num.join('');
+        obj.incidentTrain = newNum;
         return obj;
       })
     }, 5000);
@@ -161,7 +164,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 
         <p>{`Obstruction plan ${diversionState.planNumber} due to `}</p>
 
-        {diversionState.issue ? <p onClick={resetIssue} style={{textDecoration: 'underline'}}>{diversionState.issue}</p> :
+        {diversionState.issue ? <p className='former-input' onClick={resetIssue} style={{textDecoration: 'underline'}}>{diversionState.issue}</p> :
         <select onChange={declareIssue} >
           <option value='Issue' selected>-issue-</option>
           <option value='a train issue'>Train</option>
