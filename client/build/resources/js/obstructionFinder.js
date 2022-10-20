@@ -399,7 +399,7 @@ function setDetails() {
 	} else if(plan === '3p4'){
 		oblocation = 'Both tracks closed UOT interlocking to east gate UOT';
 		routing = '<strong>R1:</strong> LYO-HUR + LEE<br><strong>West Loop TUN-PAR:</strong> Line 6 (4 trains)<br><strong>East Loop HUR-E - BLA:</strong> Line 16 (5 trains)';
-		notes: '<ul><li>If 13 trains on ML, 4 must be removed/parked.</li><li>If possible, step-back at HUR-E</li></ul>';
+		notes = '<ul><li>If 13 trains on ML, 4 must be removed/parked.</li><li>If possible, step-back at HUR-E</li></ul>';
 	} else if(plan === '3p5') {
 		oblocation = '3.5 Both tracks closed east gate UOT to west gate HUR (UOT, HUR-E open)';
 		routing = '<strong>R1:</strong> RID-HUR + LEE<br><strong>West Loop 5 TUN-UOT:</strong> Line (8 trains)<br><strong>East Loop HUR-E - BLA:</strong> Line 16 (5 trains)';
@@ -407,7 +407,7 @@ function setDetails() {
 	} else if(plan === '3p6') {
 		oblocation = '3.6 Both tracks closed west gate HUR to HUR west crossover';
 		routing = '<strong>R1:</strong> RID-STL + LEE<br><strong>West Loop TUN-UOT:</strong> Line 5 (8 trains)<br><strong>East Loop TRE-E - BLA:</strong> Line 18 (5 trains)';
-		notes: 'If possible, step-back at TRE-E';
+		notes = 'If possible, step-back at TRE-E';
 	} else if(plan === '4p1') {
 		oblocation = '4.1 Obstruction track 1';
 		routing = '<strong>Single Tracking:</strong> LN01-DW05 start STL-W resume HUR-W (11 trains)';
