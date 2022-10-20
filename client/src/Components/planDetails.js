@@ -1,6 +1,8 @@
 import React from 'react';
 
 import findDetails from '../Utils/findDetails.js';
+import findPapids from '../Utils/findPapids.js';
+import findTweet from '../Utils/findTweet.js';
 
 const PlanDetails = ({ diversionState, openBoxes }) => {
 
@@ -11,8 +13,8 @@ const PlanDetails = ({ diversionState, openBoxes }) => {
           : <img src={`./resources/images/plan${diversionState.planNumber.replace('.', 'p')}.png`} alt=''></img>}</div>}
         
         {openBoxes.plan && <div id='details' className='bolded'>{findDetails(diversionState.planNumber)}</div>}
-        {openBoxes.comm && <div id='papids' className='bolded'></div>}
-        {openBoxes.tweet && <div id='cs'></div>}
+        {openBoxes.comm && <div id='papids' className='bolded'>{findPapids(diversionState.planNumber)}</div>}
+        {openBoxes.tweet && <div id='cs'>{findTweet(diversionState.planNumber)}</div>}
       </div>
 	  )
 

@@ -138,6 +138,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/IndigoVision%20Operator%20Guide.pdf?CT=1656960515004&OR=ItemsView' target='_blank' rel="noreferrer">IndigoVision</a></li>
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/Radio%20Console%20Training.pdf?CT=1656960669248&OR=ItemsView' target='_blank' rel="noreferrer">P25 radio console slides (sideways)</a></li>
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/Fire%20Panel%20Training%20-%20Part%201.pdf?CT=1656960387385&OR=ItemsView' target='_blank' rel="noreferrer">Fire Panel</a></li><li><a href='https://ottawacity.sharepoint.com/sites/RailOperations/KnowledgeBase/ONYX%20Workstation%20Training%20Notes.pdf?CT=1656960995079&OR=ItemsView' target='_blank' rel="noreferrer">ONYX Workstation Guide</a></li>
+            <li><a href='https://ottawacity.sharepoint.com/:b:/r/sites/TransitOperations/Shared%20Documents/Rail%20Operations/Cisco%20Phone%20User%20Guide.pdf?csf=1&web=1&e=6MLNrX' target='_blank' rel='noreferrer'>City Cisco Phones</a></li>
 					</ul>
 				</section>
 
