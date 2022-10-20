@@ -167,7 +167,7 @@ const SharepointPlus = ({ siteUpdatesPopupActive, setSiteUpdatesPopupActive }) =
 						<li><a href='http://webstaff.transit.local/webstaff/servlet/ServletController.asp?device=stdbrowser&action=doBeginLogin' target='_blank' rel="noreferrer">Telestaff</a></li>
 						<li><a href='http://10.136.12.88/CADIncidentManagement/' target='_blank' rel="noreferrer">CAD</a></li>
 						<li><a href='https://ottawacity.sharepoint.com/sites/RailOperations' target='_blank' rel="noreferrer">Sharepoint</a></li>
-						<li><a href='https://www.chickpeasottawa.com/' target='_blank'>Mission Critical Support</a></li>
+						<li><a href='https://www.chickpeasottawa.com/' target='_blank' rel='noreferrer'>Mission Critical Support</a></li>
 
 						<li id='scadaAlarmsLink'><a href='#resources'
 							onClick={() => setScadaPopupActive(true)} >Downloading SCADA Alarms (& secure key code)</a></li>
