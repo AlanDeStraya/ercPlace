@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const Chat = ({ socket }) => {
 	
-	const [msgs, setMsgs] = useState([{message: 'Hi'}]);
+	const [msgs, setMsgs] = useState([{message: 'Hi', messageId: '1', sender: 'Alan', timestamp: Date.now()}]);
 	const [typing, setTyping] = useState('');
 	const [sendMsg, setSendMsg] = useState('');
 	
@@ -17,13 +17,12 @@ const Chat = ({ socket }) => {
 //get username, from ?commslive? before opening chat
 	const username = 'User1';
 	socket.emit('cNewUser', username);
-	let timer;
-	let users;
 	
 	socket.on('sUserConnected', name => {
 		renderMessage(`${name} joined`);
 	});
 	
+	let users;
 	socket.on('sNewUserPackage', pack => {
 		users = pack.users;
 		setMsgs(() => {
@@ -32,6 +31,7 @@ const Chat = ({ socket }) => {
 	});
 
 	socket.on('sChatMessage', obj => {
+		console.log(`chat message received: ${obj}`)
 		renderMessage(obj);
 	});
 
@@ -44,7 +44,7 @@ const Chat = ({ socket }) => {
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	});
 	
-	socket.on('sNotTyping', name => {
+	socket.on('sNotTyping', () => {
 		setTyping(() => '' );
 	});
 	
@@ -54,6 +54,7 @@ const Chat = ({ socket }) => {
 		socket.emit('notTyping', username);
 	};
 	
+	let timer;
 	function handleTyping(event) {
 		if(event.code === 'Enter') {
 			clearTimeout(timer);

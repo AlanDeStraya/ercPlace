@@ -1,10 +1,8 @@
 # To-Do:
 
-- finder tables content
-
 - chat box
 - comms card
-- in diversion app comms side announcement timer
+- comms announcement timer
 - diversion all staff broadcast script
 - diversion statistics for CS messaging
 - manual/misc action creator button for each desk
