@@ -8,6 +8,8 @@ import DiversionControl from '../Components/diversionControl.js';
 import DiversionLive from '../Components/diversionLive.js';
 import Log from '../Components/log.js';
 
+import findScheduledTrains from '../Utils/findScheduledTrains.js';
+
 // Function to persist state
 // import React from 'react';
 
