@@ -39,14 +39,6 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
   };
   
 
-  useEffect(() => {
-    setDiversionState(() => {
-      let obj = Object.assign({}, diversionState);
-      obj.numTrains = findScheduledTrains();
-      return obj;
-    });
-  }, [])
-
   /*
   let trainStatement = '';
   let locationStatement = '';

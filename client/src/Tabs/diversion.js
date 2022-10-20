@@ -29,7 +29,7 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 		open: false,
 		startTime: 0,
 		stopwatchTime: 0,
-		numTrains: undefined,
+		numTrains: findScheduledTrains(),
 		numTrainsDeclared: false,
 		planNumber: '',
 		issue: '',

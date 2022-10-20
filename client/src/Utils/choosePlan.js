@@ -3,7 +3,6 @@ function choosePlan(stateObj, areas) {
   const numAreas = checkedAreas.filter(i => i).length;
   let numTrains = stateObj.numTrains;
 	console.log(numTrains);
-	console.log(numAreas);
   let plan;
   
 	if((numTrains >= 7 && numTrains <= 12) && (((checkedAreas[0] || checkedAreas[1]) && numAreas === 1) 
@@ -149,9 +148,7 @@ function choosePlan(stateObj, areas) {
 	} else {
 		plan = '';
 	}
-	console.log(plan)
   return plan.replace('p', '.');
-
 }
 
 export default choosePlan;
