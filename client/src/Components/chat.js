@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const Chat = ({ socket }) => {
 	
-	const [msgs, setMsgs] = useState([]);
+	const [msgs, setMsgs] = useState([{message: 'Hi'}]);
 	const [typing, setTyping] = useState('');
 	const [sendMsg, setSendMsg] = useState('');
 	
@@ -14,7 +14,7 @@ const Chat = ({ socket }) => {
 	},[msgs]);
 	
 	
-//get username, from commslive before opening chat
+//get username, from ?commslive? before opening chat
 	const username = 'User1';
 	socket.emit('cNewUser', username);
 	let timer;
@@ -80,8 +80,8 @@ const Chat = ({ socket }) => {
 	};
 	
 	function renderMessage(message) {
-		setMsgs(() => {
-			let arr = [...msgs, message];
+		setMsgs((prevState) => {
+			let arr = [...prevState, message];
       return arr;
 		});
 		chatWindow.scrollTop = chatWindow.scrollHeight;
@@ -108,7 +108,7 @@ const Chat = ({ socket }) => {
 			</div>
 			<form id='chat-form' autoComplete='off' onSubmit={submitChat}>
 				<label id='chat-label' htmlFor='chat-input'>&nbsp;Chat:&nbsp;</label>
-				<input className='input' id='chat-input' onKeyPress={handleTyping} value={setSendMsg} onChange={e => setSendMsg(e.currentTarget.value)} />
+				<input className='input' id='chat-input' onKeyPress={handleTyping} value={sendMsg} onChange={e => setSendMsg(e.currentTarget.value)} />
 				<input id='submit' type='submit' value='Send' />
 			</form>
 		</div>

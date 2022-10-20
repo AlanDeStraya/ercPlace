@@ -18,7 +18,7 @@
 - npm 6 high severity vulnerabilities
 - radar map
 - eventually remake areaFinder for specificity, auto-detect location
-- choose manually delay 300ms
+- choose manually delay 300ms - fix need for delay
 
 ## Questions:
 - Which host: Heroku, Digital Ocean, Firebase?
