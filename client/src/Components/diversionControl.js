@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 import findStopwatchTime from '../Utils/findStopwatchTime.js';
+import findScheduledTrains from '../Utils/findScheduledTrains.js';
 
 const DiversionControl = ({ socket, diversionState, setDiversionState, openBoxes, setOpenBoxes }) => {
 
