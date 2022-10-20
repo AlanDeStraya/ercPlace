@@ -33,17 +33,39 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
   function declareIncidentTrain(event) {
     setDiversionState(() => {
       let obj = Object.assign({}, diversionState);
-      obj.trainNumber = event.target.value;
+      obj.incidentTrain = event.target.value;
       return obj;
     });
   };
   
+  function resetIssue() {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.issue = '';
+      return obj;
+    })
+  }
 
+  function resetLocation() {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.location = '';
+      return obj;
+    })
+  }
+
+  function resetIncidentTrain() {
+    setDiversionState(() => {
+      let obj = Object.assign({}, diversionState);
+      obj.incidentTrain = '';
+      return obj;
+    })
+  }
   /*
   let trainStatement = '';
   let locationStatement = '';
-  if(diversionState.trainNumber) {
-    trainStatement = ` with train ${diversionState.trainNumber}`;
+  if(diversionState.incidentTrain) {
+    trainStatement = ` with train ${diversionState.incidentTrain}`;
   }
   if(diversionState.location) {
     locationStatement = ` ${diversionState.location}`;
@@ -99,7 +121,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 							}}>Graphic</button>
 
 						<button className='mini-button'
-							style={{backgroundColor: openBoxes.plan && 'blue'}}
+							style={{backgroundColor: openBoxes.plan && 'blue', color: openBoxes.plan && 'white'}}
 							onClick={() => {
 								setOpenBoxes(openBoxes => {
 									let obj = Object.assign({}, openBoxes);
@@ -119,7 +141,7 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 							}}>PA/PIDS</button>
 
 						<button className='mini-button'
-							style={{backgroundColor: openBoxes.tweet && 'green'}}
+							style={{backgroundColor: openBoxes.tweet && 'green', color: openBoxes.plan && 'white'}}
 							onClick={() => {
 								setOpenBoxes(openBoxes => {
 									let obj = Object.assign({}, openBoxes);
@@ -132,22 +154,33 @@ const FinderControl = ({ diversionState, setDiversionState, openBoxes, setOpenBo
 			</div>
       {diversionState.planNumber && 
       <div id='statement'>
+
         <p>{`Obstruction plan ${diversionState.planNumber} due to `}</p>
+        
+        {diversionState.issue ? <p onClick={resetIssue} style={{textDecoration: 'underline'}}>{diversionState.issue}</p> : 
         <select onChange={declareIssue} >
           <option value='Issue' selected>-issue-</option>
           <option value='a train issue'>Train</option>
           <option value='an infrastructure issue'>Infrastructure</option>
           <option value='a passenger incident'>Passenger</option>
-        </select>
+        </select>}
+        
         <p>{` at `}</p>
-        <input autoComplete='off' placeholder='-location-' onChange={declareLocation} ></input>
+        
+        {diversionState.location ? <p onClick={resetLocation} style={{textDecoration: 'underline'}}>{diversionState.location}</p> :
+        <input autoComplete='off' placeholder='-location-' onChange={declareLocation} ></input>}
+        
         <p>{` involving train `}</p>
-        <input autoComplete='off' placeholder='-####-' onChange={declareIncidentTrain} ></input>
+        
+        {diversionState.incidentTrain ? <p onClick={resetIncidentTrain} style={{textDecoration: 'underline'}}>{diversionState.incidentTrain}</p> :
+        <input autoComplete='off' placeholder='-####-' onChange={declareIncidentTrain} ></input>}
+
       </div>}
 
 		</div>
 	);
 
 };
+// location issue incidentTrain
 
 export default FinderControl;

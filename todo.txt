@@ -4,8 +4,6 @@
 - finder tables content
 - area box spacing => back to nbsp
 - weather timestamp css
-- finder tunnel buttons not working
-- choose manually delay 300ms
 - email subject comma after plannum
 - close and log button reset state
 - chat box
@@ -15,7 +13,7 @@
 - manual/misc action creator button for each desk
 - diversion > log > filterable; preformatted for email, cad; filter for written log
 - finder button Enter Plan Manually, move to finder control
-- comms todo enhanced email mailto: ??
+- comms todo enhanced email mailto: => email form to hide email?
 - EMS call questions
 - logs => prewrite comms emails?
 - swap ercplace h2 and ul L margins, set popup h3 back to h2
@@ -23,6 +21,7 @@
 - npm 6 high severity vulnerabilities
 - radar map
 - eventually remake areaFinder for specificity, auto-detect location
+- choose manually delay 300ms
 
 ## Questions:
 - Which host: Heroku, Digital Ocean, Firebase?

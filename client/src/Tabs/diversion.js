@@ -39,7 +39,7 @@ const Diversion = ({ testMode, setTestMode, subHeader, setSubheader, socket }) =
 		numTrainsDeclared: false,
 		planNumber: '',
 		issue: '',
-		trainNumber: '',
+		incidentTrain: '',
 		location: ''
 	});
 

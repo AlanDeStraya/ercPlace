@@ -72,7 +72,7 @@ const AreaSelector = ({ diversionState, setDiversionState }) => {
 			return (
 				<div className='area-container' key={areaName}>
 					<input onChange={() => handleAreaChange(index)} checked={checkedAreas[index]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
-					<label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>
+					<label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
 				</div>
 			)
 		}
@@ -84,7 +84,7 @@ function createAreasTwo() {
 			return (
 				<div className='area-container' key={areaName}>
 					<input name={areaName} value={areaName} onChange={() => handleAreaChange(index)} checked={checkedAreas[index]} type='checkbox' className='area-checkbox' id={`${areaName}-box`} />
-					<label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>
+					<label className='area' id={areaName} htmlFor={`${areaName}-box`}></label>&nbsp;
 				</div>
 			)
 		}

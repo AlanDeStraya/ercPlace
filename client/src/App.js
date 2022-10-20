@@ -98,8 +98,8 @@ function App() {
 
         socket={socket} />
 
-      { subHeader.type && <h2 id='subHeader' style={subHeader.type ? {backgroundColor: 'yellow', color: 'black'} : {backgroundColor: 'red', color: 'white'} }>{subHeader.content}</h2> }
-	{ subHeader.type && <div id='subHeaderSpacer'></div> }
+      {/* subHeader.type && <h2 id='subHeader' style={subHeader.type ? {backgroundColor: 'yellow', color: 'black'} : {backgroundColor: 'red', color: 'white'} }>{subHeader.content}</h2> */}
+	    {/* subHeader.type && <div id='subHeaderSpacer'></div> */}
 
       { openTab === 'SharepointPlus'
         ? <SharepointPlus
