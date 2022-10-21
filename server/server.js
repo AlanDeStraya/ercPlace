@@ -36,11 +36,11 @@ app.get('/*', (req, res) => {
 io.on('connection', socket => {
 	
   users[socket.id] = {status: 'online'};
-	socket.on('cNewUser', name => {
-		users[socket.id].name = name;
-		socket.broadcast.emit('sUserConnected', name);
-		socket.emit('sNewUserPackge', {users, messages});
-	});
+  socket.on('cNewUser', name => {
+    users[socket.id].name = name;
+    socket.broadcast.emit('sUserConnected', name);
+    socket.emit('sNewUserPackge', {users: users, messages: messages});
+  });
 
   usersOnline = Object.keys(users).length;
   console.log('A client connected, users online: ' + usersOnline);
@@ -84,8 +84,8 @@ io.on('connection', socket => {
 
 
 
-	socket.on('cChatMessage', msg => {
-		let now = new Date();
+  socket.on('cChatMessage', msg => {
+    let now = new Date();
     let hours = now.getHours();
     hours = hours < 10 ? '0' + hours : hours;
     let mins = now.getMinutes();
@@ -93,16 +93,17 @@ io.on('connection', socket => {
     let secs = now.getSeconds();
     secs = secs < 10 ? '0' + secs : secs;
     let stamp = now.getMonth() + "/" + now.getDate() + "/" + now.getFullYear() + ' ' + hours + ":" + mins + ":" + secs;
-		const newMessage = { message: msg, messageId: messageId, sender: users[socket.id], timestamp: stamp };
-    messages.push(newMessage);
-		if(messages.length > 99) {
-			messages.shift();
-		}
-		io.emit('sChatMessage', newMessage);
-	});
 
-	socket.on('disconnect', () => {
-		let now = new Date();
+    const newMessage = { message: msg, messageId: Date.now(), sender: users[socket.id].name, timestamp: stamp };
+    messages.push(newMessage);
+    if(messages.length > 99) {
+      messages.shift();
+    }
+    io.emit('sChatMessage', newMessage);
+  });
+
+  socket.on('disconnect', () => {
+    let now = new Date();
     let hours = now.getHours();
     hours = hours < 10 ? '0' + hours : hours;
     let mins = now.getMinutes();
