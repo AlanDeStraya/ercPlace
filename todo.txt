@@ -13,7 +13,6 @@
 - logs => prewrite comms emails?
 - swap ercplace h2 and ul L margins, set popup h3 back to h2
 - ? refactor IOS reference to React with single location for code description
-- npm 6 high severity vulnerabilities
 - radar map
 - eventually remake areaFinder for specificity, auto-detect location
 - choose manually delay 300ms - fix need for delay
@@ -27,6 +26,7 @@
 - remove test log statements
 - consistent formatting, style standards
 - alphabetize state and props?
+- npm high severity vulnerabilities
 - console errors (This page uses the non standard property “zoom”. Consider using calc() in the relevant property values, or using “transform” along with “transform-origin: 0 0”.)
 
 ## ERC.Place

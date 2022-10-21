@@ -13,7 +13,8 @@ Adding socket.io for live syncing, updates, and chat capability.
 - Use obstruction plan finder to determine plan number.
 - See info on plan.
 - Add event details.
-- Initiate diversion to broadcast alert?, start clock, open DiversionLive section.
+- Initiate diversion starts clock, opens DiversionLive section.
+
 - Action suggestions are populated based on event details and completed actions.
 - Action suggestions include train troubleshooting guides and work instruction procdures.
 - Completed actions logged and editable, viewable in real time.
