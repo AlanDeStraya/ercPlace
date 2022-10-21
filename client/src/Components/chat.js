@@ -10,7 +10,7 @@ const Chat = ({ socket }) => {
 	const chatWindow = useRef();
 	
 	useEffect(() => {
-		console.log('rndr msg?');
+		console.log(msgs);
 	},[msgs]);
 	
 	
