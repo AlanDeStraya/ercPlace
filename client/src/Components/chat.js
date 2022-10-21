@@ -97,7 +97,6 @@ const Chat = ({ socket }) => {
 			<div id='chat-window' ref={chatWindow}>
 				<div id='chat-window-messages'>
 					{[msgs]
-					.sort((a, b) => a.timestamp - b.timestamp)
 					.map((message) => (
 						<div key={message.messageId}>
 							<em>{`${message.timestamp}, ${message.sender}`}</em>
