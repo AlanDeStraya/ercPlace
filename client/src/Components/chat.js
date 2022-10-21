@@ -31,7 +31,7 @@ const Chat = ({ socket }) => {
 	});
 
 	socket.on('sChatMessage', obj => {
-		console.log(`chat message received: ${obj}`)
+		console.log(`chat message received: ${JSON.parse(JSON.stringify(obj))}`)
 		renderMessage(obj);
 	});
 
